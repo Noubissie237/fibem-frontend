@@ -681,4 +681,146 @@ export const en: Dictionary = {
       backToSolutions: "← All solutions",
     },
   },
+  resourcesPage: {
+    hero: {
+      title: "Resource Center",
+      subtitle: "Documentation, guides, tutorials and everything you need to succeed with Téléphonie-IA.",
+      ctaPrimary: "Access help center",
+      ctaSecondary: "Contact us",
+    },
+    getStarted: {
+      title: "Where to start?",
+      subtitle: "Choose your starting point to discover Téléphonie-IA.",
+      items: [
+        { title: "Discover features", description: "Explore everything Téléphonie-IA can do for you.", cta: "See features" },
+        { title: "Choose a plan", description: "Find the plan that fits your team and needs.", cta: "See pricing" },
+        { title: "See use cases", description: "Discover how other companies use Téléphonie-IA.", cta: "See solutions" },
+      ],
+    },
+    documentation: {
+      title: "Documentation & resources",
+      columns: {
+        docs: {
+          title: "Documentation",
+          items: [
+            { label: "Guides & documentation", description: "Step-by-step tutorials to get started" },
+            { label: "API & Webhooks", description: "Technical documentation for developers" },
+            { label: "Changelog", description: "Platform updates and new features" },
+          ],
+        },
+        trust: {
+          title: "Trust",
+          items: [
+            { label: "GDPR & Privacy", description: "Our commitment to your data" },
+            { label: "Service status", description: "Real-time availability" },
+            { label: "Help center", description: "FAQ and support" },
+          ],
+        },
+        resources: {
+          title: "Resources",
+          items: [
+            { label: "Case studies", description: "Customer testimonials and results" },
+            { label: "Blog", description: "Articles and insights" },
+          ],
+        },
+      },
+      callout: {
+        title: "Videos & tutorials",
+        description: "Learn visually with our demo videos and tutorials.",
+        cta: "Watch videos",
+      },
+    },
+    articles: {
+      title: "Recent articles",
+      subtitle: "The latest news and tips from our team.",
+      cta: "View all articles",
+      readMore: "Read article",
+    },
+    trust: {
+      title: "Trust & security",
+      subtitle: "Your data is in good hands.",
+      items: [
+        { title: "GDPR Compliance", description: "Data hosted in France, full GDPR compliance, right to erasure guaranteed." },
+        { title: "99.9% Availability", description: "Redundant infrastructure, 24/7 monitoring, guaranteed SLA for Enterprise customers." },
+        { title: "Responsive support", description: "Support team based in France, fast response, personalized assistance." },
+      ],
+    },
+    cta: {
+      title: "Need help getting started?",
+      subtitle: "Our team is here to support you in your project.",
+      primary: "Contact team",
+      secondary: "Sign up free",
+    },
+    guides: {
+      title: "Guides & documentation",
+      subtitle: "Step-by-step tutorials to master Téléphonie-IA.",
+      categories: { "getting-started": "Getting Started", "setup": "Setup", "ai": "Artificial Intelligence", "integrations": "Integrations", "analytics": "Analytics" },
+    },
+    api: {
+      title: "API & Webhooks",
+      subtitle: "Technical documentation to integrate Téléphonie-IA with your applications.",
+      sections: {
+        auth: { title: "Authentication", description: "Use API keys to authenticate your requests. Keys are generated from your dashboard and can have granular permissions." },
+        webhooks: { title: "Webhooks", description: "Receive real-time notifications for events: inbound/outbound calls, completed transcriptions, voicemails, etc." },
+        examples: { title: "Code examples", description: "Find examples in Python, Node.js, PHP and Ruby to quickly start your integration." },
+      },
+    },
+    changelog: {
+      title: "Changelog",
+      subtitle: "All the news and improvements to Téléphonie-IA.",
+      types: { feature: "New", improvement: "Improvement", fix: "Fix" },
+    },
+    rgpd: {
+      title: "GDPR & Privacy",
+      subtitle: "Our commitment to protecting your data.",
+      sections: [
+        { title: "Data collection", content: "We only collect data necessary for the service: account information, call data, recordings (if enabled), and usage data." },
+        { title: "Processing purposes", content: "Your data is used to provide the service, improve quality, ensure support, and meet our legal obligations. We never sell your data." },
+        { title: "Hosting", content: "All data is hosted in France in ISO 27001 certified datacenters, with encryption at rest and in transit." },
+        { title: "Retention period", content: "Data is retained for the duration of your contract + 1 year, unless legally required. You can request deletion at any time." },
+        { title: "Your rights", content: "You have rights of access, rectification, erasure, portability, objection and restriction. Contact privacy@fibem.com for any request." },
+        { title: "Cookies", content: "We use essential cookies and analytics cookies (with consent). You can manage your preferences at any time." },
+      ],
+    },
+    status: {
+      title: "Service status",
+      subtitle: "Real-time availability of Téléphonie-IA.",
+      operational: "All systems operational",
+      history: "Incident history",
+      allSystems: "All systems",
+    },
+    helpCenter: {
+      title: "Help Center",
+      subtitle: "Quickly find answers to your questions.",
+      searchPlaceholder: "Search help...",
+      categories: "Categories",
+      popularQuestions: "Frequently asked questions",
+    },
+    caseStudies: {
+      title: "Case Studies",
+      subtitle: "Discover how our customers transformed their telephony.",
+      challenge: "Challenge",
+      solution: "Solution",
+      results: "Results",
+    },
+    blog: {
+      title: "Blog",
+      subtitle: "Articles, tips and news about business telephony and AI.",
+      allArticles: "All articles",
+      filterBy: "Filter by",
+      categories: { ia: "Artificial Intelligence", support: "Customer Support", telephonie: "Telephony", securite: "Security", analytics: "Analytics" },
+    },
+    videos: {
+      title: "Videos & tutorials",
+      subtitle: "Learn visually with our demos and tutorials.",
+      watchNow: "Watch",
+      categories: { demo: "Demo", tutorial: "Tutorial", testimonial: "Testimonial" },
+    },
+    article: {
+      backToBlog: "← Back to blog",
+      shareArticle: "Share this article",
+      relatedArticles: "Related articles",
+      readTime: "min read",
+    },
+  },
 };

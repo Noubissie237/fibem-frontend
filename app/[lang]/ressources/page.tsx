@@ -2,7 +2,14 @@ import type { Metadata } from "next";
 import { getDictionary, isValidLocale } from "@/lib/i18n/dictionaries";
 import { Locale } from "@/types/i18n";
 import { notFound } from "next/navigation";
-import { Section } from "@/components/ui/Section";
+import {
+  ResourcesHero,
+  ResourcesGetStarted,
+  ResourcesDocumentation,
+  ResourcesArticles,
+  ResourcesTrust,
+  ResourcesCTA,
+} from "@/components/resources";
 
 interface PageProps {
   params: Promise<{ lang: string }>;
@@ -11,29 +18,28 @@ interface PageProps {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { lang } = await params;
   if (!isValidLocale(lang)) return {};
-  const dict = getDictionary(lang as Locale);
-  
   return {
-    title: dict.nav.resources,
-    description: dict.resources.subtitle,
+    title: lang === "fr" ? "Ressources | Téléphonie-IA" : "Resources | Téléphonie-IA",
+    description: lang === "fr"
+      ? "Documentation, guides, tutoriels, blog et tout ce dont vous avez besoin pour réussir avec Téléphonie-IA."
+      : "Documentation, guides, tutorials, blog and everything you need to succeed with Téléphonie-IA.",
   };
 }
 
-export default async function RessourcesPage({ params }: PageProps) {
+export default async function ResourcesPage({ params }: PageProps) {
   const { lang: langParam } = await params;
   if (!isValidLocale(langParam)) notFound();
-  
   const lang = langParam as Locale;
   const dict = getDictionary(lang);
 
   return (
-    <Section>
-      <div className="text-center max-w-3xl mx-auto">
-        <h1 className="text-4xl font-bold mb-4">{dict.nav.resources}</h1>
-        <p className="text-lg text-neutral-600">
-          {dict.resources.subtitle}
-        </p>
-      </div>
-    </Section>
+    <>
+      <ResourcesHero dict={dict} lang={lang} />
+      <ResourcesGetStarted dict={dict} lang={lang} />
+      <ResourcesDocumentation dict={dict} lang={lang} />
+      <ResourcesArticles dict={dict} lang={lang} />
+      <ResourcesTrust dict={dict} />
+      <ResourcesCTA dict={dict} lang={lang} />
+    </>
   );
 }

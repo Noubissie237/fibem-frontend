@@ -686,4 +686,146 @@ export const fr: Dictionary = {
       backToSolutions: "← Toutes les solutions",
     },
   },
+  resourcesPage: {
+    hero: {
+      title: "Centre de ressources",
+      subtitle: "Documentation, guides, tutoriels et tout ce dont vous avez besoin pour réussir avec Téléphonie-IA.",
+      ctaPrimary: "Accéder au centre d'aide",
+      ctaSecondary: "Nous contacter",
+    },
+    getStarted: {
+      title: "Par où commencer ?",
+      subtitle: "Choisissez votre point de départ pour découvrir Téléphonie-IA.",
+      items: [
+        { title: "Découvrir les fonctionnalités", description: "Explorez tout ce que Téléphonie-IA peut faire pour vous.", cta: "Voir les fonctionnalités" },
+        { title: "Choisir un plan", description: "Trouvez l'offre adaptée à votre équipe et vos besoins.", cta: "Voir les tarifs" },
+        { title: "Voir des cas d'usage", description: "Découvrez comment d'autres entreprises utilisent Téléphonie-IA.", cta: "Voir les solutions" },
+      ],
+    },
+    documentation: {
+      title: "Documentation & ressources",
+      columns: {
+        docs: {
+          title: "Documentation",
+          items: [
+            { label: "Guides & documentation", description: "Tutoriels pas à pas pour bien démarrer" },
+            { label: "API & Webhooks", description: "Documentation technique pour développeurs" },
+            { label: "Changelog", description: "Nouveautés et mises à jour de la plateforme" },
+          ],
+        },
+        trust: {
+          title: "Confiance",
+          items: [
+            { label: "RGPD & Confidentialité", description: "Notre engagement pour vos données" },
+            { label: "Statut du service", description: "Disponibilité en temps réel" },
+            { label: "Centre d'aide", description: "FAQ et support" },
+          ],
+        },
+        resources: {
+          title: "Ressources",
+          items: [
+            { label: "Études de cas", description: "Témoignages clients et résultats" },
+            { label: "Blog", description: "Articles et insights" },
+          ],
+        },
+      },
+      callout: {
+        title: "Vidéos & tutoriels",
+        description: "Apprenez visuellement avec nos vidéos de démonstration et tutoriels.",
+        cta: "Voir les vidéos",
+      },
+    },
+    articles: {
+      title: "Articles récents",
+      subtitle: "Les dernières actualités et conseils de notre équipe.",
+      cta: "Voir tous les articles",
+      readMore: "Lire l'article",
+    },
+    trust: {
+      title: "Confiance & sécurité",
+      subtitle: "Vos données sont entre de bonnes mains.",
+      items: [
+        { title: "Conformité RGPD", description: "Données hébergées en France, conformité totale au RGPD, droit à l'effacement garanti." },
+        { title: "Disponibilité 99,9%", description: "Infrastructure redondante, monitoring 24/7, SLA garanti pour les clients Enterprise." },
+        { title: "Support réactif", description: "Équipe support basée en France, réponse rapide, accompagnement personnalisé." },
+      ],
+    },
+    cta: {
+      title: "Besoin d'aide pour démarrer ?",
+      subtitle: "Notre équipe est là pour vous accompagner dans votre projet.",
+      primary: "Contacter l'équipe",
+      secondary: "S'inscrire gratuitement",
+    },
+    guides: {
+      title: "Guides & documentation",
+      subtitle: "Tutoriels pas à pas pour maîtriser Téléphonie-IA.",
+      categories: { "getting-started": "Démarrage", "setup": "Configuration", "ai": "Intelligence Artificielle", "integrations": "Intégrations", "analytics": "Analytics" },
+    },
+    api: {
+      title: "API & Webhooks",
+      subtitle: "Documentation technique pour intégrer Téléphonie-IA à vos applications.",
+      sections: {
+        auth: { title: "Authentification", description: "Utilisez des clés API pour authentifier vos requêtes. Les clés sont générées depuis votre tableau de bord et peuvent avoir des permissions granulaires." },
+        webhooks: { title: "Webhooks", description: "Recevez des notifications en temps réel pour les événements : appels entrants/sortants, transcriptions terminées, messages vocaux, etc." },
+        examples: { title: "Exemples de code", description: "Retrouvez des exemples en Python, Node.js, PHP et Ruby pour démarrer rapidement votre intégration." },
+      },
+    },
+    changelog: {
+      title: "Changelog",
+      subtitle: "Toutes les nouveautés et améliorations de Téléphonie-IA.",
+      types: { feature: "Nouveauté", improvement: "Amélioration", fix: "Correction" },
+    },
+    rgpd: {
+      title: "RGPD & Confidentialité",
+      subtitle: "Notre engagement pour la protection de vos données.",
+      sections: [
+        { title: "Collecte des données", content: "Nous collectons uniquement les données nécessaires au fonctionnement du service : informations de compte, données d'appels, enregistrements (si activés), et données d'usage." },
+        { title: "Finalités du traitement", content: "Vos données sont utilisées pour fournir le service, améliorer la qualité, assurer le support, et respecter nos obligations légales. Nous ne vendons jamais vos données." },
+        { title: "Hébergement", content: "Toutes les données sont hébergées en France dans des datacenters certifiés ISO 27001, avec chiffrement au repos et en transit." },
+        { title: "Durée de conservation", content: "Les données sont conservées pendant la durée de votre contrat + 1 an, sauf obligation légale. Vous pouvez demander la suppression à tout moment." },
+        { title: "Vos droits", content: "Vous disposez des droits d'accès, rectification, effacement, portabilité, opposition et limitation. Contactez privacy@fibem.com pour toute demande." },
+        { title: "Cookies", content: "Nous utilisons des cookies essentiels au fonctionnement et des cookies analytics (avec consentement). Vous pouvez gérer vos préférences à tout moment." },
+      ],
+    },
+    status: {
+      title: "Statut du service",
+      subtitle: "Disponibilité en temps réel de Téléphonie-IA.",
+      operational: "Tous les systèmes opérationnels",
+      history: "Historique des incidents",
+      allSystems: "Tous les systèmes",
+    },
+    helpCenter: {
+      title: "Centre d'aide",
+      subtitle: "Trouvez rapidement des réponses à vos questions.",
+      searchPlaceholder: "Rechercher dans l'aide...",
+      categories: "Catégories",
+      popularQuestions: "Questions fréquentes",
+    },
+    caseStudies: {
+      title: "Études de cas",
+      subtitle: "Découvrez comment nos clients ont transformé leur téléphonie.",
+      challenge: "Défi",
+      solution: "Solution",
+      results: "Résultats",
+    },
+    blog: {
+      title: "Blog",
+      subtitle: "Articles, conseils et actualités sur la téléphonie d'entreprise et l'IA.",
+      allArticles: "Tous les articles",
+      filterBy: "Filtrer par",
+      categories: { ia: "Intelligence Artificielle", support: "Support Client", telephonie: "Téléphonie", securite: "Sécurité", analytics: "Analytics" },
+    },
+    videos: {
+      title: "Vidéos & tutoriels",
+      subtitle: "Apprenez visuellement avec nos démonstrations et tutoriels.",
+      watchNow: "Regarder",
+      categories: { demo: "Démo", tutorial: "Tutoriel", testimonial: "Témoignage" },
+    },
+    article: {
+      backToBlog: "← Retour au blog",
+      shareArticle: "Partager cet article",
+      relatedArticles: "Articles similaires",
+      readTime: "min de lecture",
+    },
+  },
 };

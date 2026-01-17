@@ -315,5 +315,120 @@ export interface Dictionary {
       ctaSecondary: string;
       backToSolutions: string;
     };
+  },
+  resourcesPage: {
+    hero: {
+      title: string;
+      subtitle: string;
+      ctaPrimary: string;
+      ctaSecondary: string;
+    };
+    getStarted: {
+      title: string;
+      subtitle: string;
+      items: Array<{
+        title: string;
+        description: string;
+        cta: string;
+      }>;
+    };
+    documentation: {
+      title: string;
+      columns: {
+        docs: { title: string; items: Array<{ label: string; description: string }> };
+        trust: { title: string; items: Array<{ label: string; description: string }> };
+        resources: { title: string; items: Array<{ label: string; description: string }> };
+      };
+      callout: {
+        title: string;
+        description: string;
+        cta: string;
+      };
+    };
+    articles: {
+      title: string;
+      subtitle: string;
+      cta: string;
+      readMore: string;
+    };
+    trust: {
+      title: string;
+      subtitle: string;
+      items: Array<{
+        title: string;
+        description: string;
+      }>;
+    };
+    cta: {
+      title: string;
+      subtitle: string;
+      primary: string;
+      secondary: string;
+    };
+    // Sous-pages
+    guides: {
+      title: string;
+      subtitle: string;
+      categories: Record<string, string>;
+    };
+    api: {
+      title: string;
+      subtitle: string;
+      sections: {
+        auth: { title: string; description: string };
+        webhooks: { title: string; description: string };
+        examples: { title: string; description: string };
+      };
+    };
+    changelog: {
+      title: string;
+      subtitle: string;
+      types: Record<string, string>;
+    };
+    rgpd: {
+      title: string;
+      subtitle: string;
+      sections: Array<{ title: string; content: string }>;
+    };
+    status: {
+      title: string;
+      subtitle: string;
+      operational: string;
+      history: string;
+      allSystems: string;
+    };
+    helpCenter: {
+      title: string;
+      subtitle: string;
+      searchPlaceholder: string;
+      categories: string;
+      popularQuestions: string;
+    };
+    caseStudies: {
+      title: string;
+      subtitle: string;
+      challenge: string;
+      solution: string;
+      results: string;
+    };
+    blog: {
+      title: string;
+      subtitle: string;
+      allArticles: string;
+      filterBy: string;
+      categories: Record<string, string>;
+    };
+    videos: {
+      title: string;
+      subtitle: string;
+      watchNow: string;
+      categories: Record<string, string>;
+    };
+    article: {
+      backToBlog: string;
+      shareArticle: string;
+      relatedArticles: string;
+      readTime: string;
+    };
   };
 }

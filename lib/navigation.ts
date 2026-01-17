@@ -27,65 +27,78 @@ export function getNavigationItems(
       megaMenu: {
         sections: [
           {
-            title: lang === "fr" ? "Intelligence Artificielle" : "Artificial Intelligence",
+            title: lang === "fr" ? "Téléphonie & Routage" : "Telephony & Routing",
             items: [
               {
-                label: lang === "fr" ? "Assistant vocal IA" : "AI Voice Assistant",
-                href: `/${lang}/fonctionnalites#assistant-vocal`,
+                label: lang === "fr" ? "Numéros professionnels" : "Business Numbers",
+                href: `/${lang}/fonctionnalites#telephonie`,
                 description:
                   lang === "fr"
-                    ? "Répondez à vos appels 24h/24 avec notre IA conversationnelle"
-                    : "Answer your calls 24/7 with our conversational AI",
+                    ? "Numéros locaux, nationaux et internationaux"
+                    : "Local, national and international numbers",
               },
               {
-                label: lang === "fr" ? "Transcription automatique" : "Automatic Transcription",
-                href: `/${lang}/fonctionnalites#transcription`,
+                label: lang === "fr" ? "SVI & Routage avancé" : "IVR & Advanced Routing",
+                href: `/${lang}/fonctionnalites#telephonie`,
                 description:
                   lang === "fr"
-                    ? "Convertissez automatiquement vos appels en texte"
-                    : "Automatically convert your calls to text",
-              },
-              {
-                label: lang === "fr" ? "Analyse de sentiment" : "Sentiment Analysis",
-                href: `/${lang}/fonctionnalites#sentiment`,
-                description:
-                  lang === "fr"
-                    ? "Comprenez les émotions en temps réel"
-                    : "Understand emotions in real-time",
+                    ? "Menus vocaux et routage intelligent"
+                    : "Voice menus and smart routing",
               },
             ],
           },
           {
-            title: lang === "fr" ? "Gestion des appels" : "Call Management",
+            title: lang === "fr" ? "Messagerie & SMS" : "Messaging & SMS",
             items: [
               {
-                label: lang === "fr" ? "Routage intelligent" : "Smart Routing",
-                href: `/${lang}/fonctionnalites#routage`,
+                label: lang === "fr" ? "SMS professionnel" : "Business SMS",
+                href: `/${lang}/fonctionnalites#messagerie`,
                 description:
                   lang === "fr"
-                    ? "Dirigez les appels automatiquement"
-                    : "Route calls automatically",
+                    ? "Envoi et réception depuis vos numéros pro"
+                    : "Send and receive from your business numbers",
               },
               {
-                label: lang === "fr" ? "File d'attente virtuelle" : "Virtual Queue",
-                href: `/${lang}/fonctionnalites#file-attente`,
+                label: lang === "fr" ? "Enregistrements" : "Call Recording",
+                href: `/${lang}/fonctionnalites#messagerie`,
                 description:
                   lang === "fr"
-                    ? "Gérez les pics d'appels"
-                    : "Manage call peaks",
+                    ? "Enregistrez et recherchez vos appels"
+                    : "Record and search your calls",
               },
             ],
           },
           {
-            title: "Analytics",
+            title: lang === "fr" ? "IA & Qualité" : "AI & Quality",
+            items: [
+              {
+                label: lang === "fr" ? "Transcription IA" : "AI Transcription",
+                href: `/${lang}/fonctionnalites#ia`,
+                description:
+                  lang === "fr"
+                    ? "Transcription automatique en temps réel"
+                    : "Real-time automatic transcription",
+              },
+              {
+                label: lang === "fr" ? "Résumés intelligents" : "Smart Summaries",
+                href: `/${lang}/fonctionnalites#ia`,
+                description:
+                  lang === "fr"
+                    ? "Résumés et analyse de sentiment"
+                    : "Summaries and sentiment analysis",
+              },
+            ],
+          },
+          {
+            title: lang === "fr" ? "Pilotage & Admin" : "Management & Admin",
             items: [
               {
                 label: lang === "fr" ? "Tableaux de bord" : "Dashboards",
-                href: `/${lang}/fonctionnalites#dashboards`,
+                href: `/${lang}/fonctionnalites#pilotage`,
                 description:
                   lang === "fr"
-                    ? "Visualisez vos KPIs en temps réel"
-                    : "Visualize your KPIs in real-time",
+                    ? "KPIs temps réel et rapports"
+                    : "Real-time KPIs and reports",
               },
             ],
           },
@@ -158,31 +171,31 @@ export function getNavigationItems(
       megaMenu: {
         sections: [
           {
-            title: lang === "fr" ? "Par secteur" : "By Industry",
+            title: lang === "fr" ? "Par métier" : "By Use Case",
             items: [
               {
-                label: lang === "fr" ? "Santé & Médical" : "Healthcare",
-                href: `/${lang}/solutions#sante`,
+                label: lang === "fr" ? "Équipes commerciales" : "Sales Teams",
+                href: `/${lang}/solutions/equipes-commerciales`,
                 description:
                   lang === "fr"
-                    ? "Gestion des rendez-vous et urgences"
-                    : "Appointment and emergency management",
+                    ? "Qualifiez vos leads et boostez vos ventes"
+                    : "Qualify leads and boost sales",
               },
               {
-                label: lang === "fr" ? "Immobilier" : "Real Estate",
-                href: `/${lang}/solutions#immobilier`,
+                label: lang === "fr" ? "Support client" : "Customer Support",
+                href: `/${lang}/solutions/support-client`,
                 description:
                   lang === "fr"
-                    ? "Qualification des leads"
-                    : "Lead qualification",
+                    ? "Améliorez la satisfaction client"
+                    : "Improve customer satisfaction",
               },
               {
-                label: "E-commerce",
-                href: `/${lang}/solutions#ecommerce`,
+                label: lang === "fr" ? "Retail & Commerce" : "Retail & Commerce",
+                href: `/${lang}/solutions/retail`,
                 description:
                   lang === "fr"
-                    ? "Support client automatisé"
-                    : "Automated customer support",
+                    ? "Connectez tous vos points de vente"
+                    : "Connect all your locations",
               },
             ],
           },
@@ -190,32 +203,45 @@ export function getNavigationItems(
             title: lang === "fr" ? "Par taille" : "By Size",
             items: [
               {
-                label: lang === "fr" ? "TPE / Indépendants" : "Small Business",
-                href: `/${lang}/solutions#tpe`,
+                label: lang === "fr" ? "PME & ETI" : "SMBs & Mid-Market",
+                href: `/${lang}/solutions/pme-eti`,
                 description:
                   lang === "fr"
-                    ? "Ne manquez plus jamais un appel"
-                    : "Never miss a call again",
+                    ? "Solution complète pour entreprises"
+                    : "Complete solution for businesses",
               },
               {
-                label: lang === "fr" ? "PME" : "SMB",
-                href: `/${lang}/solutions#pme`,
+                label: "Startups",
+                href: `/${lang}/solutions/startups`,
                 description:
                   lang === "fr"
-                    ? "Professionnalisez votre accueil"
-                    : "Professionalize your reception",
+                    ? "Démarrez en 5 minutes, scalez sans limite"
+                    : "Start in 5 minutes, scale unlimited",
               },
               {
-                label: lang === "fr" ? "Grands comptes" : "Enterprise",
-                href: `/${lang}/solutions#grands-comptes`,
+                label: lang === "fr" ? "Télétravail" : "Remote Work",
+                href: `/${lang}/solutions/teletravail`,
                 description:
                   lang === "fr"
-                    ? "Déployez à l'échelle"
-                    : "Deploy at scale",
+                    ? "Téléphonie pro partout, tout le temps"
+                    : "Business telephony anywhere, anytime",
               },
             ],
           },
         ],
+        callout: {
+          title:
+            lang === "fr"
+              ? "Pas sûr de votre solution ?"
+              : "Not sure which solution?",
+          description:
+            lang === "fr"
+              ? "Nos experts vous aident à choisir la configuration idéale."
+              : "Our experts help you choose the ideal setup.",
+          href: `/${lang}/contact`,
+          linkText: lang === "fr" ? "Parler à un expert" : "Talk to an expert",
+          variant: "blue",
+        },
       },
     },
     {

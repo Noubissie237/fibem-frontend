@@ -12,7 +12,7 @@ export const en: Dictionary = {
     pricing: "Pricing",
     solutions: "Solutions",
     partners: "Partners",
-    why: "Why Téléphonie-IA",
+    why: "Why Téléphonie-IA ?",
     resources: "Resources",
     contact: "Contact",
     signin: "Sign in",
@@ -821,6 +821,244 @@ export const en: Dictionary = {
       shareArticle: "Share this article",
       relatedArticles: "Related articles",
       readTime: "min read",
+    },
+  },
+  whyPage: {
+    hero: {
+      title: "Why choose Téléphonie-IA?",
+      subtitle: "Business telephony reimagined: simpler, smarter, more efficient. Discover how we transform every call into an opportunity.",
+      ctaPrimary: "Request a demo",
+      ctaSecondary: "See pricing",
+    },
+    problem: {
+      title: "Business telephony challenges",
+      subtitle: "Every day, companies lose opportunities because of inadequate tools.",
+      points: [
+        "Missed calls that turn into lost customers",
+        "No visibility on phone exchanges",
+        "Scattered tools that complicate daily work",
+        "Impossible to improve what you don't measure",
+        "Mobile teams disconnected from the system",
+      ],
+      stats: [
+        { value: "62%", label: "of business calls are missed or misrouted" },
+        { value: "3h", label: "lost per week on call-related admin tasks" },
+        { value: "45%", label: "of companies have no call traceability" },
+      ],
+    },
+    approach: {
+      title: "Our approach",
+      subtitle: "Téléphonie-IA combines the best of cloud telephony and artificial intelligence.",
+      pillars: [
+        {
+          title: "Cloud Telephony",
+          description: "No more hardware to manage. Deploy in minutes, work from anywhere, scale without friction. Modern infrastructure that adapts to you.",
+          cta: "Learn more",
+        },
+        {
+          title: "Useful AI",
+          description: "Automatic transcription, smart summaries, sentiment analysis. AI that actually improves your daily life, not a gimmick.",
+          cta: "See AI features",
+        },
+        {
+          title: "Real-Time Management",
+          description: "Clear dashboards, actionable KPIs, automated reports. Make the right decisions based on data.",
+          cta: "Discover analytics",
+        },
+        {
+          title: "Trust & Security",
+          description: "Hosting in France, GDPR compliance, end-to-end encryption. Your data is in good hands.",
+          cta: "Our security commitment",
+        },
+      ],
+    },
+    comparison: {
+      title: "Traditional vs Téléphonie-IA",
+      subtitle: "Discover what really changes in daily use.",
+      traditional: "Traditional telephony",
+      modern: "Téléphonie-IA",
+      items: [
+        {
+          aspect: "Visibility on exchanges",
+          traditional: "No call traceability, impossible to know what was said",
+          modern: "Complete history, transcriptions, automatic summaries",
+        },
+        {
+          aspect: "Continuous improvement",
+          traditional: "No data to identify areas for improvement",
+          modern: "Detailed analytics, AI insights, real-time coaching",
+        },
+        {
+          aspect: "Mobility",
+          traditional: "Tied to the office, rigid landline number",
+          modern: "Work from anywhere, same number on all your devices",
+        },
+        {
+          aspect: "Tool integration",
+          traditional: "Isolated system, manual re-entry",
+          modern: "Connected to your CRM, Slack, and 50+ tools",
+        },
+        {
+          aspect: "Scalability",
+          traditional: "Long and expensive changes",
+          modern: "Add users with one click",
+        },
+      ],
+    },
+    testimonials: {
+      title: "They trust us",
+      subtitle: "Discover what our customers say about Téléphonie-IA.",
+    },
+    company: {
+      title: "Discover FIBEM",
+      subtitle: "The company behind Téléphonie-IA.",
+      cards: [
+        {
+          title: "FIBEM",
+          description: "Our mission, vision and values.",
+          cta: "Discover FIBEM",
+        },
+        {
+          title: "The Group",
+          description: "Our history and expertise.",
+          cta: "Learn more",
+        },
+        {
+          title: "Join us",
+          description: "Build the future of telephony with us.",
+          cta: "See openings",
+        },
+      ],
+    },
+    cta: {
+      title: "Ready to switch to Téléphonie-IA?",
+      subtitle: "Join 500+ companies that have modernized their telephony.",
+      primary: "Get started free",
+      secondary: "Contact team",
+    },
+  },
+  companyPages: {
+    breadcrumb: {
+      company: "Company",
+    },
+    fibem: {
+      hero: {
+        title: "FIBEM",
+        subtitle: "Innovation serving business communication. Discover the team building Téléphonie-IA.",
+      },
+      mission: {
+        title: "Our mission",
+        content: "Make business telephony simple, smart and accessible to all organizations. We believe every call counts and technology should help teams communicate better, not slow them down.",
+      },
+      vision: {
+        title: "Our vision",
+        content: "Become the reference partner for French businesses for their professional telephony. A future where AI enhances every interaction, where data guides decisions, and where technology fades in favor of humans.",
+      },
+      values: {
+        title: "Our values",
+        subtitle: "What guides us every day.",
+      },
+      figures: {
+        title: "FIBEM in numbers",
+        subtitle: "Key indicators of our activity.",
+      },
+      cta: {
+        title: "Want to know more?",
+        subtitle: "Let's discuss your needs or join our team.",
+        primary: "Contact us",
+        secondary: "Join the team",
+      },
+    },
+    groupe: {
+      hero: {
+        title: "The Group",
+        subtitle: "A history of innovation and expertise in business telecommunications.",
+      },
+      history: {
+        title: "Our history",
+        subtitle: "From vision to reality: the key steps in our journey.",
+      },
+      expertise: {
+        title: "Our areas of expertise",
+        subtitle: "Complementary skills serving your telephony.",
+        items: [
+          {
+            title: "Cloud Telephony",
+            description: "Modern, scalable and secure infrastructure for constraint-free telephony.",
+          },
+          {
+            title: "Artificial Intelligence",
+            description: "Cutting-edge algorithms for transcription, analysis and continuous improvement.",
+          },
+          {
+            title: "Integrations",
+            description: "Native connectors with business tools for a unified ecosystem.",
+          },
+          {
+            title: "Support",
+            description: "Dedicated teams for deployment, training and support.",
+          },
+        ],
+      },
+      commitment: {
+        title: "Our quality commitment",
+        content: "We are committed to providing reliable, secure service that complies with the most demanding standards. Hosting in France, GDPR compliance, ISO certifications: your trust is our priority.",
+      },
+      cta: {
+        title: "Questions about our group?",
+        primary: "Contact us",
+      },
+    },
+    careers: {
+      hero: {
+        title: "Join us",
+        subtitle: "Build the future of business telephony with a passionate and innovative team.",
+      },
+      culture: {
+        title: "Our culture",
+        content: "At FIBEM, we cultivate an environment where innovation, kindness and excellence meet. We believe the best ideas come from diverse perspectives and freedom to experiment. Flexible remote work, continuous training, and stimulating projects: we invest in our teams.",
+      },
+      whyJoin: {
+        title: "Why join us?",
+        items: [
+          {
+            title: "Real impact",
+            description: "Your work improves the daily lives of thousands of users.",
+          },
+          {
+            title: "Modern technologies",
+            description: "Cutting-edge tech stack: Next.js, TypeScript, AI, Cloud.",
+          },
+          {
+            title: "Work-life balance",
+            description: "Flexible remote work, adaptable hours, extra time off.",
+          },
+          {
+            title: "Growth",
+            description: "Training, conferences, and personalized career paths.",
+          },
+        ],
+      },
+      openings: {
+        title: "Job openings",
+        subtitle: "Find the position that suits you.",
+        apply: "Apply",
+        location: "Location",
+      },
+      spontaneous: {
+        title: "Spontaneous application",
+        subtitle: "Can't find the ideal position? Send us your application, we're always looking for talent.",
+        form: {
+          name: "Full name",
+          email: "Email",
+          message: "Tell us about yourself",
+          submit: "Send my application",
+        },
+      },
+      cta: {
+        title: "Questions about our opportunities?",
+        primary: "Contact our HR team",
+      },
     },
   },
 };

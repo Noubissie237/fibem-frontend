@@ -231,53 +231,82 @@ export function getNavigationItems(
             title: lang === "fr" ? "Notre approche" : "Our Approach",
             items: [
               {
-                label: lang === "fr" ? "Notre vision" : "Our Vision",
-                href: `/${lang}/pourquoi-telephonie-ia#vision`,
+                label: lang === "fr" ? "Pourquoi Téléphonie-IA" : "Why Téléphonie-IA",
+                href: `/${lang}/pourquoi-telephonie-ia`,
                 description:
                   lang === "fr"
-                    ? "Rendre l'IA accessible à tous"
-                    : "Making AI accessible to everyone",
+                    ? "Découvrez ce qui nous différencie"
+                    : "Discover what makes us different",
               },
               {
-                label: lang === "fr" ? "Technologie française" : "French Technology",
-                href: `/${lang}/pourquoi-telephonie-ia#technologie`,
+                label: lang === "fr" ? "Notre vision" : "Our Vision",
+                href: `/${lang}/pourquoi-telephonie-ia#approach`,
                 description:
                   lang === "fr"
-                    ? "Développée en France, hébergée en Europe"
-                    : "Developed in France, hosted in Europe",
+                    ? "Téléphonie cloud + IA + pilotage"
+                    : "Cloud telephony + AI + management",
               },
             ],
           },
           {
-            title: lang === "fr" ? "Preuves de valeur" : "Proof of Value",
+            title: lang === "fr" ? "Entreprise" : "Company",
+            items: [
+              {
+                label: "FIBEM",
+                href: `/${lang}/entreprise/fibem`,
+                description:
+                  lang === "fr"
+                    ? "Mission, vision et valeurs"
+                    : "Mission, vision and values",
+              },
+              {
+                label: lang === "fr" ? "Le Groupe" : "The Group",
+                href: `/${lang}/entreprise/le-groupe`,
+                description:
+                  lang === "fr"
+                    ? "Notre histoire et expertise"
+                    : "Our history and expertise",
+              },
+              {
+                label: lang === "fr" ? "Rejoignez-nous" : "Join Us",
+                href: `/${lang}/entreprise/rejoignez-nous`,
+                description:
+                  lang === "fr"
+                    ? "Nos offres d'emploi"
+                    : "Our job openings",
+              },
+            ],
+          },
+          {
+            title: lang === "fr" ? "Confiance" : "Trust",
             items: [
               {
                 label: lang === "fr" ? "Témoignages" : "Testimonials",
-                href: `/${lang}/pourquoi-telephonie-ia#temoignages`,
+                href: `/${lang}/pourquoi-telephonie-ia#testimonials`,
                 description:
                   lang === "fr"
-                    ? "500+ clients satisfaits"
-                    : "500+ satisfied customers",
+                    ? "Ce que disent nos clients"
+                    : "What our customers say",
               },
               {
-                label: lang === "fr" ? "Études de cas" : "Case Studies",
-                href: `/${lang}/pourquoi-telephonie-ia#etudes-cas`,
+                label: lang === "fr" ? "Sécurité & RGPD" : "Security & GDPR",
+                href: `/${lang}/ressources/rgpd`,
                 description:
                   lang === "fr"
-                    ? "ROI concret et résultats"
-                    : "Concrete ROI and results",
+                    ? "Protection de vos données"
+                    : "Protecting your data",
               },
             ],
           },
         ],
         callout: {
-          title: lang === "fr" ? "Ils nous font confiance" : "They trust us",
+          title: lang === "fr" ? "500+ entreprises" : "500+ companies",
           description:
             lang === "fr"
-              ? "Plus de 500 entreprises utilisent Téléphonie-IA."
-              : "500+ companies use Téléphonie-IA.",
-          href: `/${lang}/pourquoi-telephonie-ia#clients`,
-          linkText: lang === "fr" ? "Voir les témoignages" : "See testimonials",
+              ? "nous font déjà confiance pour leur téléphonie."
+              : "already trust us for their telephony.",
+          href: `/${lang}/contact`,
+          linkText: lang === "fr" ? "Demander une démo →" : "Request a demo →",
           variant: "blue",
         },
       },

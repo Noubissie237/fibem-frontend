@@ -430,5 +430,154 @@ export interface Dictionary {
       relatedArticles: string;
       readTime: string;
     };
+  },
+  whyPage: {
+    hero: {
+      title: string;
+      subtitle: string;
+      ctaPrimary: string;
+      ctaSecondary: string;
+    };
+    problem: {
+      title: string;
+      subtitle: string;
+      points: string[];
+      stats: Array<{ value: string; label: string }>;
+    };
+    approach: {
+      title: string;
+      subtitle: string;
+      pillars: Array<{
+        title: string;
+        description: string;
+        cta: string;
+      }>;
+    };
+    comparison: {
+      title: string;
+      subtitle: string;
+      traditional: string;
+      modern: string;
+      items: Array<{
+        aspect: string;
+        traditional: string;
+        modern: string;
+      }>;
+    };
+    testimonials: {
+      title: string;
+      subtitle: string;
+    };
+    company: {
+      title: string;
+      subtitle: string;
+      cards: Array<{
+        title: string;
+        description: string;
+        cta: string;
+      }>;
+    };
+    cta: {
+      title: string;
+      subtitle: string;
+      primary: string;
+      secondary: string;
+    };
+  };
+  companyPages: {
+    breadcrumb: {
+      company: string;
+    };
+    fibem: {
+      hero: {
+        title: string;
+        subtitle: string;
+      };
+      mission: {
+        title: string;
+        content: string;
+      };
+      vision: {
+        title: string;
+        content: string;
+      };
+      values: {
+        title: string;
+        subtitle: string;
+      };
+      figures: {
+        title: string;
+        subtitle: string;
+      };
+      cta: {
+        title: string;
+        subtitle: string;
+        primary: string;
+        secondary: string;
+      };
+    };
+    groupe: {
+      hero: {
+        title: string;
+        subtitle: string;
+      };
+      history: {
+        title: string;
+        subtitle: string;
+      };
+      expertise: {
+        title: string;
+        subtitle: string;
+        items: Array<{
+          title: string;
+          description: string;
+        }>;
+      };
+      commitment: {
+        title: string;
+        content: string;
+      };
+      cta: {
+        title: string;
+        primary: string;
+      };
+    };
+    careers: {
+      hero: {
+        title: string;
+        subtitle: string;
+      };
+      culture: {
+        title: string;
+        content: string;
+      };
+      whyJoin: {
+        title: string;
+        items: Array<{
+          title: string;
+          description: string;
+        }>;
+      };
+      openings: {
+        title: string;
+        subtitle: string;
+        apply: string;
+        location: string;
+      };
+      spontaneous: {
+        title: string;
+        subtitle: string;
+        form: {
+          name: string;
+          email: string;
+          message: string;
+          submit: string;
+        };
+      };
+      cta: {
+        title: string;
+        primary: string;
+      };
+    };
   };
 }

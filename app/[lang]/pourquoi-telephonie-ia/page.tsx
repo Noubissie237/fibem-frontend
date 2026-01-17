@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
 import { getDictionary, isValidLocale } from "@/lib/i18n/dictionaries";
-import { Locale } from "@/types/i18n";
 import { notFound } from "next/navigation";
-import { Section } from "@/components/ui/Section";
+import {
+  WhyHero,
+  WhyProblem,
+  WhyApproach,
+  WhyComparison,
+  WhyTestimonials,
+  WhyCompany,
+  WhyCTA,
+} from "@/components/why";
 
 interface PageProps {
   params: Promise<{ lang: string }>;
@@ -11,29 +18,31 @@ interface PageProps {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { lang } = await params;
   if (!isValidLocale(lang)) return {};
-  const dict = getDictionary(lang as Locale);
-  
+
   return {
-    title: dict.nav.why,
-    description: dict.why.subtitle,
+    title: lang === "fr" 
+      ? "Pourquoi Téléphonie-IA | FIBEM" 
+      : "Why Téléphonie-IA | FIBEM",
+    description: lang === "fr"
+      ? "Découvrez pourquoi plus de 500 entreprises ont choisi Téléphonie-IA pour moderniser leur téléphonie."
+      : "Discover why 500+ companies chose Téléphonie-IA to modernize their telephony.",
   };
 }
 
-export default async function PourquoiPage({ params }: PageProps) {
-  const { lang: langParam } = await params;
-  if (!isValidLocale(langParam)) notFound();
-  
-  const lang = langParam as Locale;
+export default async function WhyPage({ params }: PageProps) {
+  const { lang } = await params;
+  if (!isValidLocale(lang)) notFound();
   const dict = getDictionary(lang);
 
   return (
-    <Section>
-      <div className="text-center max-w-3xl mx-auto">
-        <h1 className="text-4xl font-bold mb-4">{dict.nav.why}</h1>
-        <p className="text-lg text-neutral-600">
-          {dict.why.subtitle}
-        </p>
-      </div>
-    </Section>
+    <>
+      <WhyHero dict={dict} lang={lang} />
+      <WhyProblem dict={dict} />
+      <WhyApproach dict={dict} lang={lang} />
+      <WhyComparison dict={dict} />
+      <WhyTestimonials dict={dict} lang={lang} />
+      <WhyCompany dict={dict} lang={lang} />
+      <WhyCTA dict={dict} lang={lang} />
+    </>
   );
 }

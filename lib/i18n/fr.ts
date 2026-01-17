@@ -12,7 +12,7 @@ export const fr: Dictionary = {
     pricing: "Tarifs",
     solutions: "Solutions",
     partners: "Partenaires",
-    why: "Pourquoi Téléphonie-IA",
+    why: "Pourquoi Téléphonie-IA ?",
     resources: "Ressources",
     contact: "Contact",
     signin: "Connexion",
@@ -826,6 +826,244 @@ export const fr: Dictionary = {
       shareArticle: "Partager cet article",
       relatedArticles: "Articles similaires",
       readTime: "min de lecture",
+    },
+  },
+  whyPage: {
+    hero: {
+      title: "Pourquoi choisir Téléphonie-IA ?",
+      subtitle: "Une téléphonie d'entreprise repensée : plus simple, plus intelligente, plus efficace. Découvrez comment nous transformons chaque appel en opportunité.",
+      ctaPrimary: "Demander une démo",
+      ctaSecondary: "Voir les tarifs",
+    },
+    problem: {
+      title: "Les défis de la téléphonie d'entreprise",
+      subtitle: "Chaque jour, des entreprises perdent des opportunités à cause d'outils inadaptés.",
+      points: [
+        "Appels manqués qui se transforment en clients perdus",
+        "Aucune visibilité sur les échanges téléphoniques",
+        "Outils dispersés qui compliquent le quotidien",
+        "Impossible d'améliorer ce qu'on ne mesure pas",
+        "Équipes mobiles déconnectées du système",
+      ],
+      stats: [
+        { value: "62%", label: "des appels pros sont manqués ou mal routés" },
+        { value: "3h", label: "perdues par semaine en tâches admin liées aux appels" },
+        { value: "45%", label: "des entreprises n'ont aucune traçabilité" },
+      ],
+    },
+    approach: {
+      title: "Notre approche",
+      subtitle: "Téléphonie-IA réunit le meilleur de la téléphonie cloud et de l'intelligence artificielle.",
+      pillars: [
+        {
+          title: "Téléphonie Cloud",
+          description: "Plus de matériel à gérer. Déployez en minutes, travaillez de partout, évoluez sans friction. Une infrastructure moderne qui s'adapte à vous.",
+          cta: "En savoir plus",
+        },
+        {
+          title: "IA Utile",
+          description: "Transcription automatique, résumés intelligents, analyse de sentiment. L'IA qui améliore vraiment votre quotidien, pas un gadget.",
+          cta: "Voir les fonctionnalités IA",
+        },
+        {
+          title: "Pilotage en Temps Réel",
+          description: "Tableaux de bord clairs, KPIs actionnables, rapports automatisés. Prenez les bonnes décisions basées sur les données.",
+          cta: "Découvrir les analytics",
+        },
+        {
+          title: "Confiance & Sécurité",
+          description: "Hébergement en France, conformité RGPD, chiffrement de bout en bout. Vos données sont entre de bonnes mains.",
+          cta: "Notre engagement sécurité",
+        },
+      ],
+    },
+    comparison: {
+      title: "Téléphonie classique vs Téléphonie-IA",
+      subtitle: "Découvrez ce qui change vraiment au quotidien.",
+      traditional: "Téléphonie classique",
+      modern: "Téléphonie-IA",
+      items: [
+        {
+          aspect: "Visibilité sur les échanges",
+          traditional: "Aucune traçabilité des appels, impossible de savoir ce qui s'est dit",
+          modern: "Historique complet, transcriptions, résumés automatiques",
+        },
+        {
+          aspect: "Amélioration continue",
+          traditional: "Pas de données pour identifier les axes de progrès",
+          modern: "Analytics détaillés, insights IA, coaching en temps réel",
+        },
+        {
+          aspect: "Mobilité",
+          traditional: "Attaché au bureau, numéro fixe rigide",
+          modern: "Travaillez de partout, même numéro sur tous vos appareils",
+        },
+        {
+          aspect: "Intégration outils",
+          traditional: "Système isolé, ressaisie manuelle",
+          modern: "Connecté à votre CRM, Slack, et 50+ outils",
+        },
+        {
+          aspect: "Évolutivité",
+          traditional: "Changements longs et coûteux",
+          modern: "Ajoutez des utilisateurs en un clic",
+        },
+      ],
+    },
+    testimonials: {
+      title: "Ils nous font confiance",
+      subtitle: "Découvrez ce que nos clients disent de Téléphonie-IA.",
+    },
+    company: {
+      title: "Découvrez FIBEM",
+      subtitle: "L'entreprise derrière Téléphonie-IA.",
+      cards: [
+        {
+          title: "FIBEM",
+          description: "Notre mission, notre vision et nos valeurs.",
+          cta: "Découvrir FIBEM",
+        },
+        {
+          title: "Le Groupe",
+          description: "Notre histoire et notre expertise.",
+          cta: "En savoir plus",
+        },
+        {
+          title: "Rejoignez-nous",
+          description: "Construisez l'avenir de la téléphonie avec nous.",
+          cta: "Voir les offres",
+        },
+      ],
+    },
+    cta: {
+      title: "Prêt à passer à Téléphonie-IA ?",
+      subtitle: "Rejoignez les 500+ entreprises qui ont modernisé leur téléphonie.",
+      primary: "Commencer gratuitement",
+      secondary: "Contacter l'équipe",
+    },
+  },
+  companyPages: {
+    breadcrumb: {
+      company: "Entreprise",
+    },
+    fibem: {
+      hero: {
+        title: "FIBEM",
+        subtitle: "L'innovation au service de la communication d'entreprise. Découvrez l'équipe qui construit Téléphonie-IA.",
+      },
+      mission: {
+        title: "Notre mission",
+        content: "Rendre la téléphonie d'entreprise simple, intelligente et accessible à toutes les organisations. Nous croyons que chaque appel compte et que la technologie doit aider les équipes à mieux communiquer, pas les freiner.",
+      },
+      vision: {
+        title: "Notre vision",
+        content: "Devenir le partenaire de référence des entreprises françaises pour leur téléphonie professionnelle. Un avenir où l'IA augmente chaque interaction, où les données guident les décisions, et où la technologie s'efface au profit de l'humain.",
+      },
+      values: {
+        title: "Nos valeurs",
+        subtitle: "Ce qui nous guide au quotidien.",
+      },
+      figures: {
+        title: "FIBEM en chiffres",
+        subtitle: "Quelques indicateurs clés de notre activité.",
+      },
+      cta: {
+        title: "Envie d'en savoir plus ?",
+        subtitle: "Échangeons sur vos besoins ou rejoignez notre équipe.",
+        primary: "Nous contacter",
+        secondary: "Rejoindre l'équipe",
+      },
+    },
+    groupe: {
+      hero: {
+        title: "Le Groupe",
+        subtitle: "Une histoire d'innovation et d'expertise dans les télécommunications d'entreprise.",
+      },
+      history: {
+        title: "Notre histoire",
+        subtitle: "De la vision à la réalité : les étapes clés de notre parcours.",
+      },
+      expertise: {
+        title: "Nos domaines d'expertise",
+        subtitle: "Des compétences complémentaires au service de votre téléphonie.",
+        items: [
+          {
+            title: "Téléphonie Cloud",
+            description: "Infrastructure moderne, évolutive et sécurisée pour une téléphonie sans contraintes.",
+          },
+          {
+            title: "Intelligence Artificielle",
+            description: "Algorithmes de pointe pour la transcription, l'analyse et l'amélioration continue.",
+          },
+          {
+            title: "Intégrations",
+            description: "Connecteurs natifs avec les outils métier pour un écosystème unifié.",
+          },
+          {
+            title: "Accompagnement",
+            description: "Équipes dédiées pour le déploiement, la formation et le support.",
+          },
+        ],
+      },
+      commitment: {
+        title: "Notre engagement qualité",
+        content: "Nous nous engageons à fournir un service fiable, sécurisé et conforme aux normes les plus exigeantes. Hébergement en France, conformité RGPD, certifications ISO : votre confiance est notre priorité.",
+      },
+      cta: {
+        title: "Une question sur notre groupe ?",
+        primary: "Contactez-nous",
+      },
+    },
+    careers: {
+      hero: {
+        title: "Rejoignez-nous",
+        subtitle: "Construisez l'avenir de la téléphonie d'entreprise avec une équipe passionnée et innovante.",
+      },
+      culture: {
+        title: "Notre culture",
+        content: "Chez FIBEM, nous cultivons un environnement où l'innovation, la bienveillance et l'excellence se rencontrent. Nous croyons que les meilleures idées naissent de la diversité des perspectives et de la liberté d'expérimenter. Télétravail flexible, formations continues, et projets stimulants : nous investissons dans nos équipes.",
+      },
+      whyJoin: {
+        title: "Pourquoi nous rejoindre ?",
+        items: [
+          {
+            title: "Impact réel",
+            description: "Votre travail améliore le quotidien de milliers d'utilisateurs.",
+          },
+          {
+            title: "Technologies modernes",
+            description: "Stack technique de pointe : Next.js, TypeScript, IA, Cloud.",
+          },
+          {
+            title: "Équilibre vie pro/perso",
+            description: "Télétravail flexible, horaires adaptables, RTT.",
+          },
+          {
+            title: "Évolution",
+            description: "Formations, conférences, et parcours de carrière personnalisés.",
+          },
+        ],
+      },
+      openings: {
+        title: "Nos offres d'emploi",
+        subtitle: "Trouvez le poste qui vous correspond.",
+        apply: "Postuler",
+        location: "Localisation",
+      },
+      spontaneous: {
+        title: "Candidature spontanée",
+        subtitle: "Vous ne trouvez pas le poste idéal ? Envoyez-nous votre candidature, nous sommes toujours à la recherche de talents.",
+        form: {
+          name: "Nom complet",
+          email: "Email",
+          message: "Présentez-vous en quelques mots",
+          submit: "Envoyer ma candidature",
+        },
+      },
+      cta: {
+        title: "Des questions sur nos opportunités ?",
+        primary: "Contactez notre équipe RH",
+      },
     },
   },
 };

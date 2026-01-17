@@ -2,19 +2,23 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { navigationItems } from "@/lib/navigation";
+import { getNavigationItems } from "@/lib/navigation";
 import { Button } from "@/components/ui/Button";
 import { LanguageSelector } from "./LanguageSelector";
 import { IconChevronDown } from "@/components/icons/Icons";
 import { cn } from "@/lib/utils";
+import { Locale, Dictionary } from "@/types/i18n";
 
 interface MobileMenuProps {
   isOpen: boolean;
   onClose: () => void;
+  lang: Locale;
+  dict?: Dictionary;
 }
 
-export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
+export function MobileMenu({ isOpen, onClose, lang, dict }: MobileMenuProps) {
   const [expandedItems, setExpandedItems] = useState<string[]>([]);
+  const navigationItems = getNavigationItems(lang, dict);
 
   const toggleExpanded = (label: string) => {
     setExpandedItems((prev) =>
@@ -25,6 +29,9 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   };
 
   if (!isOpen) return null;
+
+  const signupText = dict?.nav.signup || "Inscription";
+  const signinText = dict?.nav.signin || "Connexion";
 
   return (
     <div className="lg:hidden fixed inset-0 top-16 z-40">
@@ -106,25 +113,25 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
         {/* Actions Mobile */}
         <div className="p-4 border-t border-neutral-100 space-y-3">
           <div className="flex justify-center mb-4">
-            <LanguageSelector />
+            <LanguageSelector currentLang={lang} />
           </div>
           <Button
-            href="/inscription"
+            href={`/${lang}/inscription`}
             variant="primary"
             size="lg"
             className="w-full"
             onClick={onClose}
           >
-            Inscription
+            {signupText}
           </Button>
           <Button
-            href="/connexion"
+            href={`/${lang}/connexion`}
             variant="outline"
             size="lg"
             className="w-full"
             onClick={onClose}
           >
-            Connexion
+            {signinText}
           </Button>
         </div>
       </div>

@@ -2,15 +2,23 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { navigationItems } from "@/lib/navigation";
+import { getNavigationItems } from "@/lib/navigation";
 import { MegaMenu } from "./MegaMenu";
 import { IconChevronDown } from "@/components/icons/Icons";
 import { cn } from "@/lib/utils";
+import { Locale, Dictionary } from "@/types/i18n";
 
-export function Navigation() {
+interface NavigationProps {
+  lang: Locale;
+  dict?: Dictionary;
+}
+
+export function Navigation({ lang, dict }: NavigationProps) {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const navRef = useRef<HTMLElement>(null);
+
+  const navigationItems = getNavigationItems(lang, dict);
 
   const handleMouseEnter = (label: string) => {
     if (timeoutRef.current) {
@@ -25,7 +33,6 @@ export function Navigation() {
     }, 150);
   };
 
-  // Fermer avec Escape
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -37,7 +44,6 @@ export function Navigation() {
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, []);
 
-  // Fermer au clic extérieur
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (navRef.current && !navRef.current.contains(e.target as Node)) {

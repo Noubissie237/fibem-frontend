@@ -10,8 +10,14 @@ import { MobileMenu } from "./MobileMenu";
 import { LanguageSelector } from "./LanguageSelector";
 import { IconMenu, IconClose } from "@/components/icons/Icons";
 import { cn } from "@/lib/utils";
+import { Locale, Dictionary } from "@/types/i18n";
 
-export function Header() {
+interface HeaderProps {
+  lang?: Locale;
+  dict?: Dictionary;
+}
+
+export function Header({ lang = "fr", dict }: HeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -27,6 +33,9 @@ export function Header() {
       document.body.style.overflow = "";
     };
   }, [isMobileMenuOpen]);
+
+  const signupText = dict?.nav.signup || "Inscription";
+  const signinText = dict?.nav.signin || "Connexion";
 
   return (
     <header
@@ -86,24 +95,27 @@ export function Header() {
               
               {/* Sous-texte optionnel */}
               <span className="hidden lg:block text-[10px] text-neutral-500 font-medium tracking-wider uppercase pl-1">
-                Solutions intelligentes
+                {lang === "fr" 
+                  ? "Solutions intelligentes" 
+                  : "Smart solutions"
+                }
               </span>
             </div>
           </Link>
 
           {/* Navigation Desktop */}
           <div className="hidden lg:flex lg:items-center lg:gap-1">
-            <Navigation />
+            <Navigation lang={lang} dict={dict} />
           </div>
 
           {/* Actions Desktop */}
           <div className="hidden lg:flex lg:items-center lg:gap-3">
-            <LanguageSelector />
-            <Button href="/connexion" variant="outline" size="sm">
-              Connexion
+            <LanguageSelector currentLang={lang} />
+            <Button href={`/${lang}/connexion`} variant="outline" size="sm">
+              {signinText}
             </Button>
-            <Button href="/inscription" variant="primary" size="sm">
-              Inscription
+            <Button href={`/${lang}/inscription`} variant="primary" size="sm">
+              {signupText}
             </Button>
           </div>
 
@@ -128,6 +140,8 @@ export function Header() {
       <MobileMenu
         isOpen={isMobileMenuOpen}
         onClose={() => setIsMobileMenuOpen(false)}
+        lang={lang}
+        dict={dict}
       />
     </header>
   );

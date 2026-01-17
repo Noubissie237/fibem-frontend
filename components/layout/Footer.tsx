@@ -4,6 +4,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { IconPhone } from "@/components/icons/Icons";
+import { Locale, Dictionary } from "@/types/i18n";
+
+interface FooterProps {
+  lang?: Locale;
+  dict?: Dictionary;
+}
 
 // --- DONNÉES DE LOCALISATION ---
 const locations = [
@@ -31,47 +37,54 @@ const locations = [
   },
 ];
 
-const footerLinks = {
-  produit: {
-    title: "Produit",
-    links: [
-      { label: "Fonctionnalités", href: "/fonctionnalites" },
-      { label: "Tarifs", href: "/tarifs" },
-      { label: "Solutions", href: "/solutions" },
-      { label: "Intégrations", href: "/ressources#api" },
-    ],
-  },
-  entreprise: {
-    title: "Entreprise",
-    links: [
-      { label: "À propos", href: "/pourquoi-telephonie-ia" },
-      { label: "Partenaires", href: "/partenaires" },
-      { label: "Carrières", href: "/contact#carrieres" },
-      { label: "Contact", href: "/contact" },
-    ],
-  },
-  ressources: {
-    title: "Ressources",
-    links: [
-      { label: "Blog", href: "/ressources#blog" },
-      { label: "Centre d'aide", href: "/ressources#aide" },
-      { label: "Documentation API", href: "/ressources#api" },
-      { label: "Statut des services", href: "/ressources#statut" },
-    ],
-  },
-  legal: {
-    title: "Légal",
-    links: [
-      { label: "Mentions légales", href: "/mentions-legales" },
-      { label: "CGU", href: "/cgu" },
-      { label: "Confidentialité", href: "/confidentialite" },
-      { label: "Cookies", href: "/cookies" },
-    ],
-  },
-};
-
-export function Footer() {
+export function Footer({ lang = "fr", dict }: FooterProps) {
   const currentYear = new Date().getFullYear();
+
+  const footerSections = dict?.footer.sections || {
+    product: "Produit",
+    company: "Entreprise",
+    resources: "Ressources",
+    legal: "Légal",
+  };
+
+  const footerLinks = {
+    product: {
+      title: footerSections.product,
+      links: [
+        { label: dict?.nav.features || "Fonctionnalités", href: `/${lang}/fonctionnalites` },
+        { label: dict?.nav.pricing || "Tarifs", href: `/${lang}/tarifs` },
+        { label: dict?.nav.solutions || "Solutions", href: `/${lang}/solutions` },
+        { label: "Intégrations", href: `/${lang}/ressources#api` },
+      ],
+    },
+    company: {
+      title: footerSections.company,
+      links: [
+        { label: dict?.nav.why || "À propos", href: `/${lang}/pourquoi-telephonie-ia` },
+        { label: dict?.nav.partners || "Partenaires", href: `/${lang}/partenaires` },
+        { label: lang === "fr" ? "Carrières" : "Careers", href: `/${lang}/contact#carrieres` },
+        { label: dict?.nav.contact || "Contact", href: `/${lang}/contact` },
+      ],
+    },
+    resources: {
+      title: footerSections.resources,
+      links: [
+        { label: "Blog", href: `/${lang}/ressources#blog` },
+        { label: lang === "fr" ? "Centre d'aide" : "Help Center", href: `/${lang}/ressources#aide` },
+        { label: "API", href: `/${lang}/ressources#api` },
+        { label: "Status", href: `/${lang}/ressources#statut` },
+      ],
+    },
+    legal: {
+      title: footerSections.legal,
+      links: [
+        { label: lang === "fr" ? "Mentions légales" : "Legal Notice", href: `/${lang}/mentions-legales` },
+        { label: lang === "fr" ? "CGU" : "Terms", href: `/${lang}/cgu` },
+        { label: lang === "fr" ? "Confidentialité" : "Privacy", href: `/${lang}/confidentialite` },
+        { label: "Cookies", href: `/${lang}/cookies` },
+      ],
+    },
+  };
 
   return (
     <footer className="bg-neutral-900 text-neutral-300 pt-16 pb-8">
@@ -81,7 +94,7 @@ export function Footer() {
           
           <div className="max-w-md">
             {/* Nouveau Logo Style Header */}
-            <Link href="/" className="group flex items-center gap-4 mb-6">
+            <Link href={`/${lang}`} className="group flex items-center gap-4 mb-6">
               {/* Logo Image */}
               <div className="relative w-28 h-12 overflow-hidden p-1">
                 <Image
@@ -110,8 +123,14 @@ export function Footer() {
             </Link>
 
             <p className="text-base text-neutral-400 leading-relaxed">
-              La solution de téléphonie augmentée par l&apos;intelligence artificielle
-              pour propulser les entreprises modernes vers l&apos;efficacité.
+              {lang === "fr" 
+                ? "La solution de téléphonie augmentée par l&apos;intelligence artificielle" 
+                : "The solution of augmented telephony by artificial intelligence"
+              }
+              {lang === "fr" 
+                ? "pour propulser les entreprises modernes vers l&apos;efficacité." 
+                : "to propel modern businesses towards efficiency."
+              }
             </p>
           </div>
 
@@ -192,7 +211,10 @@ export function Footer() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
-                  Voir sur Google Maps
+                  {lang === "fr" 
+                    ? "Voir sur Google Maps" 
+                    : "See on Google Maps"
+                  }
                 </a>
                 
                 <a 

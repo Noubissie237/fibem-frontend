@@ -1,303 +1,348 @@
 import { NavigationItem } from "@/types/navigation";
+import { Locale, Dictionary } from "@/types/i18n";
 
-export const navigationItems: NavigationItem[] = [
-  {
-    label: "Accueil",
-    href: "/",
-  },
-  {
-    label: "Fonctionnalités",
-    href: "/fonctionnalites",
-    megaMenu: {
-      sections: [
-        {
-          title: "Intelligence Artificielle",
-          items: [
-            {
-              label: "Assistant vocal IA",
-              href: "/fonctionnalites#assistant-vocal",
-              description:
-                "Répondez à vos appels 24h/24 avec notre IA conversationnelle",
-            },
-            {
-              label: "Transcription automatique",
-              href: "/fonctionnalites#transcription",
-              description:
-                "Convertissez automatiquement vos appels en texte exploitable",
-            },
-            {
-              label: "Analyse de sentiment",
-              href: "/fonctionnalites#sentiment",
-              description:
-                "Comprenez les émotions de vos interlocuteurs en temps réel",
-            },
-          ],
+export function getNavigationItems(
+  lang: Locale,
+  dict?: Dictionary
+): NavigationItem[] {
+  const t = dict?.nav || {
+    home: lang === "fr" ? "Accueil" : "Home",
+    features: lang === "fr" ? "Fonctionnalités" : "Features",
+    pricing: lang === "fr" ? "Tarifs" : "Pricing",
+    solutions: "Solutions",
+    partners: lang === "fr" ? "Partenaires" : "Partners",
+    why: lang === "fr" ? "Pourquoi Téléphonie-IA" : "Why Téléphonie-IA",
+    resources: lang === "fr" ? "Ressources" : "Resources",
+    contact: "Contact",
+  };
+
+  return [
+    {
+      label: t.home,
+      href: `/${lang}`,
+    },
+    {
+      label: t.features,
+      href: `/${lang}/fonctionnalites`,
+      megaMenu: {
+        sections: [
+          {
+            title: lang === "fr" ? "Intelligence Artificielle" : "Artificial Intelligence",
+            items: [
+              {
+                label: lang === "fr" ? "Assistant vocal IA" : "AI Voice Assistant",
+                href: `/${lang}/fonctionnalites#assistant-vocal`,
+                description:
+                  lang === "fr"
+                    ? "Répondez à vos appels 24h/24 avec notre IA conversationnelle"
+                    : "Answer your calls 24/7 with our conversational AI",
+              },
+              {
+                label: lang === "fr" ? "Transcription automatique" : "Automatic Transcription",
+                href: `/${lang}/fonctionnalites#transcription`,
+                description:
+                  lang === "fr"
+                    ? "Convertissez automatiquement vos appels en texte"
+                    : "Automatically convert your calls to text",
+              },
+              {
+                label: lang === "fr" ? "Analyse de sentiment" : "Sentiment Analysis",
+                href: `/${lang}/fonctionnalites#sentiment`,
+                description:
+                  lang === "fr"
+                    ? "Comprenez les émotions en temps réel"
+                    : "Understand emotions in real-time",
+              },
+            ],
+          },
+          {
+            title: lang === "fr" ? "Gestion des appels" : "Call Management",
+            items: [
+              {
+                label: lang === "fr" ? "Routage intelligent" : "Smart Routing",
+                href: `/${lang}/fonctionnalites#routage`,
+                description:
+                  lang === "fr"
+                    ? "Dirigez les appels automatiquement"
+                    : "Route calls automatically",
+              },
+              {
+                label: lang === "fr" ? "File d'attente virtuelle" : "Virtual Queue",
+                href: `/${lang}/fonctionnalites#file-attente`,
+                description:
+                  lang === "fr"
+                    ? "Gérez les pics d'appels"
+                    : "Manage call peaks",
+              },
+            ],
+          },
+          {
+            title: "Analytics",
+            items: [
+              {
+                label: lang === "fr" ? "Tableaux de bord" : "Dashboards",
+                href: `/${lang}/fonctionnalites#dashboards`,
+                description:
+                  lang === "fr"
+                    ? "Visualisez vos KPIs en temps réel"
+                    : "Visualize your KPIs in real-time",
+              },
+            ],
+          },
+        ],
+        callout: {
+          title:
+            lang === "fr"
+              ? "Découvrez toutes nos fonctionnalités"
+              : "Discover all our features",
+          description:
+            lang === "fr"
+              ? "Plus de 50 fonctionnalités pour transformer votre téléphonie."
+              : "50+ features to transform your telephony.",
+          href: `/${lang}/fonctionnalites`,
+          linkText: lang === "fr" ? "Voir tout →" : "See all →",
+          variant: "blue",
         },
-        {
-          title: "Gestion des appels",
-          items: [
-            {
-              label: "Routage intelligent",
-              href: "/fonctionnalites#routage",
-              description:
-                "Dirigez les appels vers le bon interlocuteur automatiquement",
-            },
-            {
-              label: "File d'attente virtuelle",
-              href: "/fonctionnalites#file-attente",
-              description: "Gérez les pics d'appels sans frustrer vos clients",
-            },
-            {
-              label: "Messagerie unifiée",
-              href: "/fonctionnalites#messagerie",
-              description: "Centralisez tous vos messages en un seul endroit",
-            },
-          ],
-        },
-        {
-          title: "Analytics & Reporting",
-          items: [
-            {
-              label: "Tableaux de bord",
-              href: "/fonctionnalites#dashboards",
-              description: "Visualisez vos KPIs téléphoniques en temps réel",
-            },
-            {
-              label: "Rapports automatisés",
-              href: "/fonctionnalites#rapports",
-              description: "Recevez des insights réguliers sur votre activité",
-            },
-          ],
-        },
-      ],
-      callout: {
-        title: "Découvrez toutes nos fonctionnalités",
-        description:
-          "Plus de 50 fonctionnalités pour transformer votre téléphonie d'entreprise.",
-        href: "/fonctionnalites",
-        linkText: "Voir tout",
-        variant: "blue",
       },
     },
-  },
-  {
-    label: "Tarifs",
-    href: "/tarifs",
-    megaMenu: {
-      sections: [
-        {
-          title: "Nos offres",
-          items: [
-            {
-              label: "Starter",
-              href: "/tarifs#starter",
-              description:
-                "Idéal pour les TPE et indépendants. À partir de 29€/mois",
-            },
-            {
-              label: "Business",
-              href: "/tarifs#business",
-              description:
-                "Pour les PME en croissance. À partir de 79€/mois",
-            },
-            {
-              label: "Enterprise",
-              href: "/tarifs#enterprise",
-              description: "Solution sur-mesure pour les grandes entreprises",
-            },
-          ],
+    {
+      label: t.pricing,
+      href: `/${lang}/tarifs`,
+      megaMenu: {
+        sections: [
+          {
+            title: lang === "fr" ? "Nos offres" : "Our Plans",
+            items: [
+              {
+                label: "Starter",
+                href: `/${lang}/tarifs#starter`,
+                description:
+                  lang === "fr"
+                    ? "Idéal pour les TPE. À partir de 19€/mois"
+                    : "Ideal for small businesses. From €19/month",
+              },
+              {
+                label: "Business",
+                href: `/${lang}/tarifs#business`,
+                description:
+                  lang === "fr"
+                    ? "Pour les PME en croissance. À partir de 49€/mois"
+                    : "For growing SMBs. From €49/month",
+              },
+              {
+                label: "Enterprise",
+                href: `/${lang}/tarifs#enterprise`,
+                description:
+                  lang === "fr"
+                    ? "Solution sur-mesure"
+                    : "Custom solution",
+              },
+            ],
+          },
+        ],
+        callout: {
+          title: lang === "fr" ? "Essai gratuit 14 jours" : "14-day free trial",
+          description:
+            lang === "fr"
+              ? "Testez toutes les fonctionnalités sans engagement."
+              : "Test all features with no commitment.",
+          href: `/${lang}/inscription`,
+          linkText: lang === "fr" ? "Commencer →" : "Get started →",
+          variant: "gradient",
         },
-        {
-          title: "Options",
-          items: [
-            {
-              label: "Comparer les offres",
-              href: "/tarifs#comparatif",
-              description: "Trouvez l'offre adaptée à vos besoins",
-            },
-            {
-              label: "Calculateur de prix",
-              href: "/tarifs#calculateur",
-              description: "Estimez votre budget en quelques clics",
-            },
-          ],
-        },
-      ],
-      callout: {
-        title: "Essai gratuit 14 jours",
-        description: "Testez toutes les fonctionnalités sans engagement.",
-        href: "/inscription",
-        linkText: "Commencer gratuitement",
-        variant: "gradient",
       },
     },
-  },
-  {
-    label: "Solutions",
-    href: "/solutions",
-    megaMenu: {
-      sections: [
-        {
-          title: "Par secteur",
-          items: [
-            {
-              label: "Santé & Médical",
-              href: "/solutions#sante",
-              description: "Gestion des rendez-vous et urgences médicales",
-            },
-            {
-              label: "Immobilier",
-              href: "/solutions#immobilier",
-              description:
-                "Qualification des leads et prise de rendez-vous visites",
-            },
-            {
-              label: "E-commerce",
-              href: "/solutions#ecommerce",
-              description: "Support client et suivi de commandes automatisé",
-            },
-            {
-              label: "Services financiers",
-              href: "/solutions#finance",
-              description: "Conformité et sécurité des communications",
-            },
-          ],
-        },
-        {
-          title: "Par taille d'entreprise",
-          items: [
-            {
-              label: "TPE / Indépendants",
-              href: "/solutions#tpe",
-              description: "Ne manquez plus jamais un appel important",
-            },
-            {
-              label: "PME",
-              href: "/solutions#pme",
-              description: "Professionnalisez votre accueil téléphonique",
-            },
-            {
-              label: "Grands comptes",
-              href: "/solutions#grands-comptes",
-              description: "Déployez à l'échelle de votre organisation",
-            },
-          ],
-        },
-      ],
-    },
-  },
-  {
-    label: "Partenaires",
-    href: "/partenaires",
-  },
-  {
-    label: "Pourquoi Téléphonie-IA ?",
-    href: "/pourquoi-telephonie-ia",
-    megaMenu: {
-      sections: [
-        {
-          title: "Notre approche",
-          items: [
-            {
-              label: "Notre vision",
-              href: "/pourquoi-telephonie-ia#vision",
-              description:
-                "Rendre l'IA accessible à toutes les entreprises",
-            },
-            {
-              label: "Technologie française",
-              href: "/pourquoi-telephonie-ia#technologie",
-              description: "Développée en France, hébergée en Europe",
-            },
-            {
-              label: "Équipe & expertise",
-              href: "/pourquoi-telephonie-ia#equipe",
-              description: "20 ans d'expérience en téléphonie d'entreprise",
-            },
-          ],
-        },
-        {
-          title: "Preuves de valeur",
-          items: [
-            {
-              label: "Témoignages clients",
-              href: "/pourquoi-telephonie-ia#temoignages",
-              description:
-                "Découvrez les retours de nos 500+ clients satisfaits",
-            },
-            {
-              label: "Études de cas",
-              href: "/pourquoi-telephonie-ia#etudes-cas",
-              description: "ROI concret et résultats mesurables",
-            },
-            {
-              label: "Certifications",
-              href: "/pourquoi-telephonie-ia#certifications",
-              description: "ISO 27001, RGPD, HDS",
-            },
-          ],
-        },
-      ],
-      callout: {
-        title: "Ils nous font confiance",
-        description:
-          "Plus de 500 entreprises utilisent Téléphonie-IA au quotidien.",
-        href: "/pourquoi-telephonie-ia#clients",
-        linkText: "Voir les témoignages",
-        variant: "blue",
+    {
+      label: t.solutions,
+      href: `/${lang}/solutions`,
+      megaMenu: {
+        sections: [
+          {
+            title: lang === "fr" ? "Par secteur" : "By Industry",
+            items: [
+              {
+                label: lang === "fr" ? "Santé & Médical" : "Healthcare",
+                href: `/${lang}/solutions#sante`,
+                description:
+                  lang === "fr"
+                    ? "Gestion des rendez-vous et urgences"
+                    : "Appointment and emergency management",
+              },
+              {
+                label: lang === "fr" ? "Immobilier" : "Real Estate",
+                href: `/${lang}/solutions#immobilier`,
+                description:
+                  lang === "fr"
+                    ? "Qualification des leads"
+                    : "Lead qualification",
+              },
+              {
+                label: "E-commerce",
+                href: `/${lang}/solutions#ecommerce`,
+                description:
+                  lang === "fr"
+                    ? "Support client automatisé"
+                    : "Automated customer support",
+              },
+            ],
+          },
+          {
+            title: lang === "fr" ? "Par taille" : "By Size",
+            items: [
+              {
+                label: lang === "fr" ? "TPE / Indépendants" : "Small Business",
+                href: `/${lang}/solutions#tpe`,
+                description:
+                  lang === "fr"
+                    ? "Ne manquez plus jamais un appel"
+                    : "Never miss a call again",
+              },
+              {
+                label: lang === "fr" ? "PME" : "SMB",
+                href: `/${lang}/solutions#pme`,
+                description:
+                  lang === "fr"
+                    ? "Professionnalisez votre accueil"
+                    : "Professionalize your reception",
+              },
+              {
+                label: lang === "fr" ? "Grands comptes" : "Enterprise",
+                href: `/${lang}/solutions#grands-comptes`,
+                description:
+                  lang === "fr"
+                    ? "Déployez à l'échelle"
+                    : "Deploy at scale",
+              },
+            ],
+          },
+        ],
       },
     },
-  },
-  {
-    label: "Ressources",
-    href: "/ressources",
-    megaMenu: {
-      sections: [
-        {
-          title: "Apprendre",
-          items: [
-            {
-              label: "Blog",
-              href: "/ressources#blog",
-              description: "Actualités et bonnes pratiques téléphonie IA",
-            },
-            {
-              label: "Guides pratiques",
-              href: "/ressources#guides",
-              description: "Tutoriels pas à pas pour bien démarrer",
-            },
-            {
-              label: "Webinaires",
-              href: "/ressources#webinaires",
-              description: "Sessions live et replays disponibles",
-            },
-          ],
-        },
-        {
-          title: "Support",
-          items: [
-            {
-              label: "Centre d'aide",
-              href: "/ressources#aide",
-              description: "FAQ et documentation technique",
-            },
-            {
-              label: "API & Intégrations",
-              href: "/ressources#api",
-              description: "Connectez vos outils existants",
-            },
-            {
-              label: "Statut des services",
-              href: "/ressources#statut",
-              description: "Disponibilité en temps réel de nos services",
-            },
-          ],
-        },
-      ],
+    {
+      label: t.partners,
+      href: `/${lang}/partenaires`,
     },
-  },
-  {
-    label: "Contact",
-    href: "/contact",
-  },
-];
+    {
+      label: t.why,
+      href: `/${lang}/pourquoi-telephonie-ia`,
+      megaMenu: {
+        sections: [
+          {
+            title: lang === "fr" ? "Notre approche" : "Our Approach",
+            items: [
+              {
+                label: lang === "fr" ? "Notre vision" : "Our Vision",
+                href: `/${lang}/pourquoi-telephonie-ia#vision`,
+                description:
+                  lang === "fr"
+                    ? "Rendre l'IA accessible à tous"
+                    : "Making AI accessible to everyone",
+              },
+              {
+                label: lang === "fr" ? "Technologie française" : "French Technology",
+                href: `/${lang}/pourquoi-telephonie-ia#technologie`,
+                description:
+                  lang === "fr"
+                    ? "Développée en France, hébergée en Europe"
+                    : "Developed in France, hosted in Europe",
+              },
+            ],
+          },
+          {
+            title: lang === "fr" ? "Preuves de valeur" : "Proof of Value",
+            items: [
+              {
+                label: lang === "fr" ? "Témoignages" : "Testimonials",
+                href: `/${lang}/pourquoi-telephonie-ia#temoignages`,
+                description:
+                  lang === "fr"
+                    ? "500+ clients satisfaits"
+                    : "500+ satisfied customers",
+              },
+              {
+                label: lang === "fr" ? "Études de cas" : "Case Studies",
+                href: `/${lang}/pourquoi-telephonie-ia#etudes-cas`,
+                description:
+                  lang === "fr"
+                    ? "ROI concret et résultats"
+                    : "Concrete ROI and results",
+              },
+            ],
+          },
+        ],
+        callout: {
+          title: lang === "fr" ? "Ils nous font confiance" : "They trust us",
+          description:
+            lang === "fr"
+              ? "Plus de 500 entreprises utilisent Téléphonie-IA."
+              : "500+ companies use Téléphonie-IA.",
+          href: `/${lang}/pourquoi-telephonie-ia#clients`,
+          linkText: lang === "fr" ? "Voir les témoignages →" : "See testimonials →",
+          variant: "blue",
+        },
+      },
+    },
+    {
+      label: t.resources,
+      href: `/${lang}/ressources`,
+      megaMenu: {
+        sections: [
+          {
+            title: lang === "fr" ? "Apprendre" : "Learn",
+            items: [
+              {
+                label: "Blog",
+                href: `/${lang}/ressources#blog`,
+                description:
+                  lang === "fr"
+                    ? "Actualités et bonnes pratiques"
+                    : "News and best practices",
+              },
+              {
+                label: lang === "fr" ? "Guides pratiques" : "Practical Guides",
+                href: `/${lang}/ressources#guides`,
+                description:
+                  lang === "fr"
+                    ? "Tutoriels pour bien démarrer"
+                    : "Tutorials to get started",
+              },
+              {
+                label: lang === "fr" ? "Webinaires" : "Webinars",
+                href: `/${lang}/ressources#webinaires`,
+                description:
+                  lang === "fr"
+                    ? "Sessions live et replays"
+                    : "Live sessions and replays",
+              },
+            ],
+          },
+          {
+            title: "Support",
+            items: [
+              {
+                label: lang === "fr" ? "Centre d'aide" : "Help Center",
+                href: `/${lang}/ressources#aide`,
+                description: "FAQ",
+              },
+              {
+                label: "API & Intégrations",
+                href: `/${lang}/ressources#api`,
+                description:
+                  lang === "fr"
+                    ? "Connectez vos outils"
+                    : "Connect your tools",
+              },
+            ],
+          },
+        ],
+      },
+    },
+    {
+      label: t.contact,
+      href: `/${lang}/contact`,
+    },
+  ];
+}
+
+// Export par défaut pour compatibilité
+export const navigationItems = getNavigationItems("fr");

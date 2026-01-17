@@ -579,5 +579,82 @@ export interface Dictionary {
         primary: string;
       };
     };
+  },
+  contactPage: {
+    hero: {
+      title: string;
+      subtitle: string;
+      cta: string;
+    };
+    form: {
+      title: string;
+      subtitle: string;
+      fields: {
+        name: string;
+        email: string;
+        company: string;
+        teamSize: string;
+        subject: string;
+        phone: string;
+        message: string;
+        consent: string;
+      };
+      placeholders: {
+        name: string;
+        email: string;
+        company: string;
+        teamSize: string;
+        subject: string;
+        phone: string;
+        message: string;
+      };
+      teamSizes: Array<{ value: string; label: string }>;
+      subjects: Array<{ value: string; label: string }>;
+      optional: string;
+      submit: string;
+      submitting: string;
+      success: string;
+      errors: {
+        required: string;
+        email: string;
+        consent: string;
+      };
+    };
+    info: {
+      title: string;
+      email: string;
+      hours: string;
+      hoursValue: string;
+      location: string;
+      locationValue: string;
+      social: string;
+    };
+    whyContact: {
+      title: string;
+      items: string[];
+    };
+    demo: {
+      title: string;
+      subtitle: string;
+      cta: string;
+      items: Array<{
+        title: string;
+        description: string;
+      }>;
+    };
+    faq: {
+      title: string;
+      subtitle: string;
+      items: Array<{
+        question: string;
+        answer: string;
+      }>;
+    };
+    cta: {
+      title: string;
+      subtitle: string;
+      primary: string;
+      secondary: string;
+    };
   };
 }

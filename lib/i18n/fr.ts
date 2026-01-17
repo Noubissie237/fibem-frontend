@@ -1066,4 +1066,138 @@ export const fr: Dictionary = {
       },
     },
   },
+  contactPage: {
+    hero: {
+      title: "Contactez-nous",
+      subtitle: "Notre équipe est là pour vous accompagner dans la mise en place de Téléphonie-IA. Demandez une démo personnalisée ou posez vos questions.",
+      cta: "Voir les tarifs",
+    },
+    form: {
+      title: "Demander une démo",
+      subtitle: "Remplissez le formulaire et nous vous recontacterons dans les 24h.",
+      fields: {
+        name: "Nom complet",
+        email: "Email professionnel",
+        company: "Société",
+        teamSize: "Taille de l'équipe",
+        subject: "Sujet",
+        phone: "Téléphone",
+        message: "Message",
+        consent: "J'accepte d'être recontacté par l'équipe FIBEM concernant ma demande. Mes données seront traitées conformément à la politique de confidentialité.",
+      },
+      placeholders: {
+        name: "Jean Dupont",
+        email: "jean@entreprise.com",
+        company: "Nom de votre entreprise",
+        teamSize: "Sélectionnez la taille",
+        subject: "Choisissez un sujet",
+        phone: "+33 6 12 34 56 78",
+        message: "Décrivez votre besoin ou vos questions...",
+      },
+      teamSizes: [
+        { value: "1-10", label: "1 à 10 personnes" },
+        { value: "11-50", label: "11 à 50 personnes" },
+        { value: "51-200", label: "51 à 200 personnes" },
+        { value: "200+", label: "Plus de 200 personnes" },
+      ],
+      subjects: [
+        { value: "demo", label: "Demande de démo" },
+        { value: "pricing", label: "Questions sur les tarifs" },
+        { value: "partnership", label: "Partenariat" },
+        { value: "support", label: "Support technique" },
+        { value: "other", label: "Autre" },
+      ],
+      optional: "Optionnel",
+      submit: "Envoyer ma demande",
+      submitting: "Envoi en cours...",
+      success: "Merci ! Votre demande a été envoyée. Nous vous recontacterons très bientôt.",
+      errors: {
+        required: "Ce champ est requis",
+        email: "Veuillez entrer un email valide",
+        consent: "Vous devez accepter d'être recontacté",
+      },
+    },
+    info: {
+      title: "Coordonnées",
+      email: "contact@fibem.com",
+      hours: "Horaires",
+      hoursValue: "Lun – Ven, 9h – 18h (CET)",
+      location: "Localisation",
+      locationValue: "Douala, Cameroun",
+      social: "Suivez-nous",
+    },
+    whyContact: {
+      title: "Pourquoi nous contacter ?",
+      items: [
+        "Obtenir une démonstration personnalisée",
+        "Poser des questions techniques",
+        "Demander un devis sur mesure",
+        "Explorer un partenariat",
+        "Obtenir de l'aide sur votre compte",
+      ],
+    },
+    demo: {
+      title: "Ce que vous obtenez pendant la démo",
+      subtitle: "Une session de 30 minutes entièrement dédiée à vos besoins.",
+      cta: "Réserver une démo",
+      items: [
+        {
+          title: "Analyse de vos besoins",
+          description: "Nous comprenons votre contexte, vos défis et vos objectifs téléphoniques.",
+        },
+        {
+          title: "Démo guidée",
+          description: "Découverte complète de la plateforme avec les fonctionnalités qui vous concernent.",
+        },
+        {
+          title: "Recommandations",
+          description: "Conseils de configuration adaptés à votre structure et vos processus.",
+        },
+        {
+          title: "Estimation & plan",
+          description: "Proposition tarifaire claire et planning de déploiement.",
+        },
+        {
+          title: "Questions / Réponses",
+          description: "Réponses à toutes vos interrogations par nos experts.",
+        },
+      ],
+    },
+    faq: {
+      title: "Questions fréquentes",
+      subtitle: "Tout ce que vous devez savoir avant de nous contacter.",
+      items: [
+        {
+          question: "En combien de temps répondez-vous ?",
+          answer: "Nous nous engageons à répondre à toutes les demandes dans les 24 heures ouvrées. Pour les urgences support, le délai est généralement inférieur à 4 heures.",
+        },
+        {
+          question: "La démo est-elle gratuite ?",
+          answer: "Oui, la démonstration est entièrement gratuite et sans engagement. Elle dure environ 30 minutes et est personnalisée selon vos besoins.",
+        },
+        {
+          question: "Puis-je recevoir un devis personnalisé ?",
+          answer: "Absolument. Après avoir compris vos besoins lors de la démo, nous vous envoyons un devis détaillé sous 48h.",
+        },
+        {
+          question: "Proposez-vous un accompagnement au déploiement ?",
+          answer: "Oui, tous nos plans incluent un accompagnement au démarrage. Les plans Business et Enterprise bénéficient d'un onboarding dédié.",
+        },
+        {
+          question: "Puis-je changer de plan plus tard ?",
+          answer: "Oui, vous pouvez upgrader à tout moment. Le changement est immédiat et la différence est calculée au prorata.",
+        },
+        {
+          question: "Téléphonie-IA fonctionne-t-il à l'international ?",
+          answer: "Oui, nous proposons des numéros dans plus de 100 pays et la plateforme est accessible depuis n'importe où dans le monde.",
+        },
+      ],
+    },
+    cta: {
+      title: "On vous aide à démarrer",
+      subtitle: "Rejoignez les 500+ entreprises qui ont modernisé leur téléphonie avec nous.",
+      primary: "S'inscrire gratuitement",
+      secondary: "Voir les fonctionnalités",
+    },
+  },
 };

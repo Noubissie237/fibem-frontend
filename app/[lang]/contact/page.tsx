@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
 import { getDictionary, isValidLocale } from "@/lib/i18n/dictionaries";
-import { Locale } from "@/types/i18n";
 import { notFound } from "next/navigation";
 import { Section } from "@/components/ui/Section";
+import {
+  ContactHero,
+  ContactForm,
+  ContactInfo,
+  ContactDemo,
+  ContactFAQ,
+  ContactCTA,
+} from "@/components/contact";
 
 interface PageProps {
   params: Promise<{ lang: string }>;
@@ -11,30 +18,43 @@ interface PageProps {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { lang } = await params;
   if (!isValidLocale(lang)) return {};
-  const dict = getDictionary(lang as Locale);
-  
+
   return {
-    title: dict.nav.contact,
+    title: lang === "fr" ? "Contact | Téléphonie-IA" : "Contact | Téléphonie-IA",
+    description:
+      lang === "fr"
+        ? "Contactez l'équipe Téléphonie-IA pour une démonstration personnalisée ou pour toute question."
+        : "Contact the Téléphonie-IA team for a personalized demo or any questions.",
   };
 }
 
 export default async function ContactPage({ params }: PageProps) {
-  const { lang: langParam } = await params;
-  if (!isValidLocale(langParam)) notFound();
-  
-  const lang = langParam as Locale;
+  const { lang } = await params;
+  if (!isValidLocale(lang)) notFound();
   const dict = getDictionary(lang);
 
   return (
-    <Section>
-      <div className="text-center max-w-3xl mx-auto">
-        <h1 className="text-4xl font-bold mb-4">{dict.nav.contact}</h1>
-        <p className="text-lg text-neutral-600">
-          {lang === "fr" 
-            ? "Notre équipe est à votre disposition pour répondre à toutes vos questions."
-            : "Our team is here to answer all your questions."}
-        </p>
-      </div>
-    </Section>
+    <>
+      <ContactHero dict={dict} lang={lang} />
+
+      {/* Main Content: Form + Info */}
+      <Section background="white">
+        <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
+          {/* Form - takes 3 columns */}
+          <div className="lg:col-span-3">
+            <ContactForm dict={dict} />
+          </div>
+
+          {/* Info - takes 2 columns */}
+          <div className="lg:col-span-2">
+            <ContactInfo dict={dict} />
+          </div>
+        </div>
+      </Section>
+
+      <ContactDemo dict={dict} />
+      <ContactFAQ dict={dict} />
+      <ContactCTA dict={dict} lang={lang} />
+    </>
   );
 }

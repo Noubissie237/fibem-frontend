@@ -1061,4 +1061,138 @@ export const en: Dictionary = {
       },
     },
   },
+  contactPage: {
+    hero: {
+      title: "Contact us",
+      subtitle: "Our team is here to help you set up Téléphonie-IA. Request a personalized demo or ask your questions.",
+      cta: "See pricing",
+    },
+    form: {
+      title: "Request a demo",
+      subtitle: "Fill out the form and we'll get back to you within 24 hours.",
+      fields: {
+        name: "Full name",
+        email: "Professional email",
+        company: "Company",
+        teamSize: "Team size",
+        subject: "Subject",
+        phone: "Phone",
+        message: "Message",
+        consent: "I agree to be contacted by the FIBEM team regarding my request. My data will be processed in accordance with the privacy policy.",
+      },
+      placeholders: {
+        name: "John Smith",
+        email: "john@company.com",
+        company: "Your company name",
+        teamSize: "Select team size",
+        subject: "Choose a subject",
+        phone: "+1 234 567 8900",
+        message: "Describe your needs or questions...",
+      },
+      teamSizes: [
+        { value: "1-10", label: "1 to 10 people" },
+        { value: "11-50", label: "11 to 50 people" },
+        { value: "51-200", label: "51 to 200 people" },
+        { value: "200+", label: "More than 200 people" },
+      ],
+      subjects: [
+        { value: "demo", label: "Demo request" },
+        { value: "pricing", label: "Pricing questions" },
+        { value: "partnership", label: "Partnership" },
+        { value: "support", label: "Technical support" },
+        { value: "other", label: "Other" },
+      ],
+      optional: "Optional",
+      submit: "Send my request",
+      submitting: "Sending...",
+      success: "Thank you! Your request has been sent. We'll get back to you very soon.",
+      errors: {
+        required: "This field is required",
+        email: "Please enter a valid email",
+        consent: "You must agree to be contacted",
+      },
+    },
+    info: {
+      title: "Contact information",
+      email: "contact@fibem.com",
+      hours: "Hours",
+      hoursValue: "Mon – Fri, 9am – 6pm (CET)",
+      location: "Location",
+      locationValue: "Douala, Cameroon",
+      social: "Follow us",
+    },
+    whyContact: {
+      title: "Why contact us?",
+      items: [
+        "Get a personalized demonstration",
+        "Ask technical questions",
+        "Request a custom quote",
+        "Explore a partnership",
+        "Get help with your account",
+      ],
+    },
+    demo: {
+      title: "What you get during the demo",
+      subtitle: "A 30-minute session entirely dedicated to your needs.",
+      cta: "Book a demo",
+      items: [
+        {
+          title: "Needs analysis",
+          description: "We understand your context, challenges and telephony goals.",
+        },
+        {
+          title: "Guided demo",
+          description: "Complete platform discovery with the features that matter to you.",
+        },
+        {
+          title: "Recommendations",
+          description: "Configuration advice adapted to your structure and processes.",
+        },
+        {
+          title: "Estimate & plan",
+          description: "Clear pricing proposal and deployment timeline.",
+        },
+        {
+          title: "Q&A",
+          description: "Answers to all your questions from our experts.",
+        },
+      ],
+    },
+    faq: {
+      title: "Frequently asked questions",
+      subtitle: "Everything you need to know before contacting us.",
+      items: [
+        {
+          question: "How quickly do you respond?",
+          answer: "We commit to responding to all requests within 24 business hours. For support emergencies, the delay is usually less than 4 hours.",
+        },
+        {
+          question: "Is the demo free?",
+          answer: "Yes, the demonstration is completely free with no commitment. It lasts about 30 minutes and is personalized to your needs.",
+        },
+        {
+          question: "Can I get a custom quote?",
+          answer: "Absolutely. After understanding your needs during the demo, we send you a detailed quote within 48 hours.",
+        },
+        {
+          question: "Do you offer deployment support?",
+          answer: "Yes, all our plans include onboarding support. Business and Enterprise plans benefit from dedicated onboarding.",
+        },
+        {
+          question: "Can I change plans later?",
+          answer: "Yes, you can upgrade at any time. The change is immediate and the difference is calculated pro-rata.",
+        },
+        {
+          question: "Does Téléphonie-IA work internationally?",
+          answer: "Yes, we offer numbers in over 100 countries and the platform is accessible from anywhere in the world.",
+        },
+      ],
+    },
+    cta: {
+      title: "We help you get started",
+      subtitle: "Join 500+ companies that have modernized their telephony with us.",
+      primary: "Sign up free",
+      secondary: "See features",
+    },
+  },
 };

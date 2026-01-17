@@ -657,4 +657,95 @@ export interface Dictionary {
       secondary: string;
     };
   };
+  authPage: {
+    signup: {
+      title: string;
+      subtitle: string;
+      imageAlt: string;
+      valueTitle: string;
+      valueSubtitle: string;
+      form: {
+        fullName: string;
+        email: string;
+        password: string;
+        confirmPassword: string;
+        company: string;
+        teamSize: string;
+        phone: string;
+        consent: string;
+        submit: string;
+        submitting: string;
+      };
+      placeholders: {
+        fullName: string;
+        email: string;
+        password: string;
+        confirmPassword: string;
+        company: string;
+        teamSize: string;
+        phone: string;
+      };
+      teamSizes: Array<{ value: string; label: string }>;
+      passwordRules: string;
+      showPassword: string;
+      hidePassword: string;
+      alreadyHaveAccount: string;
+      signInLink: string;
+      success: string;
+      goToSignin: string;
+      errors: {
+        required: string;
+        email: string;
+        passwordMin: string;
+        passwordMatch: string;
+        consent: string;
+      };
+    };
+    signin: {
+      title: string;
+      subtitle: string;
+      imageAlt: string;
+      valueTitle: string;
+      valueSubtitle: string;
+      form: {
+        email: string;
+        password: string;
+        rememberMe: string;
+        forgotPassword: string;
+        submit: string;
+        submitting: string;
+      };
+      placeholders: {
+        email: string;
+        password: string;
+      };
+      noAccount: string;
+      signUpLink: string;
+      success: string;
+      redirecting: string;
+      errors: {
+        required: string;
+        email: string;
+        invalid: string;
+      };
+    };
+    forgotPassword: {
+      title: string;
+      subtitle: string;
+      form: {
+        email: string;
+        submit: string;
+        submitting: string;
+      };
+      placeholders: {
+        email: string;
+      };
+      success: string;
+      backToSignin: string;
+      errors: {
+        required: string;
+        email: string;
+      };
+    };
+  };
 }

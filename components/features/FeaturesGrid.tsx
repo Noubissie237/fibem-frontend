@@ -2,7 +2,6 @@ import { Dictionary } from "@/types/i18n";
 import { Section } from "@/components/ui/Section";
 import { Card, CardTitle, CardDescription } from "@/components/ui/Card";
 import {
-  IconPhone,
   IconPhoneArrow,
   IconUsers,
   IconMessage,

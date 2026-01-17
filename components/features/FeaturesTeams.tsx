@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Dictionary, Locale } from "@/types/i18n";
 import { Section } from "@/components/ui/Section";
-import { Card, CardTitle, CardDescription } from "@/components/ui/Card";
+import { Card, CardDescription } from "@/components/ui/Card";
 import { IconArrowRight } from "@/components/icons/Icons";
 
 interface FeaturesTeamsProps {

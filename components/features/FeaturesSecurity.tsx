@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { Dictionary } from "@/types/i18n";
 import { Section } from "@/components/ui/Section";
-import { Card, CardTitle, CardDescription } from "@/components/ui/Card";
 import { IconShield, IconCheck } from "@/components/icons/Icons";
 
 interface FeaturesSecurityProps {

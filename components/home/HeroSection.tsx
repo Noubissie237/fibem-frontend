@@ -2,13 +2,12 @@ import Image from "next/image";
 import { Dictionary, Locale } from "@/types/i18n";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { Badge } from "@/components/ui/Badge";
 import {
   IconPhone,
   IconChartBar,
   IconUsers,
   IconStar,
-  IconSparkles, // Remonté ici pour être propre
+  IconSparkles,
 } from "@/components/icons/Icons";
 
 interface HeroSectionProps {
@@ -73,7 +72,7 @@ export function HeroSection({ dict, lang }: HeroSectionProps) {
 
             <p className="text-sm text-neutral-500">{hero.noCard}</p>
 
-            {/* Trust indicators (Modifié) */}
+            {/* Trust indicators */}
             <div className="mt-10 pt-8 border-t border-neutral-200 w-full overflow-hidden">
               <p className="text-sm text-neutral-500 mb-6">{hero.trustedBy}</p>
               

@@ -21,7 +21,6 @@ export async function generateMetadata({
 }: PageProps): Promise<Metadata> {
   const { lang } = await params;
   if (!isValidLocale(lang)) return {};
-  const dict = getDictionary(lang as Locale);
 
   const title =
     lang === "fr"

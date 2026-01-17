@@ -1,5 +1,5 @@
-import { Dictionary } from "@/types/i18n";
-import { Locale } from "@/types/i18n";
+import Image from "next/image";
+import { Dictionary, Locale } from "@/types/i18n";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
@@ -8,6 +8,7 @@ import {
   IconChartBar,
   IconUsers,
   IconStar,
+  IconSparkles, // Remonté ici pour être propre
 } from "@/components/icons/Icons";
 
 interface HeroSectionProps {
@@ -15,11 +16,33 @@ interface HeroSectionProps {
   lang: Locale;
 }
 
+// Liste des logos
+const LOGOS = [
+  "/images/trusts/logo1.png",
+  "/images/trusts/logo2.png",
+  "/images/trusts/logo3.jpeg",
+  "/images/trusts/logo4.png",
+  "/images/trusts/logo5.png",
+  "/images/trusts/logo6.png",
+];
+
 export function HeroSection({ dict, lang }: HeroSectionProps) {
   const { hero } = dict;
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-brand-blue-50/50 to-white pt-8 pb-16 lg:pt-16 lg:pb-24">
+      
+      {/* Animation CSS locale pour le défilement */}
+      <style>{`
+        @keyframes scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-infinite-scroll {
+          animation: scroll 30s linear infinite;
+        }
+      `}</style>
+
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-brand-blue-100/30 rounded-full blur-3xl" />
@@ -54,21 +77,29 @@ export function HeroSection({ dict, lang }: HeroSectionProps) {
 
             <p className="text-sm text-neutral-500">{hero.noCard}</p>
 
-            {/* Trust indicators */}
-            <div className="mt-10 pt-8 border-t border-neutral-200">
-              <p className="text-sm text-neutral-500 mb-4">{hero.trustedBy}</p>
-              <div className="flex flex-wrap justify-center lg:justify-start gap-6 items-center opacity-60">
-                {/* Placeholder logos - remplacer par de vrais logos */}
-                {["TechCorp", "StartupXYZ", "InnovateSA", "GroupeABC"].map(
-                  (company) => (
-                    <span
-                      key={company}
-                      className="text-neutral-400 font-semibold text-sm"
+            {/* Trust indicators (Modifié) */}
+            <div className="mt-10 pt-8 border-t border-neutral-200 w-full overflow-hidden">
+              <p className="text-sm text-neutral-500 mb-6">{hero.trustedBy}</p>
+              
+              {/* Conteneur du slider avec masque de fondu sur les côtés */}
+              <div className="relative w-full overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_50px,_black_calc(100%-50px),transparent_100%)]">
+                <div className="flex w-max animate-infinite-scroll items-center">
+                  {/* On duplique la liste des logos pour créer la boucle infinie */}
+                  {[...LOGOS, ...LOGOS].map((src, index) => (
+                    <div 
+                      key={index} 
+                      className="mx-1 w-24 h-12 relative flex items-center justify-center grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300"
                     >
-                      {company}
-                    </span>
-                  )
-                )}
+                      <Image
+                        src={src}
+                        alt={`Partner logo ${index}`}
+                        fill
+                        className="object-contain"
+                        sizes="100px"
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -178,9 +209,6 @@ export function HeroSection({ dict, lang }: HeroSectionProps) {
     </section>
   );
 }
-
-// Import manquant
-import { IconSparkles } from "@/components/icons/Icons";
 
 interface StatCardProps {
   label: string;

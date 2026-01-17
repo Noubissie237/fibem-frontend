@@ -102,4 +102,57 @@ export interface Dictionary {
       legal: string;
     };
   };
+  // Nouvelle section pour la page Fonctionnalités
+  featuresPage: {
+    hero: {
+      title: string;
+      subtitle: string;
+      ctaPrimary: string;
+      ctaSecondary: string;
+    };
+    overview: {
+      title: string;
+      description: string;
+    };
+    pillars: {
+      title: string;
+      subtitle: string;
+      items: Array<{
+        title: string;
+        description: string;
+        features: string[];
+      }>;
+    };
+    grid: {
+      title: string;
+      subtitle: string;
+      items: Array<{
+        title: string;
+        description: string;
+      }>;
+    };
+    teams: {
+      title: string;
+      subtitle: string;
+      items: Array<{
+        title: string;
+        description: string;
+        cta: string;
+      }>;
+    };
+    security: {
+      title: string;
+      subtitle: string;
+      items: Array<{
+        title: string;
+        description: string;
+      }>;
+    };
+    cta: {
+      title: string;
+      subtitle: string;
+      primary: string;
+      secondary: string;
+    };
+  };
 }

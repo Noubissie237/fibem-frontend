@@ -19,7 +19,7 @@ export const en: Dictionary = {
     signup: "Sign up",
   },
   hero: {
-    badge: "New: Real-time AI Transcription",
+    badge: "🚀 New: Real-time AI Transcription",
     title: "Business telephony",
     titleHighlight: "powered by AI",
     subtitle:
@@ -215,8 +215,7 @@ export const en: Dictionary = {
     secondary: "Contact us",
   },
   footer: {
-    description:
-      "The AI-powered telephony solution for modern businesses.",
+    description: "The AI-powered telephony solution for modern businesses.",
     madeIn: "Designed and hosted in France",
     rights: "All rights reserved.",
     sections: {
@@ -224,6 +223,196 @@ export const en: Dictionary = {
       company: "Company",
       resources: "Resources",
       legal: "Legal",
+    },
+  },
+  // Features Page
+  featuresPage: {
+    hero: {
+      title: "All the features for modern business telephony",
+      subtitle:
+        "Téléphonie-IA combines the power of a professional phone system with artificial intelligence to transform every customer interaction.",
+      ctaPrimary: "Get started free",
+      ctaSecondary: "Request a demo",
+    },
+    overview: {
+      title: "One platform, all your communications",
+      description:
+        "Téléphonie-IA brings together everything your teams need in a single interface: inbound and outbound calls, SMS, voicemail, AI transcription, real-time analytics and management tools. No more juggling multiple solutions — everything is centralized, synchronized and accessible from any device.",
+    },
+    pillars: {
+      title: "The 4 pillars of Téléphonie-IA",
+      subtitle:
+        "Our solution is built around four complementary axes to cover all your needs.",
+      items: [
+        {
+          title: "Telephony & Routing",
+          description:
+            "A complete cloud phone system with advanced routing features so you never miss a call.",
+          features: [
+            "Local, national and international numbers",
+            "Customizable IVR (Interactive Voice Response)",
+            "Smart routing based on schedules and skills",
+            "Call transfer and ring groups",
+            "Queue with custom music and messages",
+          ],
+        },
+        {
+          title: "Messaging & SMS",
+          description:
+            "Communicate via professional SMS and keep a complete history of all your exchanges.",
+          features: [
+            "Send and receive SMS from your pro numbers",
+            "Customizable message templates",
+            "Centralized conversation history",
+            "Automated notifications and alerts",
+            "Integration with your business tools",
+          ],
+        },
+        {
+          title: "AI & Quality",
+          description:
+            "Artificial intelligence serving the quality of your interactions and team productivity.",
+          features: [
+            "Real-time automatic transcription",
+            "Smart post-call summaries",
+            "Sentiment and tone analysis",
+            "Automatic extraction of follow-up actions",
+            "Live suggestions and coaching",
+          ],
+        },
+        {
+          title: "Management & Administration",
+          description:
+            "Supervision and administration tools to keep control over your telephony.",
+          features: [
+            "Customizable real-time dashboards",
+            "Detailed reports and automated exports",
+            "User and permission management",
+            "Live call supervision",
+            "Complete logging for audit",
+          ],
+        },
+      ],
+    },
+    grid: {
+      title: "Detailed features",
+      subtitle: "Explore all the features available in Téléphonie-IA.",
+      items: [
+        {
+          title: "Professional numbers",
+          description:
+            "Get local numbers in 100+ countries or port your existing numbers in a few clicks.",
+        },
+        {
+          title: "IVR & Advanced routing",
+          description:
+            "Create custom voice menus and intelligently route calls based on your business rules.",
+        },
+        {
+          title: "Transfers & Groups",
+          description:
+            "Transfer calls with one click and set up ring groups for your teams.",
+        },
+        {
+          title: "Business SMS",
+          description:
+            "Send and receive SMS from your business number, with complete history.",
+        },
+        {
+          title: "Call recording",
+          description:
+            "Automatically record your calls for training, compliance or quality monitoring.",
+        },
+        {
+          title: "Search & Tags",
+          description:
+            "Instantly find any call with full-text search and tags.",
+        },
+        {
+          title: "AI Transcription",
+          description:
+            "Every call is automatically transcribed to text, with speaker identification.",
+        },
+        {
+          title: "Automatic summaries",
+          description:
+            "AI generates a structured summary of each call with key points and action items.",
+        },
+        {
+          title: "Dashboards",
+          description:
+            "Visualize your KPIs in real-time: call volume, response time, satisfaction.",
+        },
+        {
+          title: "Exports & Reports",
+          description:
+            "Export your data and schedule automatic reports to your email.",
+        },
+        {
+          title: "Roles & Permissions",
+          description:
+            "Define precisely who can access what with a granular role system.",
+        },
+        {
+          title: "Multi-platform apps",
+          description:
+            "Use Téléphonie-IA on web, desktop, iOS and Android with perfect sync.",
+        },
+      ],
+    },
+    teams: {
+      title: "How does it help your teams?",
+      subtitle:
+        "Téléphonie-IA adapts to the specific needs of each department.",
+      items: [
+        {
+          title: "Sales teams",
+          description:
+            "Qualify prospects faster with automatic transcriptions and summaries. Access complete exchange history before each call. Natively integrate your CRM for seamless tracking.",
+          cta: "See Sales solution",
+        },
+        {
+          title: "Customer support",
+          description:
+            "Reduce wait times with smart routing. Analyze satisfaction in real-time with AI. Train your teams with recordings and transcriptions.",
+          cta: "See Support solution",
+        },
+        {
+          title: "Managers & Executives",
+          description:
+            "Manage your phone activity with clear, actionable KPIs. Identify areas for improvement with AI insights. Make informed, data-driven decisions.",
+          cta: "See Manager solution",
+        },
+      ],
+    },
+    security: {
+      title: "Security & Trust",
+      subtitle:
+        "Your data is protected according to the highest security standards.",
+      items: [
+        {
+          title: "GDPR Compliance",
+          description:
+            "Data hosted in France, full GDPR compliance, right to erasure guaranteed. We never sell your data.",
+        },
+        {
+          title: "Access Control",
+          description:
+            "Strong authentication, SSO available, granular permissions by user and team.",
+        },
+        {
+          title: "Complete Traceability",
+          description:
+            "Logging of all actions for audit and compliance. History accessible at any time.",
+        },
+      ],
+    },
+    cta: {
+      title: "Ready to switch to Téléphonie-IA?",
+      subtitle:
+        "Join 500+ companies that have modernized their telephony. 14-day free trial, no commitment.",
+      primary: "Get started free",
+      secondary: "Contact us",
     },
   },
 };

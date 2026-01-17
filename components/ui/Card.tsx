@@ -5,10 +5,11 @@ interface CardProps {
   children: ReactNode;
   className?: string;
   hover?: boolean;
-  padding?: "sm" | "md" | "lg";
+  padding?: "none" | "sm" | "md" | "lg";
 }
 
 const paddingStyles = {
+  none: "",
   sm: "p-4",
   md: "p-6",
   lg: "p-8",
@@ -24,7 +25,7 @@ export function Card({
     <div
       className={cn(
         "bg-white rounded-xl border border-neutral-100",
-        paddingStyles[padding],
+        padding !== "none" && paddingStyles[padding],
         hover &&
           "transition-all duration-300 hover:shadow-soft hover:border-neutral-200 hover:-translate-y-1",
         className
@@ -56,9 +57,7 @@ export function CardTitle({
   as: Component = "h3",
 }: CardTitleProps) {
   return (
-    <Component
-      className={cn("font-semibold text-neutral-900", className)}
-    >
+    <Component className={cn("font-semibold text-neutral-900", className)}>
       {children}
     </Component>
   );
@@ -74,5 +73,18 @@ export function CardDescription({ children, className }: CardDescriptionProps) {
     <p className={cn("text-neutral-600 text-sm leading-relaxed", className)}>
       {children}
     </p>
+  );
+}
+
+interface CardImageProps {
+  children: ReactNode;
+  className?: string;
+}
+
+export function CardImage({ children, className }: CardImageProps) {
+  return (
+    <div className={cn("relative overflow-hidden -mx-6 -mt-6 mb-6", className)}>
+      {children}
+    </div>
   );
 }

@@ -53,10 +53,6 @@ export function HeroSection({ dict, lang }: HeroSectionProps) {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left: Content */}
           <div className="text-center lg:text-left">
-            <Badge variant="blue" className="mb-6">
-              {hero.badge}
-            </Badge>
-
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 leading-tight">
               {hero.title}{" "}
               <span className="text-brand-blue">{hero.titleHighlight}</span>

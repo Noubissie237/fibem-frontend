@@ -629,4 +629,61 @@ export const fr: Dictionary = {
       secondary: "Demander une démo",
     },
   },
+  solutionsPage: {
+    hero: {
+      title: "Des solutions adaptées à chaque métier",
+      subtitle: "Téléphonie-IA s'adapte à votre secteur d'activité, à la taille de votre équipe et à vos processus. Découvrez comment nous pouvons transformer votre téléphonie.",
+      ctaPrimary: "Demander une démo",
+      ctaSecondary: "Voir les tarifs",
+    },
+    grid: {
+      title: "Explorez nos solutions",
+      subtitle: "Cliquez sur une solution pour découvrir comment Téléphonie-IA répond à vos besoins spécifiques.",
+    },
+    benefits: {
+      title: "Des bénéfices pour tous",
+      subtitle: "Quelle que soit votre solution, vous profitez d'avantages communs.",
+      items: [
+        {
+          title: "Meilleure joignabilité",
+          description: "Ne manquez plus jamais un appel important grâce au routage intelligent, aux files d'attente virtuelles et aux notifications en temps réel.",
+        },
+        {
+          title: "Pilotage en temps réel",
+          description: "Tableaux de bord personnalisables, KPIs clairs et rapports automatisés pour prendre les bonnes décisions.",
+        },
+        {
+          title: "IA au service de la qualité",
+          description: "Transcription, résumés, analyse de sentiment : l'intelligence artificielle améliore chaque interaction.",
+        },
+      ],
+    },
+    choose: {
+      title: "Comment choisir votre solution ?",
+      subtitle: "Pas sûr de la solution qui vous convient ? Notre équipe vous accompagne pour identifier vos besoins et vous proposer la configuration idéale.",
+      cta: "Parler à un expert",
+      expert: {
+        title: "Besoin de conseils ?",
+        description: "Nos experts sont disponibles pour vous aider à choisir la solution adaptée à votre contexte.",
+      },
+    },
+    cta: {
+      title: "Prêt à transformer votre téléphonie ?",
+      subtitle: "Rejoignez les 500+ entreprises qui ont modernisé leur communication avec Téléphonie-IA.",
+      primary: "Commencer gratuitement",
+      secondary: "Nous contacter",
+    },
+    breadcrumb: {
+      solutions: "Solutions",
+    },
+    solutionPage: {
+      problem: "La problématique",
+      howWeHelp: "Notre réponse",
+      features: "Fonctionnalités clés",
+      results: "Résultats attendus",
+      ctaPrimary: "Commencer gratuitement",
+      ctaSecondary: "Demander une démo",
+      backToSolutions: "← Toutes les solutions",
+    },
+  },
 };

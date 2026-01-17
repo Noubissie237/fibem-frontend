@@ -268,5 +268,52 @@ export interface Dictionary {
       primary: string;
       secondary: string;
     };
+  },
+  solutionsPage: {
+    hero: {
+      title: string;
+      subtitle: string;
+      ctaPrimary: string;
+      ctaSecondary: string;
+    };
+    grid: {
+      title: string;
+      subtitle: string;
+    };
+    benefits: {
+      title: string;
+      subtitle: string;
+      items: Array<{
+        title: string;
+        description: string;
+      }>;
+    };
+    choose: {
+      title: string;
+      subtitle: string;
+      cta: string;
+      expert: {
+        title: string;
+        description: string;
+      };
+    };
+    cta: {
+      title: string;
+      subtitle: string;
+      primary: string;
+      secondary: string;
+    };
+    breadcrumb: {
+      solutions: string;
+    };
+    solutionPage: {
+      problem: string;
+      howWeHelp: string;
+      features: string;
+      results: string;
+      ctaPrimary: string;
+      ctaSecondary: string;
+      backToSolutions: string;
+    };
   };
 }

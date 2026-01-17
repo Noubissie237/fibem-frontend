@@ -624,4 +624,61 @@ export const en: Dictionary = {
       secondary: "Request a demo",
     },
   },
+  solutionsPage: {
+    hero: {
+      title: "Solutions tailored to every business",
+      subtitle: "Téléphonie-IA adapts to your industry, team size and processes. Discover how we can transform your telephony.",
+      ctaPrimary: "Request a demo",
+      ctaSecondary: "See pricing",
+    },
+    grid: {
+      title: "Explore our solutions",
+      subtitle: "Click on a solution to discover how Téléphonie-IA meets your specific needs.",
+    },
+    benefits: {
+      title: "Benefits for everyone",
+      subtitle: "Whatever your solution, you enjoy common advantages.",
+      items: [
+        {
+          title: "Better reachability",
+          description: "Never miss an important call thanks to smart routing, virtual queues and real-time notifications.",
+        },
+        {
+          title: "Real-time management",
+          description: "Customizable dashboards, clear KPIs and automated reports to make the right decisions.",
+        },
+        {
+          title: "AI-powered quality",
+          description: "Transcription, summaries, sentiment analysis: AI improves every interaction.",
+        },
+      ],
+    },
+    choose: {
+      title: "How to choose your solution?",
+      subtitle: "Not sure which solution fits you? Our team will help you identify your needs and suggest the ideal configuration.",
+      cta: "Talk to an expert",
+      expert: {
+        title: "Need advice?",
+        description: "Our experts are available to help you choose the right solution for your context.",
+      },
+    },
+    cta: {
+      title: "Ready to transform your telephony?",
+      subtitle: "Join 500+ companies that have modernized their communications with Téléphonie-IA.",
+      primary: "Get started free",
+      secondary: "Contact us",
+    },
+    breadcrumb: {
+      solutions: "Solutions",
+    },
+    solutionPage: {
+      problem: "The challenge",
+      howWeHelp: "Our solution",
+      features: "Key features",
+      results: "Expected results",
+      ctaPrimary: "Get started free",
+      ctaSecondary: "Request a demo",
+      backToSolutions: "← All solutions",
+    },
+  },
 };

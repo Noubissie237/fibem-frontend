@@ -13,22 +13,23 @@ import {
 } from "@/components/features";
 
 interface PageProps {
-  params: { lang: string };
+  params: Promise<{ lang: string }>;
 }
 
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
-  if (!isValidLocale(params.lang)) return {};
-  const dict = getDictionary(params.lang as Locale);
+  const { lang } = await params;
+  if (!isValidLocale(lang)) return {};
+  const dict = getDictionary(lang as Locale);
 
   const title =
-    params.lang === "fr"
+    lang === "fr"
       ? "Fonctionnalités | Téléphonie-IA"
       : "Features | Téléphonie-IA";
 
   const description =
-    params.lang === "fr"
+    lang === "fr"
       ? "Découvrez toutes les fonctionnalités de Téléphonie-IA : téléphonie cloud, SMS pro, transcription IA, analytics et plus encore."
       : "Discover all Téléphonie-IA features: cloud telephony, business SMS, AI transcription, analytics and more.";
 
@@ -50,10 +51,11 @@ export async function generateMetadata({
   };
 }
 
-export default function FeaturesPage({ params }: PageProps) {
-  if (!isValidLocale(params.lang)) notFound();
+export default async function FeaturesPage({ params }: PageProps) {
+  const { lang: langParam } = await params;
+  if (!isValidLocale(langParam)) notFound();
 
-  const lang = params.lang as Locale;
+  const lang = langParam as Locale;
   const dict = getDictionary(lang);
 
   return (

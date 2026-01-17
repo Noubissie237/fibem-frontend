@@ -76,7 +76,7 @@ export function UseCasesSection({ dict, lang }: UseCasesSectionProps) {
 
       <div className="text-center">
         <Button href={`/${lang}/solutions`} variant="outline">
-          {useCases.cta} →
+          {useCases.cta}
         </Button>
       </div>
     </Section>

@@ -55,7 +55,7 @@ export function ResourcesSection({ dict, lang }: ResourcesSectionProps) {
               href={`/${lang}/ressources`}
               className="text-sm font-medium text-brand-blue hover:text-brand-blue-700 transition-colors"
             >
-              {item.cta} →
+              {item.cta}
             </Link>
           </Card>
         ))}

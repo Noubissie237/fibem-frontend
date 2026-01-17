@@ -90,7 +90,7 @@ export function PricingPreviewSection({ dict, lang }: PricingPreviewSectionProps
 
       <div className="text-center">
         <Button href={`/${lang}/tarifs`} variant="ghost">
-          {pricing.cta} →
+          {pricing.cta}
         </Button>
       </div>
     </Section>

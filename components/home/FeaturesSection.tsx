@@ -53,7 +53,7 @@ export function FeaturesSection({ dict, lang }: FeaturesSectionProps) {
 
       <div className="text-center">
         <Button href={`/${lang}/fonctionnalites`} variant="outline">
-          {features.cta} →
+          {features.cta}
         </Button>
       </div>
     </Section>

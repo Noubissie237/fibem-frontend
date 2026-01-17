@@ -100,7 +100,7 @@ export function getNavigationItems(
               ? "Plus de 50 fonctionnalités pour transformer votre téléphonie."
               : "50+ features to transform your telephony.",
           href: `/${lang}/fonctionnalites`,
-          linkText: lang === "fr" ? "Voir tout →" : "See all →",
+          linkText: lang === "fr" ? "Voir tout" : "See all",
           variant: "blue",
         },
       },
@@ -147,7 +147,7 @@ export function getNavigationItems(
               ? "Testez toutes les fonctionnalités sans engagement."
               : "Test all features with no commitment.",
           href: `/${lang}/inscription`,
-          linkText: lang === "fr" ? "Commencer →" : "Get started →",
+          linkText: lang === "fr" ? "Commencer" : "Get started",
           variant: "gradient",
         },
       },
@@ -277,7 +277,7 @@ export function getNavigationItems(
               ? "Plus de 500 entreprises utilisent Téléphonie-IA."
               : "500+ companies use Téléphonie-IA.",
           href: `/${lang}/pourquoi-telephonie-ia#clients`,
-          linkText: lang === "fr" ? "Voir les témoignages →" : "See testimonials →",
+          linkText: lang === "fr" ? "Voir les témoignages" : "See testimonials",
           variant: "blue",
         },
       },

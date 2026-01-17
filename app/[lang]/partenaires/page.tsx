@@ -2,7 +2,14 @@ import type { Metadata } from "next";
 import { getDictionary, isValidLocale } from "@/lib/i18n/dictionaries";
 import { Locale } from "@/types/i18n";
 import { notFound } from "next/navigation";
-import { Section } from "@/components/ui/Section";
+import { PartnersHero } from "@/components/partners/PartnersHero";
+import { WhyPartner } from "@/components/partners/WhyPartner";
+import { PartnerTypes } from "@/components/partners/PartnerTypes";
+import { WhatWeProvide } from "@/components/partners/WhatWeProvide";
+import { OurPartners } from "@/components/partners/OurPartners";
+import { ProcessSection } from "@/components/partners/ProcessSection";
+import { FormSection } from "@/components/partners/FormSection";
+import { PartnersCTA } from "@/components/partners/PartnersCTA";
 
 interface PageProps {
   params: Promise<{ lang: string }>;
@@ -14,7 +21,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const dict = getDictionary(lang as Locale);
   
   return {
-    title: dict.nav.partners,
+    title: dict.partnersPage.hero.title,
+    description: dict.partnersPage.hero.subtitle,
   };
 }
 
@@ -26,15 +34,15 @@ export default async function PartenairesPage({ params }: PageProps) {
   const dict = getDictionary(lang);
 
   return (
-    <Section>
-      <div className="text-center max-w-3xl mx-auto">
-        <h1 className="text-4xl font-bold mb-4">{dict.nav.partners}</h1>
-        <p className="text-lg text-neutral-600">
-          {lang === "fr" 
-            ? "Développez votre activité en devenant partenaire FIBEM."
-            : "Grow your business by becoming a FIBEM partner."}
-        </p>
-      </div>
-    </Section>
+    <>
+      <PartnersHero dict={dict} lang={lang} />
+      <WhyPartner dict={dict} />
+      <PartnerTypes dict={dict} />
+      <WhatWeProvide dict={dict} lang={lang} />
+      <OurPartners dict={dict} />
+      <ProcessSection dict={dict} />
+      <FormSection dict={dict} />
+      <PartnersCTA dict={dict} lang={lang} />
+    </>
   );
 }

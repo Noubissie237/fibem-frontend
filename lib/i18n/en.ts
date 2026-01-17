@@ -1291,4 +1291,163 @@ export const en: Dictionary = {
       },
     },
   },
+  partnersPage: {
+    hero: {
+      title: "Partners",
+      subtitle: "Join our partner network and participate in transforming professional telephony through artificial intelligence.",
+      ctaPrimary: "Become a partner",
+      ctaSecondary: "Contact the team",
+    },
+    whyPartner: {
+      title: "Why become a partner?",
+      subtitle: "By joining our ecosystem, you benefit from growth opportunities and an innovative offering that meets market needs.",
+      benefits: [
+        {
+          title: "Recurring revenue",
+          description: "Generate predictable revenue through our SaaS model with attractive commissions on each customer.",
+        },
+        {
+          title: "Resources & training",
+          description: "Access our complete library of documentation, training and certifications for your teams.",
+        },
+        {
+          title: "Dedicated support",
+          description: "Benefit from technical and commercial support to succeed in your deployments.",
+        },
+        {
+          title: "AI innovation",
+          description: "Offer a unique solution combining professional telephony and artificial intelligence.",
+        },
+      ],
+    },
+    partnerTypes: {
+      title: "Partnership types",
+      subtitle: "We collaborate with different profiles to maximize our market impact.",
+      types: [
+        {
+          title: "Resellers & Integrators",
+          description: "You market and deploy IT solutions for your professional clients.",
+          forWho: "Ideal for IT service companies, telecom integrators, IT resellers and digital transformation consultants.",
+          whatYouGet: "Reseller access, attractive margins, pre-sales support, technical training, demonstration tools.",
+        },
+        {
+          title: "Agencies & Consulting firms",
+          description: "You support your clients in their digital strategy and growth.",
+          forWho: "Perfect for marketing agencies, consulting firms, web agencies and customer experience experts.",
+          whatYouGet: "Affiliate program, co-branded marketing materials, unlimited demo access, recurring commissions.",
+        },
+        {
+          title: "Technology partners",
+          description: "You develop complementary solutions or want to integrate our API.",
+          forWho: "For software publishers, CRM, ERP, communication platforms and business tools.",
+          whatYouGet: "Complete API documentation, development sandbox, priority technical support, co-marketing.",
+        },
+      ],
+    },
+    whatWeProvide: {
+      title: "What we provide",
+      subtitle: "All the tools and resources to succeed in your deployments and support your clients.",
+      items: [
+        {
+          title: "Marketing materials",
+          description: "Brochures, presentations, case studies, demo videos and customizable content.",
+        },
+        {
+          title: "Unlimited demo access",
+          description: "Complete demonstration environment to present the solution to your prospects.",
+        },
+        {
+          title: "Complete documentation",
+          description: "Installation guides, user manuals, FAQ and always up-to-date knowledge base.",
+        },
+        {
+          title: "Onboarding program",
+          description: "Initial training, certification and personalized support to get started quickly.",
+        },
+        {
+          title: "Technical support",
+          description: "Dedicated team available to help you with technical and commercial aspects.",
+        },
+        {
+          title: "Management tools",
+          description: "Partner portal to track your opportunities, commissions and access resources.",
+        },
+      ],
+      callout: {
+        title: "Technical resources",
+        description: "Access our complete API documentation and integration guides to develop your own solutions.",
+        linkApi: "API Documentation",
+        linkGuides: "Technical guides",
+      },
+    },
+    ourPartners: {
+      title: "They trust us",
+      subtitle: "Our partners support us in deploying Téléphonie-IA to hundreds of companies.",
+    },
+    process: {
+      title: "Partnership process",
+      subtitle: "A simple and structured journey to become a partner in a few weeks.",
+      steps: [
+        {
+          title: "Application",
+          description: "Fill out the form below to present your project and expectations.",
+        },
+        {
+          title: "Qualification",
+          description: "Our team reviews your application and contacts you for an in-depth discussion.",
+        },
+        {
+          title: "Onboarding",
+          description: "Training, certification and setup of tools to start in the best conditions.",
+        },
+        {
+          title: "Launch",
+          description: "You're ready! Start offering Téléphonie-IA to your clients with our support.",
+        },
+      ],
+    },
+    form: {
+      title: "Become a partner",
+      subtitle: "Fill out this form and our team will contact you quickly to discuss collaboration opportunities.",
+      fields: {
+        fullName: "Full name",
+        email: "Business email",
+        company: "Company",
+        partnerType: "Partnership type",
+        country: "Country",
+        city: "City",
+        message: "Message",
+        consent: "I agree to be contacted by the FIBEM Téléphonie-IA team",
+      },
+      placeholders: {
+        fullName: "John Doe",
+        email: "john.doe@company.com",
+        company: "Your company name",
+        partnerType: "Select a type",
+        country: "United States",
+        city: "New York",
+        message: "Tell us about your project and expectations...",
+      },
+      partnerTypes: [
+        { value: "reseller", label: "Reseller / Integrator" },
+        { value: "agency", label: "Agency / Consulting firm" },
+        { value: "tech", label: "Technology partner" },
+        { value: "other", label: "Other" },
+      ],
+      submit: "Submit application",
+      submitting: "Submitting...",
+      success: "Thank you for your application! Our team will get back to you shortly.",
+      errors: {
+        required: "This field is required",
+        email: "Please enter a valid email address",
+        consent: "You must agree to be contacted to continue",
+      },
+    },
+    cta: {
+      title: "Let's build AI-powered professional telephony together",
+      subtitle: "Join us to transform the telephone experience of businesses.",
+      primary: "Request a demo",
+      secondary: "See pricing",
+    },
+  },
 };

@@ -748,4 +748,94 @@ export interface Dictionary {
       };
     };
   };
+  partnersPage: {
+    hero: {
+      title: string;
+      subtitle: string;
+      ctaPrimary: string;
+      ctaSecondary: string;
+    };
+    whyPartner: {
+      title: string;
+      subtitle: string;
+      benefits: Array<{
+        title: string;
+        description: string;
+      }>;
+    };
+    partnerTypes: {
+      title: string;
+      subtitle: string;
+      types: Array<{
+        title: string;
+        description: string;
+        forWho: string;
+        whatYouGet: string;
+      }>;
+    };
+    whatWeProvide: {
+      title: string;
+      subtitle: string;
+      items: Array<{
+        title: string;
+        description: string;
+      }>;
+      callout: {
+        title: string;
+        description: string;
+        linkApi: string;
+        linkGuides: string;
+      };
+    };
+    ourPartners: {
+      title: string;
+      subtitle: string;
+    };
+    process: {
+      title: string;
+      subtitle: string;
+      steps: Array<{
+        title: string;
+        description: string;
+      }>;
+    };
+    form: {
+      title: string;
+      subtitle: string;
+      fields: {
+        fullName: string;
+        email: string;
+        company: string;
+        partnerType: string;
+        country: string;
+        city: string;
+        message: string;
+        consent: string;
+      };
+      placeholders: {
+        fullName: string;
+        email: string;
+        company: string;
+        partnerType: string;
+        country: string;
+        city: string;
+        message: string;
+      };
+      partnerTypes: Array<{ value: string; label: string }>;
+      submit: string;
+      submitting: string;
+      success: string;
+      errors: {
+        required: string;
+        email: string;
+        consent: string;
+      };
+    };
+    cta: {
+      title: string;
+      subtitle: string;
+      primary: string;
+      secondary: string;
+    };
+  };
 }

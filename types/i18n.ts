@@ -155,4 +155,118 @@ export interface Dictionary {
       secondary: string;
     };
   };
+  // Page Tarifs
+  pricingPage: {
+    hero: {
+      title: string;
+      subtitle: string;
+      cta: string;
+    };
+    toggle: {
+      monthly: string;
+      yearly: string;
+      discount: string;
+    };
+    plans: {
+      starter: {
+        name: string;
+        description: string;
+        priceMonthly: string;
+        priceYearly: string;
+        features: string[];
+        cta: string;
+      };
+      business: {
+        name: string;
+        description: string;
+        priceMonthly: string;
+        priceYearly: string;
+        features: string[];
+        cta: string;
+        popular: string;
+      };
+      enterprise: {
+        name: string;
+        description: string;
+        price: string;
+        features: string[];
+        cta: string;
+      };
+    };
+    perMonth: string;
+    perYear: string;
+    compare: {
+      title: string;
+      subtitle: string;
+      features: {
+        numbers: string;
+        minutes: string;
+        recordings: string;
+        transcription: string;
+        dashboards: string;
+        integrations: string;
+        support: string;
+      };
+      values: {
+        starter: {
+          numbers: string;
+          minutes: string;
+          recordings: string;
+          transcription: string;
+          dashboards: string;
+          integrations: string;
+          support: string;
+        };
+        business: {
+          numbers: string;
+          minutes: string;
+          recordings: string;
+          transcription: string;
+          dashboards: string;
+          integrations: string;
+          support: string;
+        };
+        enterprise: {
+          numbers: string;
+          minutes: string;
+          recordings: string;
+          transcription: string;
+          dashboards: string;
+          integrations: string;
+          support: string;
+        };
+      };
+    };
+    addons: {
+      title: string;
+      subtitle: string;
+      items: Array<{
+        title: string;
+        description: string;
+        cta: string;
+      }>;
+    };
+    billing: {
+      title: string;
+      subtitle: string;
+      items: Array<{
+        title: string;
+        description: string;
+      }>;
+    };
+    faq: {
+      title: string;
+      subtitle: string;
+      items: Array<{
+        question: string;
+        answer: string;
+      }>;
+    };
+    cta: {
+      title: string;
+      subtitle: string;
+      primary: string;
+      secondary: string;
+    };
+  };
 }

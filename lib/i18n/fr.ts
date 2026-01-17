@@ -227,7 +227,6 @@ export const fr: Dictionary = {
       legal: "Légal",
     },
   },
-  // Page Fonctionnalités
   featuresPage: {
     hero: {
       title: "Toutes les fonctionnalités pour une téléphonie d'entreprise moderne",
@@ -416,6 +415,218 @@ export const fr: Dictionary = {
         "Rejoignez les 500+ entreprises qui ont modernisé leur téléphonie. Essai gratuit 14 jours, sans engagement.",
       primary: "Commencer gratuitement",
       secondary: "Nous contacter",
+    },
+  },
+  // Page Tarifs
+  pricingPage: {
+    hero: {
+      title: "Des tarifs adaptés à chaque entreprise",
+      subtitle:
+        "Choisissez le plan qui correspond à la taille de votre équipe et à vos besoins. Évoluez à tout moment, sans engagement.",
+      cta: "Contacter l'équipe commerciale",
+    },
+    toggle: {
+      monthly: "Mensuel",
+      yearly: "Annuel",
+      discount: "-20%",
+    },
+    plans: {
+      starter: {
+        name: "Starter",
+        description: "Idéal pour les indépendants et petites équipes",
+        priceMonthly: "19",
+        priceYearly: "15",
+        features: [
+          "1 numéro professionnel inclus",
+          "500 minutes d'appels/mois",
+          "100 SMS/mois",
+          "Enregistrement des appels (30 jours)",
+          "Transcription IA basique",
+          "Tableau de bord essentiel",
+          "Support par email",
+        ],
+        cta: "Choisir Starter",
+      },
+      business: {
+        name: "Business",
+        description: "Pour les PME en croissance",
+        priceMonthly: "49",
+        priceYearly: "39",
+        features: [
+          "3 numéros professionnels inclus",
+          "Minutes d'appels illimitées",
+          "500 SMS/mois",
+          "Enregistrement des appels (90 jours)",
+          "Transcription IA avancée + résumés",
+          "Tableaux de bord personnalisables",
+          "Intégrations CRM (Salesforce, HubSpot)",
+          "Support prioritaire",
+        ],
+        cta: "Choisir Business",
+        popular: "Le plus populaire",
+      },
+      enterprise: {
+        name: "Enterprise",
+        description: "Pour les grandes organisations",
+        price: "Sur devis",
+        features: [
+          "Numéros illimités",
+          "Minutes et SMS illimités",
+          "Enregistrement illimité",
+          "IA complète + coaching temps réel",
+          "API complète & webhooks",
+          "SSO & permissions avancées",
+          "SLA garanti 99,9%",
+          "Account manager dédié",
+          "Formation sur site",
+        ],
+        cta: "Parler à un expert",
+      },
+    },
+    perMonth: "€/mois",
+    perYear: "€/mois facturé annuellement",
+    compare: {
+      title: "Comparer les offres",
+      subtitle:
+        "Retrouvez en détail ce qui est inclus dans chaque plan.",
+      features: {
+        numbers: "Numéros inclus",
+        minutes: "Minutes d'appels",
+        recordings: "Enregistrements",
+        transcription: "Transcription IA",
+        dashboards: "Tableaux de bord",
+        integrations: "Intégrations",
+        support: "Support",
+      },
+      values: {
+        starter: {
+          numbers: "1 numéro",
+          minutes: "500 min/mois",
+          recordings: "30 jours",
+          transcription: "Basique",
+          dashboards: "Essentiel",
+          integrations: "—",
+          support: "Email",
+        },
+        business: {
+          numbers: "3 numéros",
+          minutes: "Illimitées",
+          recordings: "90 jours",
+          transcription: "Avancée + résumés",
+          dashboards: "Personnalisables",
+          integrations: "CRM (Salesforce, HubSpot)",
+          support: "Prioritaire",
+        },
+        enterprise: {
+          numbers: "Illimités",
+          minutes: "Illimitées",
+          recordings: "Illimité",
+          transcription: "Complète + coaching",
+          dashboards: "Sur mesure",
+          integrations: "API complète",
+          support: "Dédié + SLA",
+        },
+      },
+    },
+    addons: {
+      title: "Options & Add-ons",
+      subtitle:
+        "Personnalisez votre offre avec des options complémentaires.",
+      items: [
+        {
+          title: "Enregistrements étendus",
+          description:
+            "Conservez vos enregistrements d'appels au-delà de la durée incluse dans votre plan. Idéal pour la conformité et la formation.",
+          cta: "En savoir plus",
+        },
+        {
+          title: "Stockage supplémentaire",
+          description:
+            "Augmentez votre espace de stockage pour les fichiers, transcriptions et exports. Capacité flexible selon vos besoins.",
+          cta: "En savoir plus",
+        },
+        {
+          title: "IA avancée",
+          description:
+            "Débloquez les fonctionnalités IA premium : coaching en temps réel, analyse prédictive, insights personnalisés.",
+          cta: "En savoir plus",
+        },
+        {
+          title: "Numéros internationaux",
+          description:
+            "Ajoutez des numéros dans plus de 100 pays pour votre présence internationale. Tarifs locaux compétitifs.",
+          cta: "En savoir plus",
+        },
+      ],
+    },
+    billing: {
+      title: "Facturation & Contrat",
+      subtitle: "Tout ce que vous devez savoir sur la facturation.",
+      items: [
+        {
+          title: "Facturation flexible",
+          description:
+            "Choisissez entre facturation mensuelle ou annuelle. L'annuel vous fait économiser 20%.",
+        },
+        {
+          title: "TVA incluse",
+          description:
+            "Tous les prix affichés sont HT. La TVA applicable sera ajoutée selon votre pays.",
+        },
+        {
+          title: "Factures téléchargeables",
+          description:
+            "Accédez à toutes vos factures depuis votre espace client. Export PDF automatique.",
+        },
+        {
+          title: "Évoluez librement",
+          description:
+            "Changez de plan à tout moment. Upgrade instantané, downgrade en fin de période.",
+        },
+      ],
+    },
+    faq: {
+      title: "Questions fréquentes",
+      subtitle: "Tout ce que vous devez savoir sur nos tarifs.",
+      items: [
+        {
+          question: "Puis-je changer d'offre en cours de route ?",
+          answer:
+            "Oui, vous pouvez passer à un plan supérieur à tout moment. Le changement est immédiat et la différence de prix est calculée au prorata. Pour passer à un plan inférieur, le changement prendra effet à la fin de votre période de facturation en cours.",
+        },
+        {
+          question: "Proposez-vous une démo gratuite ?",
+          answer:
+            "Absolument ! Nous proposons un essai gratuit de 14 jours sur tous nos plans, sans carte bancaire requise. Vous pouvez également demander une démo personnalisée avec notre équipe commerciale.",
+        },
+        {
+          question: "Y a-t-il un engagement minimum ?",
+          answer:
+            "Non, il n'y a aucun engagement minimum. Vous pouvez annuler votre abonnement à tout moment. Si vous optez pour la facturation annuelle, vous bénéficiez de 20% de réduction mais vous vous engagez pour 12 mois.",
+        },
+        {
+          question: "Comment fonctionne la facturation ?",
+          answer:
+            "La facturation est automatique, mensuelle ou annuelle selon votre choix. Vous recevez une facture par email et pouvez télécharger toutes vos factures depuis votre espace client à tout moment.",
+        },
+        {
+          question: "Puis-je ajouter des utilisateurs supplémentaires ?",
+          answer:
+            "Oui, vous pouvez ajouter des utilisateurs à tout moment. Le prix par utilisateur dépend de votre plan. Contactez-nous pour les tarifs de volume si vous avez plus de 50 utilisateurs.",
+        },
+        {
+          question: "Comment obtenir un devis Enterprise ?",
+          answer:
+            "Contactez notre équipe commerciale via le formulaire de contact ou en cliquant sur \"Parler à un expert\" sur la carte Enterprise. Nous vous recontacterons sous 24h pour comprendre vos besoins et vous proposer une offre sur mesure.",
+        },
+      ],
+    },
+    cta: {
+      title: "Prêt à lancer Téléphonie-IA ?",
+      subtitle:
+        "Essai gratuit 14 jours, sans engagement. Commencez en quelques minutes.",
+      primary: "Commencer gratuitement",
+      secondary: "Demander une démo",
     },
   },
 };

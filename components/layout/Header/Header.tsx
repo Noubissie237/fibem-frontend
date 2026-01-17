@@ -53,7 +53,7 @@ export function Header({ lang = "fr", dict }: HeaderProps) {
           >
             {/* Logo FIBEM */}
             <div className="relative flex items-center justify-center min-w-[80px] lg:min-w-[100px]">
-              <div className="relative w-full h-12 lg:h-14 overflow-hidden shadow-sm">
+              <div className="relative w-full h-12 lg:h-14 overflow-hidden">
                 <Image
                   src="/images/logo-wbg.png"
                   alt="FIBEM"

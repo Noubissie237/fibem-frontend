@@ -225,7 +225,6 @@ export const en: Dictionary = {
       legal: "Legal",
     },
   },
-  // Features Page
   featuresPage: {
     hero: {
       title: "All the features for modern business telephony",
@@ -413,6 +412,216 @@ export const en: Dictionary = {
         "Join 500+ companies that have modernized their telephony. 14-day free trial, no commitment.",
       primary: "Get started free",
       secondary: "Contact us",
+    },
+  },
+  // Pricing Page
+  pricingPage: {
+    hero: {
+      title: "Pricing that fits every business",
+      subtitle:
+        "Choose the plan that matches your team size and needs. Upgrade anytime, no commitment.",
+      cta: "Contact sales team",
+    },
+    toggle: {
+      monthly: "Monthly",
+      yearly: "Yearly",
+      discount: "-20%",
+    },
+    plans: {
+      starter: {
+        name: "Starter",
+        description: "Ideal for freelancers and small teams",
+        priceMonthly: "19",
+        priceYearly: "15",
+        features: [
+          "1 professional number included",
+          "500 call minutes/month",
+          "100 SMS/month",
+          "Call recording (30 days)",
+          "Basic AI transcription",
+          "Essential dashboard",
+          "Email support",
+        ],
+        cta: "Choose Starter",
+      },
+      business: {
+        name: "Business",
+        description: "For growing SMBs",
+        priceMonthly: "49",
+        priceYearly: "39",
+        features: [
+          "3 professional numbers included",
+          "Unlimited call minutes",
+          "500 SMS/month",
+          "Call recording (90 days)",
+          "Advanced AI transcription + summaries",
+          "Customizable dashboards",
+          "CRM integrations (Salesforce, HubSpot)",
+          "Priority support",
+        ],
+        cta: "Choose Business",
+        popular: "Most popular",
+      },
+      enterprise: {
+        name: "Enterprise",
+        description: "For large organizations",
+        price: "Custom",
+        features: [
+          "Unlimited numbers",
+          "Unlimited minutes and SMS",
+          "Unlimited recording",
+          "Full AI + real-time coaching",
+          "Full API & webhooks",
+          "SSO & advanced permissions",
+          "99.9% SLA guaranteed",
+          "Dedicated account manager",
+          "On-site training",
+        ],
+        cta: "Talk to an expert",
+      },
+    },
+    perMonth: "€/month",
+    perYear: "€/month billed yearly",
+    compare: {
+      title: "Compare plans",
+      subtitle: "See in detail what's included in each plan.",
+      features: {
+        numbers: "Numbers included",
+        minutes: "Call minutes",
+        recordings: "Recordings",
+        transcription: "AI Transcription",
+        dashboards: "Dashboards",
+        integrations: "Integrations",
+        support: "Support",
+      },
+      values: {
+        starter: {
+          numbers: "1 number",
+          minutes: "500 min/month",
+          recordings: "30 days",
+          transcription: "Basic",
+          dashboards: "Essential",
+          integrations: "—",
+          support: "Email",
+        },
+        business: {
+          numbers: "3 numbers",
+          minutes: "Unlimited",
+          recordings: "90 days",
+          transcription: "Advanced + summaries",
+          dashboards: "Customizable",
+          integrations: "CRM (Salesforce, HubSpot)",
+          support: "Priority",
+        },
+        enterprise: {
+          numbers: "Unlimited",
+          minutes: "Unlimited",
+          recordings: "Unlimited",
+          transcription: "Full + coaching",
+          dashboards: "Custom",
+          integrations: "Full API",
+          support: "Dedicated + SLA",
+        },
+      },
+    },
+    addons: {
+      title: "Options & Add-ons",
+      subtitle: "Customize your plan with additional options.",
+      items: [
+        {
+          title: "Extended recordings",
+          description:
+            "Keep your call recordings beyond the duration included in your plan. Ideal for compliance and training.",
+          cta: "Learn more",
+        },
+        {
+          title: "Additional storage",
+          description:
+            "Increase your storage space for files, transcriptions and exports. Flexible capacity based on your needs.",
+          cta: "Learn more",
+        },
+        {
+          title: "Advanced AI",
+          description:
+            "Unlock premium AI features: real-time coaching, predictive analytics, personalized insights.",
+          cta: "Learn more",
+        },
+        {
+          title: "International numbers",
+          description:
+            "Add numbers in 100+ countries for your international presence. Competitive local rates.",
+          cta: "Learn more",
+        },
+      ],
+    },
+    billing: {
+      title: "Billing & Contract",
+      subtitle: "Everything you need to know about billing.",
+      items: [
+        {
+          title: "Flexible billing",
+          description:
+            "Choose between monthly or yearly billing. Yearly saves you 20%.",
+        },
+        {
+          title: "VAT included",
+          description:
+            "All prices shown are excluding VAT. Applicable VAT will be added based on your country.",
+        },
+        {
+          title: "Downloadable invoices",
+          description:
+            "Access all your invoices from your client portal. Automatic PDF export.",
+        },
+        {
+          title: "Scale freely",
+          description:
+            "Change plans anytime. Instant upgrade, downgrade at period end.",
+        },
+      ],
+    },
+    faq: {
+      title: "Frequently asked questions",
+      subtitle: "Everything you need to know about our pricing.",
+      items: [
+        {
+          question: "Can I change my plan later?",
+          answer:
+            "Yes, you can upgrade to a higher plan at any time. The change is immediate and the price difference is calculated pro-rata. To downgrade, the change will take effect at the end of your current billing period.",
+        },
+        {
+          question: "Do you offer a free demo?",
+          answer:
+            "Absolutely! We offer a 14-day free trial on all our plans, no credit card required. You can also request a personalized demo with our sales team.",
+        },
+        {
+          question: "Is there a minimum commitment?",
+          answer:
+            "No, there is no minimum commitment. You can cancel your subscription at any time. If you opt for yearly billing, you get 20% off but commit for 12 months.",
+        },
+        {
+          question: "How does billing work?",
+          answer:
+            "Billing is automatic, monthly or yearly depending on your choice. You receive an invoice by email and can download all your invoices from your client portal at any time.",
+        },
+        {
+          question: "Can I add additional users?",
+          answer:
+            "Yes, you can add users at any time. The price per user depends on your plan. Contact us for volume pricing if you have more than 50 users.",
+        },
+        {
+          question: "How do I get an Enterprise quote?",
+          answer:
+            "Contact our sales team via the contact form or by clicking \"Talk to an expert\" on the Enterprise card. We'll get back to you within 24 hours to understand your needs and offer a custom solution.",
+        },
+      ],
+    },
+    cta: {
+      title: "Ready to launch Téléphonie-IA?",
+      subtitle:
+        "14-day free trial, no commitment. Get started in minutes.",
+      primary: "Get started free",
+      secondary: "Request a demo",
     },
   },
 };

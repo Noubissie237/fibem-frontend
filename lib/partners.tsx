@@ -1,14 +1,12 @@
 import { ReactNode } from "react";
 
 export const partnerLogos = [
-  { id: "partner-1", name: "CloudIntegrate" },
-  { id: "partner-2", name: "TechSolutions" },
-  { id: "partner-3", name: "DigitalPartners" },
-  { id: "partner-4", name: "InnovateCorp" },
-  { id: "partner-5", name: "SmartConnect" },
-  { id: "partner-6", name: "ProTelecom" },
-  { id: "partner-7", name: "AgileConsult" },
-  { id: "partner-8", name: "FutureLink" },
+  { id: "partner-1", name: "Partner 1", image: "/images/trusts/logo1.png" },
+  { id: "partner-2", name: "Partner 2", image: "/images/trusts/logo2.png" },
+  { id: "partner-3", name: "Partner 3", image: "/images/trusts/logo3.jpeg" },
+  { id: "partner-4", name: "Partner 4", image: "/images/trusts/logo4.png" },
+  { id: "partner-5", name: "Partner 5", image: "/images/trusts/logo5.png" },
+  { id: "partner-6", name: "Partner 6", image: "/images/trusts/logo6.png" },
 ];
 
 export const benefitIcons: Record<string, ReactNode> = {

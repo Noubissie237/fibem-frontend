@@ -15,8 +15,8 @@ export interface TestimonialContent {
 
 export const testimonials: Testimonial[] = [
   {
-    id: "marie-dupont",
-    name: "Marie Dupont",
+    id: "marie-gomis",
+    name: "Marie Gomis",
     role: "Directrice Commerciale",
     company: "TechVision SAS",
     avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&q=80",
@@ -38,7 +38,7 @@ export const testimonials: Testimonial[] = [
 ];
 
 export const testimonialsContentFr: Record<string, TestimonialContent> = {
-  "marie-dupont": {
+  "marie-gomis": {
     quote: "Depuis que nous utilisons Téléphonie-IA, nos commerciaux ont gagné un temps précieux. Les transcriptions automatiques et les résumés d'appels leur permettent de se concentrer sur la vente plutôt que sur la prise de notes.",
   },
   "pierre-martin": {
@@ -50,7 +50,7 @@ export const testimonialsContentFr: Record<string, TestimonialContent> = {
 };
 
 export const testimonialsContentEn: Record<string, TestimonialContent> = {
-  "marie-dupont": {
+  "marie-gomis": {
     quote: "Since we started using Téléphonie-IA, our sales team has saved precious time. Automatic transcriptions and call summaries let them focus on selling rather than note-taking.",
   },
   "pierre-martin": {

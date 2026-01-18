@@ -1,12 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import { Dictionary, Locale } from "@/types/i18n";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import {
   IconPhone,
-  IconChartBar,
-  IconUsers,
-  IconStar,
+  IconCheckCircle,
   IconSparkles,
 } from "@/components/icons/Icons";
 
@@ -15,224 +15,198 @@ interface HeroSectionProps {
   lang: Locale;
 }
 
-// Liste des logos
 const LOGOS = [
-  "/images/trusts/logo1.png",
-  "/images/trusts/logo2.png",
-  "/images/trusts/logo3.jpeg",
-  "/images/trusts/logo4.png",
-  "/images/trusts/logo5.png",
-  "/images/trusts/logo6.png",
+  { src: "/images/trusts/logo1.png", alt: "Company 1" },
+  { src: "/images/trusts/logo2.png", alt: "Company 2" },
+  { src: "/images/trusts/logo3.jpeg", alt: "Company 3" },
+  { src: "/images/trusts/logo4.png", alt: "Company 4" },
+  { src: "/images/trusts/logo5.png", alt: "Company 5" },
+  { src: "/images/trusts/logo6.png", alt: "Company 6" },
+];
+
+const FEATURES = [
+  { key: "calls", value: "10M+", labelFr: "Appels traités", labelEn: "Calls processed" },
+  { key: "satisfaction", value: "98%", labelFr: "Satisfaction", labelEn: "Satisfaction" },
+  { key: "uptime", value: "99.9%", labelFr: "Disponibilité", labelEn: "Uptime" },
 ];
 
 export function HeroSection({ dict, lang }: HeroSectionProps) {
   const { hero } = dict;
 
+  // Double les logos pour un défilement infini fluide
+  const duplicatedLogos = [...LOGOS, ...LOGOS];
+
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-brand-blue-50/50 to-white pt-8 pb-16 lg:pt-16 lg:pb-24">
+    <section className="relative overflow-hidden bg-white">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
       
-      {/* Animation CSS locale pour le défilement */}
-      <style>{`
+      <Container className="relative">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center py-16 lg:py-24">
+          
+          {/* Left Content */}
+          <div className="max-w-xl">
+            {/* Title */}
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 leading-[1.1]">
+              {hero.title}{" "}
+              <span className="relative">
+                <span className="text-brand-blue">{hero.titleHighlight}</span>
+                <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" fill="none">
+                  <path d="M2 10C50 4 150 4 198 10" stroke="currentColor" strokeWidth="3" strokeLinecap="round" className="text-brand-blue/30" />
+                </svg>
+              </span>
+            </h1>
+
+            {/* Subtitle */}
+            <p className="text-lg lg:text-xl text-neutral-600 mb-8 leading-relaxed">
+              {hero.subtitle}
+            </p>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 mb-8">
+              <Button href={`/${lang}/inscription`} variant="primary" size="lg" className="group">
+                {hero.ctaPrimary}
+                <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Button>
+              <Button href={`/${lang}/contact`} variant="ghost" size="lg" className="group">
+                {lang === "fr" ? "Voir la démo" : "Watch demo"}
+              </Button>
+            </div>
+
+            {/* Trust indicators */}
+            <div className="flex items-center gap-6 text-sm text-neutral-500">
+              <div className="flex items-center gap-2">
+                <IconCheckCircle className="w-5 h-5 text-green-500" />
+                <span>{hero.noCard}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <IconCheckCircle className="w-5 h-5 text-green-500" />
+                <span>{lang === "fr" ? "Setup en 5 min" : "5 min setup"}</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Content - Visual */}
+          <div className="relative lg:h-[600px]">
+            {/* Main Image */}
+            <div className="relative bg-gradient-to-br from-brand-blue to-brand-blue-600 rounded-2xl p-1 shadow-2xl shadow-brand-blue/20">
+              <div className="bg-neutral-900 rounded-xl overflow-hidden">
+                <div className="relative aspect-[4/4]">
+                  <Image
+                    src="/images/telephone-ia.webp"
+                    alt="AlloMedia Dashboard"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Floating Stats Cards */}
+            <div className="absolute -left-8 top-1/4 bg-white rounded-xl p-4 shadow-lg border border-neutral-100 animate-float">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                  <IconPhone className="w-5 h-5 text-green-600" />
+                </div>
+                <div>
+                  <p className="text-2xl font-bold text-neutral-900">+127%</p>
+                  <p className="text-xs text-neutral-500">{lang === "fr" ? "Appels traités" : "Calls handled"}</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="absolute -right-4 bottom-1/4 bg-white rounded-xl p-4 shadow-lg border border-neutral-100 animate-float-delayed">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-brand-blue-50 rounded-lg flex items-center justify-center">
+                  <IconSparkles className="w-5 h-5 text-brand-blue" />
+                </div>
+                <div>
+                  <p className="text-2xl font-bold text-neutral-900">AI</p>
+                  <p className="text-xs text-neutral-500">{lang === "fr" ? "Transcription auto" : "Auto transcription"}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Stats Bar */}
+        <div className="border-t border-neutral-200 py-10">
+          <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
+            {FEATURES.map((feat) => (
+              <div key={feat.key} className="text-center">
+                <p className="text-3xl lg:text-4xl font-bold text-neutral-900">{feat.value}</p>
+                <p className="text-sm text-neutral-500 mt-1">{lang === "fr" ? feat.labelFr : feat.labelEn}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Container>
+
+      {/* Logo Carousel - Full Width */}
+      <div className="border-t border-neutral-200 bg-neutral-50/50 py-10">
+        <Container>
+          <p className="text-center text-sm font-medium text-neutral-500 mb-8">
+            {hero.trustedBy || (lang === "fr" ? "Ils nous font confiance" : "Trusted by leading companies")}
+          </p>
+        </Container>
+        
+        {/* Infinite Scroll Container */}
+        <div className="relative overflow-hidden">
+          {/* Gradient Masks */}
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-neutral-50/50 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-neutral-50/50 to-transparent z-10 pointer-events-none" />
+          
+          {/* Scrolling Track */}
+          <div className="flex animate-scroll">
+            {duplicatedLogos.map((logo, index) => (
+              <div
+                key={index}
+                className="flex-shrink-0 mx-8 lg:mx-12"
+              >
+                <div className="relative h-12 w-32 lg:h-14 lg:w-40 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300">
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    fill
+                    className="object-contain"
+                    sizes="160px"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <style jsx>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-10px); }
+        }
+        @keyframes float-delayed {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-8px); }
+        }
         @keyframes scroll {
           0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }
         }
-        .animate-infinite-scroll {
+        .animate-float {
+          animation: float 4s ease-in-out infinite;
+        }
+        .animate-float-delayed {
+          animation: float-delayed 4s ease-in-out infinite 1s;
+        }
+        .animate-scroll {
           animation: scroll 30s linear infinite;
         }
+        .animate-scroll:hover {
+          animation-play-state: paused;
+        }
       `}</style>
-
-      {/* Background decoration */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-brand-blue-100/30 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 -left-20 w-60 h-60 bg-brand-gold/10 rounded-full blur-3xl" />
-      </div>
-
-      <Container className="relative">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left: Content */}
-          <div className="text-center lg:text-left">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 leading-tight">
-              {hero.title}{" "}
-              <span className="text-brand-blue">{hero.titleHighlight}</span>
-            </h1>
-
-            <p className="text-lg sm:text-xl text-neutral-600 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-              {hero.subtitle}
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-6">
-              <Button href={`/${lang}/inscription`} size="lg">
-                {hero.ctaPrimary}
-              </Button>
-              <Button href={`/${lang}/contact`} variant="outline" size="lg">
-                {hero.ctaSecondary}
-              </Button>
-            </div>
-
-            <p className="text-sm text-neutral-500">{hero.noCard}</p>
-
-            {/* Trust indicators */}
-            <div className="mt-10 pt-8 border-t border-neutral-200 w-full overflow-hidden">
-              <p className="text-sm text-neutral-500 mb-6">{hero.trustedBy}</p>
-              
-              {/* Conteneur du slider avec masque de fondu sur les côtés */}
-              <div className="relative w-full overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_50px,_black_calc(100%-50px),transparent_100%)]">
-                <div className="flex w-max animate-infinite-scroll items-center">
-                  {/* On duplique la liste des logos pour créer la boucle infinie */}
-                  {[...LOGOS, ...LOGOS].map((src, index) => (
-                    <div 
-                      key={index} 
-                      className="mx-1 w-24 h-12 relative flex items-center justify-center grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300"
-                    >
-                      <Image
-                        src={src}
-                        alt={`Partner logo ${index}`}
-                        fill
-                        className="object-contain"
-                        sizes="100px"
-                      />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Right: Dashboard Preview Card */}
-          <div className="relative">
-            <div className="relative bg-white rounded-2xl shadow-mega border border-neutral-100 p-6 lg:p-8">
-              {/* Header */}
-              <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-brand-blue rounded-lg flex items-center justify-center">
-                    <IconPhone className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-neutral-900">
-                      {hero.dashboardPreview.title}
-                    </h3>
-                    <p className="text-xs text-neutral-500">FIBEM Téléphonie-IA</p>
-                  </div>
-                </div>
-                <div className="flex gap-1.5">
-                  <span className="w-3 h-3 bg-red-400 rounded-full" />
-                  <span className="w-3 h-3 bg-amber-400 rounded-full" />
-                  <span className="w-3 h-3 bg-emerald-400 rounded-full" />
-                </div>
-              </div>
-
-              {/* Stats Grid */}
-              <div className="grid grid-cols-2 gap-4 mb-6">
-                <StatCard
-                  label={hero.dashboardPreview.callsToday}
-                  value="127"
-                  trend="+12%"
-                  icon={<IconPhone className="w-4 h-4" />}
-                  color="blue"
-                />
-                <StatCard
-                  label={hero.dashboardPreview.responseRate}
-                  value="94%"
-                  trend="+3%"
-                  icon={<IconChartBar className="w-4 h-4" />}
-                  color="green"
-                />
-                <StatCard
-                  label={hero.dashboardPreview.satisfaction}
-                  value="4.8"
-                  icon={<IconStar className="w-4 h-4" />}
-                  color="gold"
-                />
-                <StatCard
-                  label={hero.dashboardPreview.activeAgents}
-                  value="8/10"
-                  icon={<IconUsers className="w-4 h-4" />}
-                  color="neutral"
-                />
-              </div>
-
-              {/* Mini chart placeholder */}
-              <div className="h-24 bg-gradient-to-r from-brand-blue-50 to-brand-blue-100/50 rounded-lg flex items-end justify-around p-3">
-                {[40, 65, 45, 80, 55, 90, 70, 85].map((h, i) => (
-                  <div
-                    key={i}
-                    className="w-6 bg-brand-blue/60 rounded-t"
-                    style={{ height: `${h}%` }}
-                  />
-                ))}
-              </div>
-            </div>
-
-            {/* Floating elements */}
-            <div className="absolute -top-4 -right-4 bg-white rounded-xl shadow-lg border border-neutral-100 p-3 animate-fade-in">
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center">
-                  <IconPhone className="w-4 h-4 text-emerald-600" />
-                </div>
-                <div className="text-xs">
-                  <p className="font-medium text-neutral-900">
-                    {lang === "fr" 
-                      ? "Appel entrant" 
-                      : "Incoming call"
-                    }
-                  </p>
-                  <p className="text-neutral-500">+33 1 23 45 67 89</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-lg border border-neutral-100 p-3 animate-fade-in">
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 bg-brand-blue-100 rounded-full flex items-center justify-center">
-                  <IconSparkles className="w-4 h-4 text-brand-blue" />
-                </div>
-                <div className="text-xs">
-                  <p className="font-medium text-neutral-900">IA active</p>
-                  <p className="text-neutral-500">
-                    {lang === "fr" 
-                      ? "Transcription en cours..." 
-                      : "Transcription in progress..."
-                    }
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </Container>
     </section>
-  );
-}
-
-interface StatCardProps {
-  label: string;
-  value: string;
-  trend?: string;
-  icon: React.ReactNode;
-  color: "blue" | "green" | "gold" | "neutral";
-}
-
-const colorStyles = {
-  blue: "bg-brand-blue-50 text-brand-blue",
-  green: "bg-emerald-50 text-emerald-600",
-  gold: "bg-amber-50 text-amber-600",
-  neutral: "bg-neutral-100 text-neutral-600",
-};
-
-function StatCard({ label, value, trend, icon, color }: StatCardProps) {
-  return (
-    <div className="bg-neutral-50 rounded-xl p-4">
-      <div className="flex items-center justify-between mb-2">
-        <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${colorStyles[color]}`}>
-          {icon}
-        </div>
-        {trend && (
-          <span className="text-xs font-medium text-emerald-600">{trend}</span>
-        )}
-      </div>
-      <p className="text-2xl font-bold text-neutral-900">{value}</p>
-      <p className="text-xs text-neutral-500">{label}</p>
-    </div>
   );
 }

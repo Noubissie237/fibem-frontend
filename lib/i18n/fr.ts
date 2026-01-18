@@ -1086,8 +1086,8 @@ export const fr: Dictionary = {
         consent: "J'accepte d'être recontacté par l'équipe FIBEM concernant ma demande. Mes données seront traitées conformément à la politique de confidentialité.",
       },
       placeholders: {
-        name: "Jean Dupont",
-        email: "jean@entreprise.com",
+        name: "Gilbert Gomis",
+        email: "gilbert@entreprise.com",
         company: "Nom de votre entreprise",
         teamSize: "Sélectionnez la taille",
         subject: "Choisissez un sujet",
@@ -1123,7 +1123,7 @@ export const fr: Dictionary = {
       hours: "Horaires",
       hoursValue: "Lun – Ven, 9h – 18h (CET)",
       location: "Localisation",
-      locationValue: "Douala, Cameroun",
+      locationValue: "Paris, France",
       social: "Suivez-nous",
     },
     whyContact: {
@@ -1220,8 +1220,8 @@ export const fr: Dictionary = {
         submitting: "Création en cours...",
       },
       placeholders: {
-        fullName: "Jean Dupont",
-        email: "jean.dupont@entreprise.fr",
+        fullName: "Gilbert Gomis",
+        email: "gilbert.gomis@entreprise.fr",
         password: "••••••••",
         confirmPassword: "••••••••",
         company: "Nom de votre entreprise",
@@ -1425,8 +1425,8 @@ export const fr: Dictionary = {
         consent: "J'accepte d'être recontacté par l'équipe FIBEM Téléphonie-IA",
       },
       placeholders: {
-        fullName: "Jean Dupont",
-        email: "jean.dupont@entreprise.fr",
+        fullName: "Gilbert Gomis",
+        email: "gilbert.gomis@entreprise.fr",
         company: "Nom de votre société",
         partnerType: "Sélectionnez un type",
         country: "France",

@@ -1118,7 +1118,7 @@ export const en: Dictionary = {
       hours: "Hours",
       hoursValue: "Mon – Fri, 9am – 6pm (CET)",
       location: "Location",
-      locationValue: "Douala, Cameroon",
+      locationValue: "Paris, France",
       social: "Follow us",
     },
     whyContact: {

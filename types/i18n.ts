@@ -13,6 +13,8 @@ export interface Dictionary {
     partners: string;
     why: string;
     resources: string;
+    services: string;
+    jobs: string;
     contact: string;
     signin: string;
     signup: string;

@@ -23,7 +23,7 @@ export function MegaMenu({ data, onClose }: MegaMenuProps) {
       <div
         className={cn(
           "bg-white rounded-xl shadow-mega border border-neutral-100 overflow-hidden animate-slide-down",
-          hasCallout ? "w-200" : "w-150"
+          hasCallout ? "w-[1000px]" : "w-[900px]"
         )}
       >
         <div className="flex">
@@ -34,7 +34,8 @@ export function MegaMenu({ data, onClose }: MegaMenuProps) {
               hasCallout ? "grid gap-6" : "grid gap-6",
               sectionCount === 1 && "grid-cols-1",
               sectionCount === 2 && "grid-cols-2",
-              sectionCount >= 3 && "grid-cols-3"
+              sectionCount === 3 && "grid-cols-3",
+              sectionCount >= 4 && "grid-cols-4"
             )}
           >
             {sections.map((section, idx) => (

@@ -8,7 +8,8 @@ import { Button } from "@/components/ui/Button";
 import { Navigation } from "./Navigation";
 import { MobileMenu } from "./MobileMenu";
 import { LanguageSelector } from "./LanguageSelector";
-import { IconMenu, IconClose } from "@/components/icons/Icons";
+import { SearchBar } from "./SearchBar";
+import { IconMenu, IconClose, IconSearch } from "@/components/icons/Icons";
 import { cn } from "@/lib/utils";
 import { Locale, Dictionary } from "@/types/i18n";
 
@@ -20,6 +21,7 @@ interface HeaderProps {
 export function Header({ lang = "fr", dict }: HeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 10);
@@ -105,18 +107,39 @@ export function Header({ lang = "fr", dict }: HeaderProps) {
 
           {/* Navigation Desktop */}
           <div className="hidden lg:flex lg:items-center lg:gap-1">
-            <Navigation lang={lang} dict={dict} />
+            {!isSearchOpen && <Navigation lang={lang} dict={dict} />}
+            {isSearchOpen && (
+              <SearchBar
+                isOpen={isSearchOpen}
+                onClose={() => setIsSearchOpen(false)}
+                lang={lang}
+              />
+            )}
           </div>
 
           {/* Actions Desktop */}
           <div className="hidden lg:flex lg:items-center lg:gap-3">
+            {!isSearchOpen && (
+              <button
+                type="button"
+                onClick={() => setIsSearchOpen(true)}
+                className="p-2 rounded-lg text-neutral-600 hover:text-neutral-900 hover:bg-neutral-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2 transition-colors"
+                aria-label={lang === "fr" ? "Rechercher" : "Search"}
+              >
+                <IconSearch className="w-5 h-5" />
+              </button>
+            )}
             <LanguageSelector currentLang={lang} />
-            <Button href={`/${lang}/connexion`} variant="outline" size="sm">
-              {signinText}
-            </Button>
-            <Button href={`/${lang}/inscription`} variant="primary" size="sm">
-              {signupText}
-            </Button>
+            {!isSearchOpen && (
+              <>
+                <Button href={`/${lang}/connexion`} variant="outline" size="sm">
+                  {signinText}
+                </Button>
+                <Button href={`/${lang}/inscription`} variant="primary" size="sm">
+                  {signupText}
+                </Button>
+              </>
+            )}
           </div>
 
           {/* Bouton Menu Mobile */}

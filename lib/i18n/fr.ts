@@ -14,6 +14,8 @@ export const fr: Dictionary = {
     partners: "Partenaires",
     why: "Pourquoi Téléphonie-IA ?",
     resources: "Ressources",
+    services: "Services",
+    jobs: "Emploi",
     contact: "Contact",
     signin: "Connexion",
     signup: "Inscription",

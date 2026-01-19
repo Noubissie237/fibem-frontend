@@ -5,7 +5,8 @@ import Link from "next/link";
 import { getNavigationItems } from "@/lib/navigation";
 import { Button } from "@/components/ui/Button";
 import { LanguageSelector } from "./LanguageSelector";
-import { IconChevronDown } from "@/components/icons/Icons";
+import { SearchBar } from "./SearchBar";
+import { IconChevronDown, IconSearch } from "@/components/icons/Icons";
 import { cn } from "@/lib/utils";
 import { Locale, Dictionary } from "@/types/i18n";
 
@@ -18,6 +19,7 @@ interface MobileMenuProps {
 
 export function MobileMenu({ isOpen, onClose, lang, dict }: MobileMenuProps) {
   const [expandedItems, setExpandedItems] = useState<string[]>([]);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const navigationItems = getNavigationItems(lang, dict);
 
   const toggleExpanded = (label: string) => {
@@ -43,6 +45,26 @@ export function MobileMenu({ isOpen, onClose, lang, dict }: MobileMenuProps) {
 
       {/* Menu Panel */}
       <div className="relative h-full bg-white overflow-y-auto animate-fade-in">
+        {/* Search Toggle Button */}
+        <div className="p-4 border-b border-neutral-100">
+          {!isSearchOpen ? (
+            <button
+              type="button"
+              onClick={() => setIsSearchOpen(true)}
+              className="w-full flex items-center justify-center gap-2 px-4 py-3 text-sm font-medium text-neutral-600 bg-neutral-50 hover:bg-neutral-100 rounded-lg transition-colors"
+            >
+              <IconSearch className="w-5 h-5" />
+              {lang === "fr" ? "Rechercher" : "Search"}
+            </button>
+          ) : (
+            <SearchBar
+              isOpen={isSearchOpen}
+              onClose={() => setIsSearchOpen(false)}
+              lang={lang}
+            />
+          )}
+        </div>
+
         <nav className="p-4">
           <ul className="space-y-1">
             {navigationItems.map((item) => {

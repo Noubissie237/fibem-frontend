@@ -7,125 +7,61 @@ export function getNavigationItems(
 ): NavigationItem[] {
   const t = dict?.nav || {
     home: lang === "fr" ? "Accueil" : "Home",
-    features: lang === "fr" ? "Fonctionnalités" : "Features",
-    pricing: lang === "fr" ? "Tarifs" : "Pricing",
-    solutions: "Solutions",
-    partners: lang === "fr" ? "Partenaires" : "Partners",
-    why: lang === "fr" ? "Pourquoi Téléphonie-IA" : "Why Téléphonie-IA",
-    resources: lang === "fr" ? "Ressources" : "Resources",
+    services: lang === "fr" ? "Services" : "Services",
+    jobs: lang === "fr" ? "Emploi" : "Jobs",
     contact: "Contact",
   };
 
   return [
+    // 1. ACCUEIL
     {
       label: t.home,
       href: `/${lang}`,
     },
+    
+    // 2. SERVICES (avec sous-menus)
     {
-      label: t.features,
-      href: `/${lang}/fonctionnalites`,
+      label: t.services,
+      href: `/${lang}/services`,
       megaMenu: {
         sections: [
           {
-            title: lang === "fr" ? "Téléphonie & Routage" : "Telephony & Routing",
+            title: lang === "fr" ? "Ressources & Support" : "Resources & Support",
             items: [
               {
-                label: lang === "fr" ? "Numéros professionnels" : "Business Numbers",
-                href: `/${lang}/fonctionnalites#telephonie`,
+                label: lang === "fr" ? "Ressources et support (Public)" : "Resources & Support (Public)",
+                href: `/${lang}/ressources`,
                 description:
                   lang === "fr"
-                    ? "Numéros locaux, nationaux et internationaux"
-                    : "Local, national and international numbers",
+                    ? "Documentation, guides et centre d'aide"
+                    : "Documentation, guides and help center",
               },
               {
-                label: lang === "fr" ? "SVI & Routage avancé" : "IVR & Advanced Routing",
-                href: `/${lang}/fonctionnalites#telephonie`,
+                label: lang === "fr" ? "Centre d'aide" : "Help Center",
+                href: `/${lang}/ressources#aide`,
+                description: "FAQ",
+              },
+              {
+                label: "API & Intégrations",
+                href: `/${lang}/ressources#api`,
                 description:
                   lang === "fr"
-                    ? "Menus vocaux et routage intelligent"
-                    : "Voice menus and smart routing",
+                    ? "Connectez vos outils"
+                    : "Connect your tools",
               },
             ],
           },
           {
-            title: lang === "fr" ? "Messagerie & SMS" : "Messaging & SMS",
+            title: lang === "fr" ? "Offres & Tarifs" : "Plans & Pricing",
             items: [
               {
-                label: lang === "fr" ? "SMS professionnel" : "Business SMS",
-                href: `/${lang}/fonctionnalites#messagerie`,
+                label: lang === "fr" ? "Offres et Tarifs" : "Plans & Pricing",
+                href: `/${lang}/tarifs`,
                 description:
                   lang === "fr"
-                    ? "Envoi et réception depuis vos numéros pro"
-                    : "Send and receive from your business numbers",
+                    ? "Découvrez nos formules adaptées à vos besoins"
+                    : "Discover our plans tailored to your needs",
               },
-              {
-                label: lang === "fr" ? "Enregistrements" : "Call Recording",
-                href: `/${lang}/fonctionnalites#messagerie`,
-                description:
-                  lang === "fr"
-                    ? "Enregistrez et recherchez vos appels"
-                    : "Record and search your calls",
-              },
-            ],
-          },
-          {
-            title: lang === "fr" ? "IA & Qualité" : "AI & Quality",
-            items: [
-              {
-                label: lang === "fr" ? "Transcription IA" : "AI Transcription",
-                href: `/${lang}/fonctionnalites#ia`,
-                description:
-                  lang === "fr"
-                    ? "Transcription automatique en temps réel"
-                    : "Real-time automatic transcription",
-              },
-              {
-                label: lang === "fr" ? "Résumés intelligents" : "Smart Summaries",
-                href: `/${lang}/fonctionnalites#ia`,
-                description:
-                  lang === "fr"
-                    ? "Résumés et analyse de sentiment"
-                    : "Summaries and sentiment analysis",
-              },
-            ],
-          },
-          {
-            title: lang === "fr" ? "Pilotage & Admin" : "Management & Admin",
-            items: [
-              {
-                label: lang === "fr" ? "Tableaux de bord" : "Dashboards",
-                href: `/${lang}/fonctionnalites#pilotage`,
-                description:
-                  lang === "fr"
-                    ? "KPIs temps réel et rapports"
-                    : "Real-time KPIs and reports",
-              },
-            ],
-          },
-        ],
-        callout: {
-          title:
-            lang === "fr"
-              ? "Découvrez toutes nos fonctionnalités"
-              : "Discover all our features",
-          description:
-            lang === "fr"
-              ? "Plus de 50 fonctionnalités pour transformer votre téléphonie."
-              : "50+ features to transform your telephony.",
-          href: `/${lang}/fonctionnalites`,
-          linkText: lang === "fr" ? "Voir tout" : "See all",
-          variant: "blue",
-        },
-      },
-    },
-    {
-      label: t.pricing,
-      href: `/${lang}/tarifs`,
-      megaMenu: {
-        sections: [
-          {
-            title: lang === "fr" ? "Nos offres" : "Our Plans",
-            items: [
               {
                 label: "Starter",
                 href: `/${lang}/tarifs#starter`,
@@ -152,138 +88,24 @@ export function getNavigationItems(
               },
             ],
           },
-        ],
-        callout: {
-          title: lang === "fr" ? "Essai gratuit 14 jours" : "14-day free trial",
-          description:
-            lang === "fr"
-              ? "Testez toutes les fonctionnalités sans engagement."
-              : "Test all features with no commitment.",
-          href: `/${lang}/inscription`,
-          linkText: lang === "fr" ? "Commencer" : "Get started",
-          variant: "gradient",
-        },
-      },
-    },
-    {
-      label: t.solutions,
-      href: `/${lang}/solutions`,
-      megaMenu: {
-        sections: [
-          {
-            title: lang === "fr" ? "Par métier" : "By Use Case",
-            items: [
-              {
-                label: lang === "fr" ? "Équipes commerciales" : "Sales Teams",
-                href: `/${lang}/solutions/equipes-commerciales`,
-                description:
-                  lang === "fr"
-                    ? "Qualifiez vos leads et boostez vos ventes"
-                    : "Qualify leads and boost sales",
-              },
-              {
-                label: lang === "fr" ? "Support client" : "Customer Support",
-                href: `/${lang}/solutions/support-client`,
-                description:
-                  lang === "fr"
-                    ? "Améliorez la satisfaction client"
-                    : "Improve customer satisfaction",
-              },
-              {
-                label: lang === "fr" ? "Retail & Commerce" : "Retail & Commerce",
-                href: `/${lang}/solutions/retail`,
-                description:
-                  lang === "fr"
-                    ? "Connectez tous vos points de vente"
-                    : "Connect all your locations",
-              },
-            ],
-          },
-          {
-            title: lang === "fr" ? "Par taille" : "By Size",
-            items: [
-              {
-                label: lang === "fr" ? "PME & ETI" : "SMBs & Mid-Market",
-                href: `/${lang}/solutions/pme-eti`,
-                description:
-                  lang === "fr"
-                    ? "Solution complète pour entreprises"
-                    : "Complete solution for businesses",
-              },
-              {
-                label: "Startups",
-                href: `/${lang}/solutions/startups`,
-                description:
-                  lang === "fr"
-                    ? "Démarrez en 5 minutes, scalez sans limite"
-                    : "Start in 5 minutes, scale unlimited",
-              },
-              {
-                label: lang === "fr" ? "Télétravail" : "Remote Work",
-                href: `/${lang}/solutions/teletravail`,
-                description:
-                  lang === "fr"
-                    ? "Téléphonie pro partout, tout le temps"
-                    : "Business telephony anywhere, anytime",
-              },
-            ],
-          },
-        ],
-        callout: {
-          title:
-            lang === "fr"
-              ? "Pas sûr de votre solution ?"
-              : "Not sure which solution?",
-          description:
-            lang === "fr"
-              ? "Nos experts vous aident à choisir la configuration idéale."
-              : "Our experts help you choose the ideal setup.",
-          href: `/${lang}/contact`,
-          linkText: lang === "fr" ? "Parler à un expert" : "Talk to an expert",
-          variant: "blue",
-        },
-      },
-    },
-    {
-      label: t.partners,
-      href: `/${lang}/partenaires`,
-    },
-    {
-      label: t.why,
-      href: `/${lang}/pourquoi-telephonie-ia`,
-      megaMenu: {
-        sections: [
-          {
-            title: lang === "fr" ? "Notre approche" : "Our Approach",
-            items: [
-              {
-                label: lang === "fr" ? "Pourquoi Téléphonie-IA" : "Why Téléphonie-IA",
-                href: `/${lang}/pourquoi-telephonie-ia`,
-                description:
-                  lang === "fr"
-                    ? "Découvrez ce qui nous différencie"
-                    : "Discover what makes us different",
-              },
-              {
-                label: lang === "fr" ? "Notre vision" : "Our Vision",
-                href: `/${lang}/pourquoi-telephonie-ia#approach`,
-                description:
-                  lang === "fr"
-                    ? "Téléphonie cloud + IA + pilotage"
-                    : "Cloud telephony + AI + management",
-              },
-            ],
-          },
           {
             title: lang === "fr" ? "Entreprise" : "Company",
             items: [
               {
-                label: "FIBEM",
+                label: lang === "fr" ? "Entreprise" : "Company",
                 href: `/${lang}/entreprise/fibem`,
                 description:
                   lang === "fr"
                     ? "Mission, vision et valeurs"
                     : "Mission, vision and values",
+              },
+              {
+                label: "FIBEM",
+                href: `/${lang}/entreprise/fibem`,
+                description:
+                  lang === "fr"
+                    ? "Qui sommes-nous ?"
+                    : "Who are we?",
               },
               {
                 label: lang === "fr" ? "Le Groupe" : "The Group",
@@ -293,26 +115,89 @@ export function getNavigationItems(
                     ? "Notre histoire et expertise"
                     : "Our history and expertise",
               },
+            ],
+          },
+          {
+            title: lang === "fr" ? "Partenaires" : "Partners",
+            items: [
               {
-                label: lang === "fr" ? "Rejoignez-nous" : "Join Us",
-                href: `/${lang}/entreprise/rejoignez-nous`,
+                label: lang === "fr" ? "Partenaire" : "Partners",
+                href: `/${lang}/partenaires`,
                 description:
                   lang === "fr"
-                    ? "Nos offres d'emploi"
-                    : "Our job openings",
+                    ? "Rejoignez notre réseau de partenaires"
+                    : "Join our partner network",
               },
             ],
           },
           {
-            title: lang === "fr" ? "Confiance" : "Trust",
+            title: lang === "fr" ? "Fonctionnalités" : "Features",
             items: [
               {
-                label: lang === "fr" ? "Témoignages" : "Testimonials",
-                href: `/${lang}/pourquoi-telephonie-ia#testimonials`,
+                label: lang === "fr" ? "Fonctionnalités" : "Features",
+                href: `/${lang}/fonctionnalites`,
                 description:
                   lang === "fr"
-                    ? "Ce que disent nos clients"
-                    : "What our customers say",
+                    ? "Découvrez toutes nos fonctionnalités"
+                    : "Discover all our features",
+              },
+              {
+                label: lang === "fr" ? "Téléphonie & Routage" : "Telephony & Routing",
+                href: `/${lang}/fonctionnalites#telephonie`,
+                description:
+                  lang === "fr"
+                    ? "Numéros pro et routage intelligent"
+                    : "Business numbers and smart routing",
+              },
+              {
+                label: lang === "fr" ? "IA & Transcription" : "AI & Transcription",
+                href: `/${lang}/fonctionnalites#ia`,
+                description:
+                  lang === "fr"
+                    ? "Transcription et analyse intelligente"
+                    : "Transcription and smart analysis",
+              },
+            ],
+          },
+          {
+            title: "Solutions",
+            items: [
+              {
+                label: "Solutions",
+                href: `/${lang}/solutions`,
+                description:
+                  lang === "fr"
+                    ? "Solutions adaptées à votre métier"
+                    : "Solutions tailored to your business",
+              },
+              {
+                label: lang === "fr" ? "Équipes commerciales" : "Sales Teams",
+                href: `/${lang}/solutions/equipes-commerciales`,
+                description:
+                  lang === "fr"
+                    ? "Boostez vos ventes"
+                    : "Boost your sales",
+              },
+              {
+                label: lang === "fr" ? "Support client" : "Customer Support",
+                href: `/${lang}/solutions/support-client`,
+                description:
+                  lang === "fr"
+                    ? "Satisfaction client optimale"
+                    : "Optimal customer satisfaction",
+              },
+            ],
+          },
+          {
+            title: lang === "fr" ? "Performance & Conformité" : "Performance & Compliance",
+            items: [
+              {
+                label: lang === "fr" ? "Expérience utilisateur, performance et conformité" : "User Experience, Performance & Compliance",
+                href: `/${lang}/pourquoi-telephonie-ia`,
+                description:
+                  lang === "fr"
+                    ? "UX optimale, performances et conformité RGPD"
+                    : "Optimal UX, performance and GDPR compliance",
               },
               {
                 label: lang === "fr" ? "Sécurité & RGPD" : "Security & GDPR",
@@ -324,74 +209,86 @@ export function getNavigationItems(
               },
             ],
           },
+          {
+            title: lang === "fr" ? "Différenciation" : "Differentiation",
+            items: [
+              {
+                label: lang === "fr" ? "Page de différenciation" : "Differentiation Page",
+                href: `/${lang}/services/differentiation`,
+                description:
+                  lang === "fr"
+                    ? "Ce qui nous rend uniques"
+                    : "What makes us unique",
+              },
+            ],
+          },
         ],
         callout: {
-          title: lang === "fr" ? "500+ entreprises" : "500+ companies",
+          title:
+            lang === "fr"
+              ? "Découvrez tous nos services"
+              : "Discover all our services",
           description:
             lang === "fr"
-              ? "nous font déjà confiance pour leur téléphonie."
-              : "already trust us for their telephony.",
+              ? "Une plateforme complète pour transformer votre téléphonie."
+              : "A complete platform to transform your telephony.",
           href: `/${lang}/contact`,
-          linkText: lang === "fr" ? "Demander une démo →" : "Request a demo →",
+          linkText: lang === "fr" ? "Parler à un expert" : "Talk to an expert",
           variant: "blue",
         },
       },
     },
+    
+    // 3. EMPLOI (avec sous-menus)
     {
-      label: t.resources,
-      href: `/${lang}/ressources`,
+      label: t.jobs,
+      href: `/${lang}/emploi/annonces`,
       megaMenu: {
         sections: [
           {
-            title: lang === "fr" ? "Apprendre" : "Learn",
+            title: lang === "fr" ? "Opportunités" : "Opportunities",
             items: [
               {
-                label: "Blog",
-                href: `/${lang}/ressources#blog`,
+                label: lang === "fr" ? "Candidature" : "Application",
+                href: `/${lang}/emploi/candidature`,
                 description:
                   lang === "fr"
-                    ? "Actualités et bonnes pratiques"
-                    : "News and best practices",
+                    ? "Candidature spontanée"
+                    : "Spontaneous application",
               },
               {
-                label: lang === "fr" ? "Guides pratiques" : "Practical Guides",
-                href: `/${lang}/ressources#guides`,
+                label: lang === "fr" ? "Annonces" : "Job Openings",
+                href: `/${lang}/emploi/annonces`,
                 description:
                   lang === "fr"
-                    ? "Tutoriels pour bien démarrer"
-                    : "Tutorials to get started",
+                    ? "Consultez nos offres d'emploi"
+                    : "View our job openings",
               },
               {
-                label: lang === "fr" ? "Webinaires" : "Webinars",
-                href: `/${lang}/ressources#webinaires`,
+                label: lang === "fr" ? "Stagiaires" : "Internships",
+                href: `/${lang}/emploi/stagiaires`,
                 description:
                   lang === "fr"
-                    ? "Sessions live et replays"
-                    : "Live sessions and replays",
-              },
-            ],
-          },
-          {
-            title: "Support",
-            items: [
-              {
-                label: lang === "fr" ? "Centre d'aide" : "Help Center",
-                href: `/${lang}/ressources#aide`,
-                description: "FAQ",
-              },
-              {
-                label: "API & Intégrations",
-                href: `/${lang}/ressources#api`,
-                description:
-                  lang === "fr"
-                    ? "Connectez vos outils"
-                    : "Connect your tools",
+                    ? "Stages et alternances"
+                    : "Internships and work-study programs",
               },
             ],
           },
         ],
+        callout: {
+          title: lang === "fr" ? "Rejoignez-nous" : "Join Us",
+          description:
+            lang === "fr"
+              ? "Intégrez une équipe passionnée et innovante."
+              : "Join a passionate and innovative team.",
+          href: `/${lang}/entreprise/rejoignez-nous`,
+          linkText: lang === "fr" ? "En savoir plus" : "Learn more",
+          variant: "gradient",
+        },
       },
     },
+    
+    // 4. CONTACT
     {
       label: t.contact,
       href: `/${lang}/contact`,

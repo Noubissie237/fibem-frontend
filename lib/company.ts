@@ -138,7 +138,7 @@ export interface TimelineEventContent {
 }
 
 export const timeline: TimelineEvent[] = [
-  { year: "2018", id: "founding" },
+  { year: "2010", id: "founding" },
   { year: "2019", id: "launch" },
   { year: "2021", id: "ai" },
   { year: "2023", id: "growth" },

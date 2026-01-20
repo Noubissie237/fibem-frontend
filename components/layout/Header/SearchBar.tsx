@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { IconClose } from "@/components/icons/Icons";
 import { cn } from "@/lib/utils";
 
 interface SearchBarProps {

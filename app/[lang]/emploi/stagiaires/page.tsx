@@ -1,47 +1,43 @@
-import { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
+import { getDictionary } from "@/lib/i18n/dictionaries";
+import { Locale } from "@/types/i18n";
 
-export const metadata: Metadata = {
-  title: "Stages & Alternances - Téléphonie-IA",
-  description: "Opportunités de stage et d'alternance chez Téléphonie-IA",
-};
+interface InternshipsPageProps {
+  params: Promise<{ lang: Locale }>;
+}
 
-const internshipOffers = [
-  {
-    id: 1,
-    title: "Stage Développement Full-Stack",
-    duration: "6 mois",
-    startDate: "Février - Septembre 2026",
-    department: "Engineering",
-    description: "Participez au développement de nouvelles fonctionnalités de notre plateforme SaaS. Vous travaillerez sur React, Node.js et découvrirez l'architecture cloud.",
-    skills: ["React", "JavaScript/TypeScript", "Git", "API REST"],
-    level: "Bac+4/5",
-  },
-  {
-    id: 2,
-    title: "Alternance Data Science / IA",
-    duration: "12-24 mois",
-    startDate: "Septembre 2026",
-    department: "R&D",
-    description: "Rejoignez notre équipe R&D pour améliorer nos modèles de transcription et d'analyse de sentiment. Formation en Machine Learning souhaitée.",
-    skills: ["Python", "Machine Learning", "NLP", "Data Analysis"],
-    level: "Bac+4/5",
-  },
-  {
-    id: 3,
-    title: "Stage Product Management",
-    duration: "6 mois",
-    startDate: "Avril - Septembre 2026",
-    department: "Product",
-    description: "Assistez le Product Manager dans la définition de la roadmap, l'analyse des besoins utilisateurs et le suivi des KPIs produit.",
-    skills: ["Analyse", "Communication", "Outils PM", "UX/UI"],
-    level: "Bac+4/5",
-  },
+export async function generateMetadata({ params }: InternshipsPageProps) {
+  const { lang } = await params;
+  const dict = await getDictionary(lang);
+  return {
+    title: dict.internshipsPage.meta.title,
+    description: dict.internshipsPage.meta.description,
+  };
+}
+
+// Icons for "Why Join" section
+const REASON_ICONS = [
+  // Projets concrets
+  <svg key="projects" className="w-8 h-8 text-brand-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+  </svg>,
+  // Mentorat personnalisé
+  <svg key="mentoring" className="w-8 h-8 text-brand-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+  </svg>,
+  // Opportunités d'embauche
+  <svg key="opportunities" className="w-8 h-8 text-brand-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+  </svg>,
 ];
 
-export default function StagiairesPage() {
+export default async function InternshipsPage({ params }: InternshipsPageProps) {
+  const { lang } = await params;
+  const dict = await getDictionary(lang);
+  const { internshipsPage: t } = dict;
+
   return (
     <main>
       {/* Hero Section */}
@@ -49,10 +45,10 @@ export default function StagiairesPage() {
         <Container>
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-6">
-              Lancez votre carrière avec nous
+              {t.hero.title}
             </h1>
             <p className="text-lg text-neutral-600 mb-8">
-              Développez vos compétences au sein d'une entreprise innovante dans le domaine de la téléphonie intelligente et de l'IA.
+              {t.hero.subtitle}
             </p>
           </div>
         </Container>
@@ -63,53 +59,24 @@ export default function StagiairesPage() {
         <Container>
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold text-neutral-900 mb-12 text-center">
-              Pourquoi faire un stage chez nous ?
+              {t.whyJoin.title}
             </h2>
             
             <div className="grid md:grid-cols-3 gap-8 mb-16">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-brand-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-brand-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                  </svg>
+              {t.whyJoin.reasons.map((reason, index) => (
+                <div key={index} className="text-center">
+                  <div className="w-16 h-16 bg-brand-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    {REASON_ICONS[index]}
+                  </div>
+                  <h3 className="text-xl font-bold text-neutral-900 mb-3">
+                    {reason.title}
+                  </h3>
+                  <p className="text-neutral-600">
+                    {reason.description}
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold text-neutral-900 mb-3">
-                  Projets concrets
-                </h3>
-                <p className="text-neutral-600">
-                  Travaillez sur de vraies fonctionnalités utilisées par nos clients, pas de projets fictifs.
-                </p>
-              </div>
-
-              <div className="text-center">
-                <div className="w-16 h-16 bg-brand-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-brand-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-neutral-900 mb-3">
-                  Mentorat personnalisé
-                </h3>
-                <p className="text-neutral-600">
-                  Un tuteur dédié vous accompagne tout au long de votre parcours pour maximiser votre apprentissage.
-                </p>
-              </div>
-
-              <div className="text-center">
-                <div className="w-16 h-16 bg-brand-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-brand-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-neutral-900 mb-3">
-                  Opportunités d'embauche
-                </h3>
-                <p className="text-neutral-600">
-                  Les meilleurs stagiaires se voient proposer un CDI à l'issue de leur stage.
-                </p>
-              </div>
+              ))}
             </div>
-
           </div>
         </Container>
       </Section>
@@ -119,11 +86,11 @@ export default function StagiairesPage() {
         <Container>
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold text-neutral-900 mb-8">
-              Nos offres de stage et alternance
+              {t.offers.title}
             </h2>
             
             <div className="space-y-6 mb-12">
-              {internshipOffers.map((offer) => (
+              {t.offers.items.map((offer) => (
                 <div
                   key={offer.id}
                   className="bg-white rounded-2xl shadow-soft hover:shadow-lg transition-all duration-300 p-8"
@@ -165,7 +132,7 @@ export default function StagiairesPage() {
 
                   <div className="mb-6">
                     <h4 className="text-sm font-semibold text-neutral-900 mb-3">
-                      Compétences recherchées
+                      {t.offers.skillsLabel}
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {offer.skills.map((skill, index) => (
@@ -179,8 +146,8 @@ export default function StagiairesPage() {
                     </div>
                   </div>
 
-                  <Button href="/fr/contact" variant="primary">
-                    Postuler
+                  <Button href={`/${lang}/contact`} variant="primary">
+                    {t.offers.applyButton}
                   </Button>
                 </div>
               ))}
@@ -189,57 +156,35 @@ export default function StagiairesPage() {
             {/* Process de candidature */}
             <div className="bg-white rounded-2xl shadow-soft p-8">
               <h3 className="text-2xl font-bold text-neutral-900 mb-6">
-                Comment postuler ?
+                {t.process.title}
               </h3>
               
               <div className="grid md:grid-cols-3 gap-6 mb-8">
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-brand-blue text-white rounded-full flex items-center justify-center mx-auto mb-3 font-bold text-lg">
-                    1
+                {t.process.steps.map((step, index) => (
+                  <div key={index} className="text-center">
+                    <div className="w-12 h-12 bg-brand-blue text-white rounded-full flex items-center justify-center mx-auto mb-3 font-bold text-lg">
+                      {step.number}
+                    </div>
+                    <h4 className="font-semibold text-neutral-900 mb-2">
+                      {step.title}
+                    </h4>
+                    <p className="text-sm text-neutral-600">
+                      {step.description}
+                    </p>
                   </div>
-                  <h4 className="font-semibold text-neutral-900 mb-2">
-                    Envoyez votre CV
-                  </h4>
-                  <p className="text-sm text-neutral-600">
-                    CV + lettre de motivation à recrutement@fibem.com
-                  </p>
-                </div>
-
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-brand-blue text-white rounded-full flex items-center justify-center mx-auto mb-3 font-bold text-lg">
-                    2
-                  </div>
-                  <h4 className="font-semibold text-neutral-900 mb-2">
-                    Entretien RH
-                  </h4>
-                  <p className="text-sm text-neutral-600">
-                    Discussion sur votre parcours et vos motivations
-                  </p>
-                </div>
-
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-brand-blue text-white rounded-full flex items-center justify-center mx-auto mb-3 font-bold text-lg">
-                    3
-                  </div>
-                  <h4 className="font-semibold text-neutral-900 mb-2">
-                    Rencontre équipe
-                  </h4>
-                  <p className="text-sm text-neutral-600">
-                    Échange avec votre futur tuteur et l'équipe
-                  </p>
-                </div>
+                ))}
               </div>
 
               <div className="bg-brand-blue-50 border border-brand-blue-100 rounded-lg p-6 text-center">
                 <p className="text-neutral-700 mb-4">
-                  <strong>Gratification :</strong> Selon la législation en vigueur + tickets restaurant + remboursement transport
+                  <strong>{t.process.compensation}</strong>
                 </p>
                 <div className="flex flex-wrap gap-4 justify-center">
                   <Button href="mailto:recrutement@fibem.com" variant="primary">
-                    Envoyer ma candidature
+                    {t.process.sendApplication}
                   </Button>
-                  <Button href="/fr/emploi/candidature" variant="outline">
-                    Candidature spontanée
+                  <Button href={`/${lang}/emploi/candidature`} variant="outline">
+                    {t.process.spontaneousApplication}
                   </Button>
                 </div>
               </div>

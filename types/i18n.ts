@@ -840,4 +840,144 @@ export interface Dictionary {
       secondary: string;
     };
   };
+  differentiationPage: {
+    hero: {
+      title: string;
+      titleHighlight: string;
+      subtitle: string;
+      stats: Array<{
+        value: string;
+        label: string;
+      }>;
+    };
+    differentiators: Array<{
+      id: string;
+      title: string;
+      subtitle: string;
+      description: string;
+      features: string[];
+      imageAlt: string;
+      stat: {
+        value: string;
+        label: string;
+      };
+    }>;
+    testimonials: {
+      title: string;
+      badge: string;
+      items: Array<{
+        quote: string;
+        author: string;
+        role: string;
+        company: string;
+      }>;
+    };
+    cta: {
+      title: string;
+      subtitle: string;
+      primaryButton: string;
+      secondaryButton: string;
+      features: string;
+    };
+  };
+  jobsPage: {
+    meta: {
+      title: string;
+      description: string;
+    };
+    hero: {
+      title: string;
+      subtitle: string;
+    };
+    jobs: {
+      experienceLabel: string;
+      skillsLabel: string;
+      applyButton: string;
+      learnMore: string;
+      items: Array<{
+        id: number;
+        title: string;
+        department: string;
+        location: string;
+        type: string;
+        description: string;
+        skills: string[];
+        experience: string;
+      }>;
+    };
+  };
+  spontaneousApplicationPage: {
+    meta: {
+      title: string;
+      description: string;
+    };
+    hero: {
+      title: string;
+      subtitle: string;
+    };
+    form: {
+      title: string;
+      howToApply: {
+        title: string;
+        description: string;
+        email: string;
+      };
+      profiles: {
+        title: string;
+        items: string[];
+      };
+      expectations: {
+        title: string;
+        items: string[];
+      };
+    };
+    cta: {
+      question: string;
+      viewOffers: string;
+      contactUs: string;
+    };
+  };
+  internshipsPage: {
+    meta: {
+      title: string;
+      description: string;
+    };
+    hero: {
+      title: string;
+      subtitle: string;
+    };
+    whyJoin: {
+      title: string;
+      reasons: Array<{
+        title: string;
+        description: string;
+      }>;
+    };
+    offers: {
+      title: string;
+      skillsLabel: string;
+      applyButton: string;
+      items: Array<{
+        id: number;
+        title: string;
+        duration: string;
+        startDate: string;
+        department: string;
+        description: string;
+        skills: string[];
+        level: string;
+      }>;
+    };
+    process: {
+      title: string;
+      steps: Array<{
+        number: string;
+        title: string;
+        description: string;
+      }>;
+      compensation: string;
+      sendApplication: string;
+      spontaneousApplication: string;
+    };
+  };
 }

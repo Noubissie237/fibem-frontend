@@ -18,7 +18,7 @@ export default function ServicesPage() {
               Nos Services
             </h1>
             <p className="text-lg text-neutral-600 mb-12">
-              Découvrez notre gamme complète de services pour transformer votre téléphonie d'entreprise.
+              Découvrez notre gamme complète de services pour transformer votre téléphonie d&apos;entreprise.
             </p>
             
             <div className="grid md:grid-cols-2 gap-6">

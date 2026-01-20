@@ -38,8 +38,7 @@ const locations = [
   },
 ];
 
-export function Footer({ lang = "fr", dict }: FooterProps) {
-  const currentYear = new Date().getFullYear();
+export function Footer({ lang = "fr" }: FooterProps) {
   const [isLegalOpen, setIsLegalOpen] = useState(false);
 
   const navigationLinks = [
@@ -244,7 +243,7 @@ export function Footer({ lang = "fr", dict }: FooterProps) {
                 type="submit"
                 className="px-6 py-2 rounded-lg bg-red-500 hover:bg-red-600 text-white font-medium text-sm transition-colors whitespace-nowrap"
               >
-                S'abonner
+                S&apos;abonner
               </button>
             </form>
             <p className="text-xs text-neutral-500 mt-3">

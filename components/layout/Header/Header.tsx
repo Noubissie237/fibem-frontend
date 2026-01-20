@@ -9,7 +9,7 @@ import { Navigation } from "./Navigation";
 import { MobileMenu } from "./MobileMenu";
 import { LanguageSelector } from "./LanguageSelector";
 import { SearchBar } from "./SearchBar";
-import { IconMenu, IconClose, IconSearch } from "@/components/icons/Icons";
+import { IconMenu, IconClose } from "@/components/icons/Icons";
 import { cn } from "@/lib/utils";
 import { Locale, Dictionary } from "@/types/i18n";
 

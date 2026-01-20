@@ -148,7 +148,7 @@ export const en: Dictionary = {
     plans: [
       {
         name: "Starter",
-        price: "€19",
+        price: "€29",
         description: "Ideal for freelancers and small businesses",
         features: [
           "1 number included",

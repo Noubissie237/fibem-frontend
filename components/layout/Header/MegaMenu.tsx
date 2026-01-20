@@ -17,7 +17,7 @@ export function MegaMenu({ data, onClose }: MegaMenuProps) {
 
   return (
     <div
-      className="absolute top-full left-1/2 -translate-x-1/2 pt-4"
+      className="absolute top-full -left-1/2 -translate-x-1/2 pt-4"
       onMouseEnter={(e) => e.stopPropagation()}
     >
       <div

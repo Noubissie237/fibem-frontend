@@ -149,7 +149,7 @@ export const fr: Dictionary = {
     plans: [
       {
         name: "Starter",
-        price: "19€",
+        price: "29€",
         description: "Idéal pour les indépendants et TPE",
         features: [
           "1 numéro inclus",
@@ -436,8 +436,8 @@ export const fr: Dictionary = {
       starter: {
         name: "Starter",
         description: "Idéal pour les indépendants et petites équipes",
-        priceMonthly: "19",
-        priceYearly: "15",
+        priceMonthly: "29",
+        priceYearly: "23.2",
         features: [
           "1 numéro professionnel inclus",
           "500 minutes d'appels/mois",
@@ -453,7 +453,7 @@ export const fr: Dictionary = {
         name: "Business",
         description: "Pour les PME en croissance",
         priceMonthly: "49",
-        priceYearly: "39",
+        priceYearly: "39.2",
         features: [
           "3 numéros professionnels inclus",
           "Minutes d'appels illimitées",

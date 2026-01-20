@@ -21,7 +21,6 @@ interface HeaderProps {
 export function Header({ lang = "fr", dict }: HeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 10);
@@ -105,41 +104,30 @@ export function Header({ lang = "fr", dict }: HeaderProps) {
             </div>
           </Link>
 
-          {/* Navigation Desktop */}
-          <div className="hidden lg:flex lg:items-center lg:gap-1">
-            {!isSearchOpen && <Navigation lang={lang} dict={dict} />}
-            {isSearchOpen && (
-              <SearchBar
-                isOpen={isSearchOpen}
-                onClose={() => setIsSearchOpen(false)}
-                lang={lang}
-              />
-            )}
-          </div>
-
-          {/* Actions Desktop */}
-          <div className="hidden lg:flex lg:items-center lg:gap-3">
-            {!isSearchOpen && (
-              <button
-                type="button"
-                onClick={() => setIsSearchOpen(true)}
-                className="p-2 rounded-lg text-neutral-600 hover:text-neutral-900 hover:bg-neutral-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue focus-visible:ring-offset-2 transition-colors"
-                aria-label={lang === "fr" ? "Rechercher" : "Search"}
-              >
-                <IconSearch className="w-5 h-5" />
-              </button>
-            )}
+          {/* Navigation Desktop - Aligné à droite */}
+          <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:gap-3">
+            {/* Barre de recherche toujours visible */}
+            <SearchBar isOpen={true} onClose={() => {}} lang={lang} />
+            
+            {/* Sélecteur de langue */}
             <LanguageSelector currentLang={lang} />
-            {!isSearchOpen && (
-              <>
-                <Button href={`/${lang}/connexion`} variant="outline" size="sm">
-                  {signinText}
-                </Button>
-                <Button href={`/${lang}/inscription`} variant="primary" size="sm">
-                  {signupText}
-                </Button>
-              </>
-            )}
+            
+            {/* Séparateur */}
+            <div className="h-6 w-px bg-neutral-200 mx-1" />
+            
+            {/* Navigation Items */}
+            <Navigation lang={lang} dict={dict} />
+            
+            {/* Séparateur */}
+            <div className="h-6 w-px bg-neutral-200 mx-1" />
+            
+            {/* Boutons Connexion/Inscription */}
+            <Button href={`/${lang}/connexion`} variant="outline" size="sm">
+              {signinText}
+            </Button>
+            <Button href={`/${lang}/inscription`} variant="primary" size="sm">
+              {signupText}
+            </Button>
           </div>
 
           {/* Bouton Menu Mobile */}

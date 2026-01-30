@@ -27,6 +27,10 @@ interface RootLayoutProps {
   params: Promise<{ lang: string }>;
 }
 
+export async function generateStaticParams() {
+  return [{ lang: "fr" }, { lang: "en" }];
+}
+
 export default async function LangLayout({
   children,
   params,

@@ -4,7 +4,6 @@ import { useState, FormEvent } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Locale, Dictionary } from "@/types/i18n";
-import { AuthLayout } from "./AuthLayout";
 import { FormField } from "./FormField";
 import { PasswordField } from "./PasswordField";
 import { Input } from "@/components/ui/Input";
@@ -95,40 +94,53 @@ export function SigninForm({ lang, dict }: SigninFormProps) {
 
   if (isSuccess) {
     return (
-      <AuthLayout
-        imageUrl="https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=80"
-        imageAlt={signin.imageAlt}
-        valueTitle={signin.valueTitle}
-        valueSubtitle={signin.valueSubtitle}
-      >
-        <div className="bg-white rounded-2xl shadow-xl p-8 text-center">
-          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg className="w-8 h-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-            </svg>
+      <div className="min-h-screen bg-neutral-50 flex items-center justify-center px-4 py-12">
+        <div className="w-full max-w-md">
+          {/* Lien retour accueil */}
+          <div className="mb-6">
+            <Link
+              href={`/${lang}`}
+              className="inline-flex items-center gap-2 text-neutral-600 hover:text-brand-blue transition-colors"
+            >
+              <span className="text-sm font-medium">Retour à l'accueil</span>
+            </Link>
           </div>
-          <h2 className="text-2xl font-bold text-neutral-900 mb-2">
-            {signin.success}
-          </h2>
-          <p className="text-neutral-600">
-            {signin.redirecting}
-          </p>
-          <div className="mt-4 flex justify-center">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-brand-blue"></div>
+
+          <div className="bg-white rounded-2xl shadow-xl p-8 text-center">
+            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg className="w-8 h-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <h2 className="text-2xl font-bold text-neutral-900 mb-2">
+              {signin.success}
+            </h2>
+            <p className="text-neutral-600">
+              {signin.redirecting}
+            </p>
+            <div className="mt-4 flex justify-center">
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-brand-blue"></div>
+            </div>
           </div>
         </div>
-      </AuthLayout>
+      </div>
     );
   }
 
   return (
-    <AuthLayout
-      imageUrl="https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=80"
-      imageAlt={signin.imageAlt}
-      valueTitle={signin.valueTitle}
-      valueSubtitle={signin.valueSubtitle}
-    >
-      <div className="bg-white rounded-2xl shadow-xl p-8">
+    <div className="min-h-screen bg-neutral-50 flex items-center justify-center px-4 py-12">
+      <div className="w-full max-w-md">
+        {/* Lien retour accueil */}
+        <div className="mb-6">
+          <Link
+            href={`/${lang}`}
+            className="inline-flex items-center gap-2 text-neutral-600 hover:text-brand-blue transition-colors"
+          >
+            <span className="text-sm font-medium">Retour à l'accueil</span>
+          </Link>
+        </div>
+
+        <div className="bg-white rounded-2xl shadow-xl p-8">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-neutral-900 mb-2">
             {signin.title}
@@ -221,7 +233,8 @@ export function SigninForm({ lang, dict }: SigninFormProps) {
             {signin.signUpLink}
           </Link>
         </div>
+        </div>
       </div>
-    </AuthLayout>
+    </div>
   );
 }

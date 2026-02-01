@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { getDictionary, isValidLocale } from "@/lib/i18n/dictionaries";
 import { Locale } from "@/types/i18n";
 import { notFound } from "next/navigation";
-import { SignupForm } from "@/components/auth/SignupForm";
+import { SignupWizard } from "@/components/auth/wizard/SignupWizard";
 
 interface PageProps {
   params: Promise<{ lang: string }>;
@@ -26,5 +26,5 @@ export default async function InscriptionPage({ params }: PageProps) {
   const lang = langParam as Locale;
   const dict = getDictionary(lang);
 
-  return <SignupForm lang={lang} dict={dict} />;
+  return <SignupWizard lang={lang} dict={dict} />;
 }

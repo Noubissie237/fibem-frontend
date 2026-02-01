@@ -39,3 +39,13 @@
     text-wrap: balance;
   }
 }
+
+/* Masquer Header et Footer sur les pages d'authentification */
+body.auth-page header,
+body.auth-page footer {
+  display: none !important;
+}
+
+body.auth-page main {
+  padding-top: 0 !important;
+}

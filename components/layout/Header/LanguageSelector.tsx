@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import { IconGlobe, IconChevronDown } from "@/components/icons/Icons";
+import { IconChevronDown } from "@/components/icons/Icons";
 import { cn } from "@/lib/utils";
 import { Locale } from "@/types/i18n";
 import { locales } from "@/lib/i18n/dictionaries";
@@ -37,7 +37,6 @@ export function LanguageSelector({ currentLang = "fr" }: LanguageSelectorProps) 
   }, []);
 
   const handleLanguageChange = (newLang: Locale) => {
-    // Remplace le segment de langue dans le pathname
     const segments = pathname.split("/");
     if (locales.includes(segments[1] as Locale)) {
       segments[1] = newLang;
@@ -48,6 +47,8 @@ export function LanguageSelector({ currentLang = "fr" }: LanguageSelectorProps) 
     router.push(newPath);
     setIsOpen(false);
   };
+
+  const currentFlag = languageLabels[currentLang].flag;
 
   return (
     <div ref={dropdownRef} className="relative">
@@ -61,7 +62,7 @@ export function LanguageSelector({ currentLang = "fr" }: LanguageSelectorProps) 
         aria-expanded={isOpen}
         aria-haspopup="listbox"
       >
-        <IconGlobe className="w-4 h-4" />
+        <span className="text-lg leading-none">{currentFlag}</span>
         <span className="hidden sm:inline">{currentLang.toUpperCase()}</span>
         <IconChevronDown
           className={cn(

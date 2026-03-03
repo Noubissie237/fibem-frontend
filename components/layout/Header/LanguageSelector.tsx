@@ -55,7 +55,7 @@ export function LanguageSelector({ currentLang = "fr" }: LanguageSelectorProps) 
       <button
         type="button"
         className={cn(
-          "flex items-center gap-1.5 px-2 py-1.5 text-sm text-neutral-600 hover:text-neutral-900 rounded-lg transition-colors",
+          "flex items-center gap-1.5 px-2 py-1.5 text-sm text-white hover:text-neutral-900 rounded-lg transition-colors",
           isOpen && "bg-neutral-50"
         )}
         onClick={() => setIsOpen(!isOpen)}

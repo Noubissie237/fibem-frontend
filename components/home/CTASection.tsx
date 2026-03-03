@@ -10,7 +10,7 @@ export function CTASection({ dict, lang }: CTASectionProps) {
   const { cta } = dict;
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-brand-blue to-brand-blue-800 py-16 lg:py-24">
+    <section className="relative overflow-hidden bg-gray py-16 lg:py-24">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
@@ -18,10 +18,10 @@ export function CTASection({ dict, lang }: CTASectionProps) {
       </div>
 
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 mb-6">
           {cta.title}
         </h2>
-        <p className="text-lg sm:text-xl text-white/80 mb-10 max-w-2xl mx-auto">
+        <p className="text-lg sm:text-xl text-neutral-900 mb-10 max-w-2xl mx-auto">
           {cta.subtitle}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -36,7 +36,7 @@ export function CTASection({ dict, lang }: CTASectionProps) {
             href={`/${lang}/contact`}
             size="lg"
             variant="outline"
-            className="border-white/30 text-white hover:bg-white/10"
+            className="border-brand-blue text-brand-blue"
           >
             {cta.secondary}
           </Button>

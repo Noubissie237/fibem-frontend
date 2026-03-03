@@ -42,7 +42,7 @@ export function Header({ lang = "fr", dict }: HeaderProps) {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled ? "bg-white/95 backdrop-blur-md shadow-soft" : "bg-white"
+        isScrolled ? "bg-brand-blue backdrop-blur-md shadow-soft" : "bg-brand-blue/80"
       )}
     >
       <Container fluid>
@@ -56,7 +56,7 @@ export function Header({ lang = "fr", dict }: HeaderProps) {
             <div className="relative flex items-center justify-center min-w-[80px] lg:min-w-[100px]">
               <div className="relative w-full h-12 lg:h-14 overflow-hidden">
                 <Image
-                  src="/images/logo-wbg.png"
+                  src="/images/logo.jpg"
                   alt="FIBEM"
                   fill
                   className=""
@@ -72,7 +72,7 @@ export function Header({ lang = "fr", dict }: HeaderProps) {
             <div className="flex flex-col items-start justify-center gap-0.5">
               {/* Badge Téléphonie-IA - Version principale */}
               <div className="relative">
-                <span className="inline-flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-brand-blue to-brand-blue-600 px-3 py-1.5 lg:px-4 lg:py-2 text-xs lg:text-sm font-bold text-white shadow-md shadow-brand-blue/25 transition-all duration-300 group-hover:shadow-lg group-hover:shadow-brand-blue/30 group-hover:scale-[1.02]">
+                <span className="inline-flex items-center gap-1.5 rounded-lg bg-white px-3 py-1.5 lg:px-4 lg:py-2 text-xs lg:text-sm font-bold text-red-600 shadow-md shadow-brand-blue/25 transition-all duration-300 group-hover:shadow-lg group-hover:shadow-brand-blue/30 group-hover:scale-[1.02]">
                   {/* Icône téléphone optionnelle */}
                   <svg 
                     className="w-3.5 h-3.5 lg:w-4 lg:h-4" 
@@ -95,7 +95,7 @@ export function Header({ lang = "fr", dict }: HeaderProps) {
               </div>
               
               {/* Sous-texte optionnel */}
-              <span className="hidden lg:block text-[10px] text-neutral-500 font-medium tracking-wider uppercase pl-1">
+              <span className="hidden lg:block text-[10px] text-white font-medium tracking-wider uppercase pl-1">
                 {lang === "fr" 
                   ? "Solutions intelligentes" 
                   : "Smart solutions"
@@ -122,10 +122,10 @@ export function Header({ lang = "fr", dict }: HeaderProps) {
             <div className="h-6 w-px bg-neutral-200 mx-1" />
             
             {/* Boutons Connexion/Inscription */}
-            <Button href={`/${lang}/connexion`} variant="outline" size="sm">
+            <Button href={`/${lang}/connexion`} variant="outline" className="text-white" size="sm">
               {signinText}
             </Button>
-            <Button href={`/${lang}/inscription`} variant="primary" size="sm">
+            <Button href={`/${lang}/inscription`} variant="secondary" size="sm">
               {signupText}
             </Button>
           </div>

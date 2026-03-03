@@ -21,7 +21,7 @@ const locations = [
     address: "51 Rue du Grévarin - 27200 Vernon",
     phone: "+33 6 05 51 14 32",
     siret: "435 574 937 00032",
-    email: "senfibem.paris@outlook.com",
+    email: "gg.telephonieia-fibem75@gmail.com",
     mapLink: "https://share.google/FBj1EnsBL7EM6UwY9",
     whatsapp: "https://wa.me/33605511432",
   },
@@ -31,8 +31,8 @@ const locations = [
     name: "SEN FIBEM - Sénégal",
     address: "Rue 7 Corniche x 6, Médina, Dakar",
     phone: "+221 77 877 69 32",
-    siret: "30 84 31 62 02 - APE 7112B Ingénierie Étude Technique",
-    email: "senfibem.sn@outlook.com",
+    siret: "N.I.N.E.A : 30 84 31 62 02 - APE 7112B Ingénierie Étude Technique",
+    email: "gg.telephonieia-fibem99@gmail.com",
     mapLink: "https://maps.app.goo.gl/b3APqeGrp7jnZQLU7",
     whatsapp: "https://wa.me/221778776932",
   },
@@ -129,7 +129,7 @@ export function Footer({ lang = "fr" }: FooterProps) {
             <Link href={`/${lang}`} className="inline-block mb-3">
               <div className="relative w-28 h-12 overflow-hidden">
                 <Image
-                  src="/images/logo-wbg.png"
+                  src="/images/logo.jpg"
                   alt="FIBEM"
                   fill
                   className="object-contain"
@@ -139,9 +139,9 @@ export function Footer({ lang = "fr" }: FooterProps) {
             </Link>
 
             {/* Badge Téléphonie IA */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-brand-blue-800 text-sm mb-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white text-sm text-red-600 mb-4">
               <svg
-                className="w-4 h-4 text-white"
+                className="w-4 h-4 text-red-600"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -162,7 +162,7 @@ export function Footer({ lang = "fr" }: FooterProps) {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="px-2 py-2 rounded-lg bg-brand-blue-800 hover:bg-brand-blue-700 text-xs font-medium transition-colors text-center"
+                  className="px-1 py-2 rounded-lg bg-white text-brand-blue-800 text-xs font-medium transition-colors text-center"
                 >
                   {link.label}
                 </Link>
@@ -253,10 +253,10 @@ export function Footer({ lang = "fr" }: FooterProps) {
                 href={locations[0].mapLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-brand-blue-800 hover:bg-brand-blue-700 text-xs transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-white text-brand-blue-800 text-xs transition-colors"
               >
                 <svg
-                  className="w-4 h-4 text-white"
+                  className="w-4 h-4 text-brand-blue-800"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -374,10 +374,10 @@ export function Footer({ lang = "fr" }: FooterProps) {
                 href={locations[1].mapLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-brand-blue-800 hover:bg-brand-blue-700 text-xs transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-white text-xs text-brand-blue-800 transition-colors"
               >
                 <svg
-                  className="w-4 h-4 text-white"
+                  className="w-4 h-4 text-brand-blue-800"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -422,7 +422,7 @@ export function Footer({ lang = "fr" }: FooterProps) {
               <input
                 type="email"
                 placeholder="Votre email..."
-                className="flex-1 px-4 py-2 rounded-lg bg-brand-blue-800 border border-brand-blue-700 text-white placeholder:text-white focus:outline-none focus:ring-2 focus:ring-white text-sm"
+                className="flex-1 px-4 py-2 rounded-lg bg-white text-brand-blue-800 placeholder:text-brand-blue-800 focus:outline-none focus:ring-2 focus:ring-white text-sm"
               />
               <button
                 type="submit"
@@ -444,7 +444,7 @@ export function Footer({ lang = "fr" }: FooterProps) {
         <div className="mt-12 px-6 lg:px-12">
           <button
             onClick={() => setIsLegalOpen(!isLegalOpen)}
-            className="flex items-center gap-2 text-sm text-brand-blue-200 hover:text-white transition-colors"
+            className="flex items-center gap-2 text-sm text-white hover:text-brand-blue-200 transition-colors"
           >
             <span
               className={`transform transition-transform ${isLegalOpen ? "rotate-90" : ""}`}

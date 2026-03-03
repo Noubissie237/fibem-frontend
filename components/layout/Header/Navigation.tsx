@@ -77,7 +77,7 @@ export function Navigation({ lang, dict }: NavigationProps) {
                       "flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-lg transition-colors",
                       isActive
                         ? "text-brand-blue bg-brand-blue-50"
-                        : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-50"
+                        : "text-white hover:text-neutral-900 hover:bg-neutral-50"
                     )}
                     onClick={() => setActiveMenu(isActive ? null : item.label)}
                     aria-expanded={isActive}
@@ -102,7 +102,7 @@ export function Navigation({ lang, dict }: NavigationProps) {
               ) : (
                 <Link
                   href={item.href}
-                  className="flex items-center px-3 py-2 text-sm font-medium text-neutral-600 hover:text-neutral-900 hover:bg-neutral-50 rounded-lg transition-colors"
+                  className="flex items-center px-3 py-2 text-sm font-medium text-white hover:text-neutral-900 hover:bg-neutral-50 rounded-lg transition-colors"
                 >
                   {item.label}
                 </Link>

@@ -4,7 +4,7 @@ export type AccountType =
   | "particulier" 
   | "freelance" 
   | "professionnel" 
-  | "vendeur" 
+  | "partenaire" 
   | "administrateur";
 
 export type BillingPeriod = "monthly" | "yearly" | "twoYears";

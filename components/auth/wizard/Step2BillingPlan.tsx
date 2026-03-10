@@ -16,7 +16,7 @@ const accountTypePrices: Record<AccountType, number> = {
   particulier: 6,
   freelance: 8,
   professionnel: 10,
-  vendeur: 12,
+  partenaire: 12,
   administrateur: 0,
 };
 

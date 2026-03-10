@@ -47,9 +47,9 @@ const accountTypes: AccountTypeOption[] = [
     imageUrl: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&q=80",
   },
   {
-    id: "vendeur",
-    name: "Vendeur",
-    description: "Pour les commerciaux et équipes de vente",
+    id: "partenaire",
+    name: "Partenaire",
+    description: "Pour les entreprises et grands groupes",
     monthlyPrice: 12,
     imageUrl: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&q=80",
   },

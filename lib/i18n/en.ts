@@ -513,8 +513,8 @@ export const en: Dictionary = {
         cta: "Talk to an expert",
       },
     },
-    perMonth: "€/month",
-    perYear: "€/month billed yearly",
+    perMonth: "/month",
+    perYear: "/month billed yearly",
     compare: {
       title: "Compare plans",
       subtitle: "See in detail what's included in each plan.",

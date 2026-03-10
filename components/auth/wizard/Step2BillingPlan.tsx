@@ -47,7 +47,7 @@ const billingOptions: BillingOption[] = [
     badgeColor: "bg-green-100 text-green-700",
     getPrice: (monthlyPrice) => monthlyPrice * 12 - 12,
     getPriceLabel: (monthlyPrice) => `${monthlyPrice * 12 - 12}€`,
-    getSubLabel: (monthlyPrice) => `${((monthlyPrice * 12 - 12) / 12).toFixed(2)}€/mois`,
+    getSubLabel: (monthlyPrice) => `${((monthlyPrice * 12 - 12) / 12).toFixed(2)}/mois`,
   },
   {
     id: "twoYears",
@@ -56,7 +56,7 @@ const billingOptions: BillingOption[] = [
     badgeColor: "bg-brand-blue/10 text-brand-blue",
     getPrice: (monthlyPrice) => monthlyPrice * 24 - 29,
     getPriceLabel: (monthlyPrice) => `${monthlyPrice * 24 - 29}€`,
-    getSubLabel: (monthlyPrice) => `${((monthlyPrice * 24 - 29) / 24).toFixed(2)}€/mois`,
+    getSubLabel: (monthlyPrice) => `${((monthlyPrice * 24 - 29) / 24).toFixed(2)}/mois`,
   },
 ];
 

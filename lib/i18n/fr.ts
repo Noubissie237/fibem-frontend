@@ -516,8 +516,8 @@ export const fr: Dictionary = {
         cta: "Parler à un expert",
       },
     },
-    perMonth: "€/mois",
-    perYear: "€/mois facturé annuellement",
+    perMonth: "/mois",
+    perYear: "/mois facturé annuellement",
     compare: {
       title: "Comparer les offres",
       subtitle:

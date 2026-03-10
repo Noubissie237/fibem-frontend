@@ -67,7 +67,7 @@ export function getNavigationItems(
                 href: `/${lang}/tarifs#starter`,
                 description:
                   lang === "fr"
-                    ? "Idéal pour les TPE. À partir de 29€/mois"
+                    ? "Idéal pour les TPE. À partir de 29/mois"
                     : "Ideal for small businesses. From €29/month",
               },
               {
@@ -75,7 +75,7 @@ export function getNavigationItems(
                 href: `/${lang}/tarifs#business`,
                 description:
                   lang === "fr"
-                    ? "Pour les PME en croissance. À partir de 49€/mois"
+                    ? "Pour les PME en croissance. À partir de 49/mois"
                     : "For growing SMBs. From €49/month",
               },
               {

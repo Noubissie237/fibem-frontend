@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import { Locale } from "@/types/i18n";
+import { JobDetailDrawer } from "./JobDetailDrawer";
 
-interface JobOffer {
+export interface JobOffer {
   id: number;
   title: string;
   company: string;
@@ -14,6 +15,10 @@ interface JobOffer {
   description: string;
   logo?: string;
   isFavorite?: boolean;
+  fullDescription?: string;
+  requirements?: string[];
+  responsibilities?: string[];
+  benefits?: string[];
 }
 
 interface JobResultsListProps {
@@ -48,15 +53,12 @@ const IconHeart = ({ className, filled }: { className?: string; filled?: boolean
   </svg>
 );
 
-const IconMap = ({ className }: { className?: string }) => (
-  <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-  </svg>
-);
 
 export function JobResultsList({ lang, jobs, totalCount, searchKeyword }: JobResultsListProps) {
   const [sortBy, setSortBy] = useState<"relevance" | "date">("relevance");
   const [favorites, setFavorites] = useState<Set<number>>(new Set());
+  const [selectedJob, setSelectedJob] = useState<JobOffer | null>(null);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const isFrench = lang === "fr";
 
@@ -70,97 +72,108 @@ export function JobResultsList({ lang, jobs, totalCount, searchKeyword }: JobRes
     setFavorites(newFavorites);
   };
 
-  return (
-    <div className="bg-neutral-50 min-h-screen py-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header with Results Count and Sort */}
-        <div className="mb-6">
-          <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
-            <div>
-              <h1 className="text-2xl md:text-3xl font-bold text-neutral-900">
-                {totalCount.toLocaleString()} {isFrench ? "offres" : "offers"}
-                {searchKeyword && (
-                  <span className="text-brand-blue"> {isFrench ? "pour" : "for"} {searchKeyword}</span>
-                )}
-              </h1>
-              <p className="text-sm text-neutral-600 mt-1">
-                {isFrench ? "Nous avons corrigé votre saisie, vous pouvez réessayer avec" : "We corrected your input, you can try again with"}{" "}
-                <button className="text-brand-blue hover:underline font-medium">
-                  {searchKeyword || (isFrench ? "développeur" : "developer")}
-                </button>
-              </p>
-            </div>
+  const openJobDetail = (job: JobOffer) => {
+    setSelectedJob(job);
+    setIsDrawerOpen(true);
+  };
 
-            {/* Sort Options */}
-            <div className="flex items-center gap-3">
-              <span className="text-sm text-neutral-600">{isFrench ? "Trier par" : "Sort by"}:</span>
-              <div className="flex gap-2">
-                <button
-                  onClick={() => setSortBy("relevance")}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                    sortBy === "relevance"
-                      ? "bg-brand-blue text-white"
-                      : "bg-white text-neutral-700 hover:bg-neutral-100 border border-neutral-300"
-                  }`}
-                >
-                  {isFrench ? "Pertinence" : "Relevance"}
-                </button>
-                <button
-                  onClick={() => setSortBy("date")}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                    sortBy === "date"
-                      ? "bg-brand-blue text-white"
-                      : "bg-white text-neutral-700 hover:bg-neutral-100 border border-neutral-300"
-                  }`}
-                >
-                  {isFrench ? "Date" : "Date"}
-                </button>
+  const closeJobDetail = () => {
+    setIsDrawerOpen(false);
+    setTimeout(() => setSelectedJob(null), 300);
+  };
+
+  return (
+    <>
+      <div className="bg-neutral-50 min-h-screen py-4 sm:py-8">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
+          {/* Header with Results Count and Sort */}
+          <div className="mb-4 sm:mb-6">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 mb-4">
+              <div>
+                <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-neutral-900">
+                  {totalCount.toLocaleString()} {isFrench ? "offres" : "offers"}
+                  {searchKeyword && (
+                    <span className="text-brand-blue block sm:inline"> {isFrench ? "pour" : "for"} {searchKeyword}</span>
+                  )}
+                </h1>
+                <p className="text-xs sm:text-sm text-neutral-600 mt-1">
+                  {isFrench ? "Nous avons corrigé votre saisie, vous pouvez réessayer avec" : "We corrected your input, you can try again with"}{" "}
+                  <button className="text-brand-blue hover:underline font-medium">
+                    {searchKeyword || (isFrench ? "développeur" : "developer")}
+                  </button>
+                </p>
               </div>
 
+              {/* Sort Options */}
+              <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+                <span className="text-xs sm:text-sm text-neutral-600 hidden sm:inline">{isFrench ? "Trier par" : "Sort by"}:</span>
+                <div className="flex gap-2 w-full sm:w-auto">
+                  <button
+                    onClick={() => setSortBy("relevance")}
+                    className={`flex-1 sm:flex-none px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all ${
+                      sortBy === "relevance"
+                        ? "bg-brand-blue text-white"
+                        : "bg-white text-neutral-700 hover:bg-neutral-100 border border-neutral-300"
+                    }`}
+                  >
+                    {isFrench ? "Pertinence" : "Relevance"}
+                  </button>
+                  <button
+                    onClick={() => setSortBy("date")}
+                    className={`flex-1 sm:flex-none px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all ${
+                      sortBy === "date"
+                        ? "bg-brand-blue text-white"
+                        : "bg-white text-neutral-700 hover:bg-neutral-100 border border-neutral-300"
+                    }`}
+                  >
+                    {isFrench ? "Date" : "Date"}
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Job Listings */}
-        <div className="space-y-4">
+          {/* Job Listings */}
+          <div className="space-y-3 sm:space-y-4">
           {jobs.map((job) => (
             <div
               key={job.id}
-              className="group bg-white rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden border border-neutral-200 hover:border-brand-blue"
+              className="group bg-white rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden border border-neutral-200 hover:border-brand-blue cursor-pointer"
+              onClick={() => openJobDetail(job)}
             >
-              <div className="p-6">
-                <div className="flex items-start justify-between gap-4">
+              <div className="p-4 sm:p-6">
+                <div className="flex items-start justify-between gap-2 sm:gap-4">
                   {/* Left Side - Job Info */}
-                  <div className="flex-1">
-                    <div className="flex items-start gap-4">
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-start gap-3 sm:gap-4">
                       {/* Company Logo */}
                       {job.logo ? (
-                        <div className="w-16 h-16 bg-neutral-100 rounded-lg flex items-center justify-center shrink-0">
-                          <img src={job.logo} alt={job.company} className="w-12 h-12 object-contain" />
+                        <div className="w-12 h-12 sm:w-16 sm:h-16 bg-neutral-100 rounded-lg flex items-center justify-center shrink-0">
+                          <img src={job.logo} alt={job.company} className="w-10 h-10 sm:w-12 sm:h-12 object-contain" />
                         </div>
                       ) : (
-                        <div className="w-16 h-16 bg-gradient-to-br from-brand-blue to-brand-blue-700 rounded-lg flex items-center justify-center shrink-0">
-                          <span className="text-white font-bold text-xl">
+                        <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-brand-blue to-brand-blue-700 rounded-lg flex items-center justify-center shrink-0">
+                          <span className="text-white font-bold text-base sm:text-xl">
                             {job.company.charAt(0)}
                           </span>
                         </div>
                       )}
 
                       {/* Job Details */}
-                      <div className="flex-1">
-                        <h2 className="text-xl font-bold text-neutral-900 group-hover:text-brand-blue transition-colors mb-1">
+                      <div className="flex-1 min-w-0">
+                        <h2 className="text-base sm:text-lg lg:text-xl font-bold text-neutral-900 group-hover:text-brand-blue transition-colors mb-1 line-clamp-2">
                           {job.title}
                         </h2>
-                        <p className="text-brand-blue font-semibold mb-3">{job.company}</p>
+                        <p className="text-brand-blue font-semibold mb-2 sm:mb-3 text-sm sm:text-base truncate">{job.company}</p>
 
                         {/* Meta Info */}
-                        <div className="flex flex-wrap gap-4 text-sm text-neutral-600 mb-3">
+                        <div className="flex flex-wrap gap-2 sm:gap-4 text-xs sm:text-sm text-neutral-600 mb-2 sm:mb-3">
                           <span className="inline-flex items-center gap-1.5">
-                            <IconMapPin className="w-4 h-4 text-neutral-500" />
-                            {job.location}
+                            <IconMapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-neutral-500" />
+                            <span className="truncate max-w-[150px] sm:max-w-none">{job.location}</span>
                           </span>
                           <span className="inline-flex items-center gap-1.5">
-                            <IconBriefcase className="w-4 h-4 text-neutral-500" />
+                            <IconBriefcase className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-neutral-500" />
                             {job.contractType}
                           </span>
                           {job.salary && (
@@ -171,34 +184,37 @@ export function JobResultsList({ lang, jobs, totalCount, searchKeyword }: JobRes
                         </div>
 
                         {/* Description */}
-                        <p className="text-neutral-600 text-sm line-clamp-2 mb-3">
+                        <p className="text-neutral-600 text-xs sm:text-sm line-clamp-2 mb-2 sm:mb-3 hidden sm:block">
                           {job.description}
                         </p>
 
                         {/* Published Date */}
                         <div className="flex items-center gap-1.5 text-xs text-neutral-500">
-                          <IconClock className="w-3.5 h-3.5" />
-                          {isFrench ? "Publié" : "Published"} {job.publishedDate}
+                          <IconClock className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                          <span className="truncate">{isFrench ? "Publié" : "Published"} {job.publishedDate}</span>
                         </div>
                       </div>
                     </div>
                   </div>
 
                   {/* Right Side - Actions */}
-                  <div className="flex flex-col items-end gap-3 shrink-0">
+                  <div className="flex flex-col items-end gap-2 sm:gap-3 shrink-0">
                     <button
-                      onClick={() => toggleFavorite(job.id)}
-                      className={`p-2 rounded-lg transition-all ${
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        toggleFavorite(job.id);
+                      }}
+                      className={`p-1.5 sm:p-2 rounded-lg transition-all ${
                         favorites.has(job.id)
                           ? "text-red-500 bg-red-50"
                           : "text-neutral-400 hover:text-red-500 hover:bg-red-50"
                       }`}
                       aria-label={isFrench ? "Ajouter aux favoris" : "Add to favorites"}
                     >
-                      <IconHeart className="w-6 h-6" filled={favorites.has(job.id)} />
+                      <IconHeart className="w-5 h-5 sm:w-6 sm:h-6" filled={favorites.has(job.id)} />
                     </button>
 
-                    <button className="px-6 py-2.5 bg-brand-blue hover:bg-brand-blue-700 text-white font-semibold rounded-lg transition-colors">
+                    <button className="px-3 sm:px-6 py-2 sm:py-2.5 bg-brand-blue hover:bg-brand-blue-700 text-white font-semibold rounded-lg transition-colors text-xs sm:text-sm whitespace-nowrap">
                       {isFrench ? "Voir l'offre" : "View offer"}
                     </button>
                   </div>
@@ -211,31 +227,40 @@ export function JobResultsList({ lang, jobs, totalCount, searchKeyword }: JobRes
           ))}
         </div>
 
-        {/* Pagination */}
-        <div className="mt-8 flex justify-center">
-          <div className="flex items-center gap-2">
-            <button className="px-4 py-2 border border-neutral-300 rounded-lg text-sm font-medium text-neutral-700 hover:bg-neutral-100 transition-all disabled:opacity-50 disabled:cursor-not-allowed">
-              {isFrench ? "Précédent" : "Previous"}
-            </button>
-            <button className="px-4 py-2 bg-brand-blue text-white rounded-lg text-sm font-medium">
-              1
-            </button>
-            <button className="px-4 py-2 border border-neutral-300 rounded-lg text-sm font-medium text-neutral-700 hover:bg-neutral-100 transition-all">
-              2
-            </button>
-            <button className="px-4 py-2 border border-neutral-300 rounded-lg text-sm font-medium text-neutral-700 hover:bg-neutral-100 transition-all">
-              3
-            </button>
-            <span className="px-2 text-neutral-500">...</span>
-            <button className="px-4 py-2 border border-neutral-300 rounded-lg text-sm font-medium text-neutral-700 hover:bg-neutral-100 transition-all">
-              10
-            </button>
-            <button className="px-4 py-2 border border-neutral-300 rounded-lg text-sm font-medium text-neutral-700 hover:bg-neutral-100 transition-all">
-              {isFrench ? "Suivant" : "Next"}
-            </button>
+          {/* Pagination */}
+          <div className="mt-6 sm:mt-8 flex justify-center">
+            <div className="flex items-center gap-1 sm:gap-2 overflow-x-auto pb-2">
+              <button className="px-2 sm:px-4 py-2 border border-neutral-300 rounded-lg text-xs sm:text-sm font-medium text-neutral-700 hover:bg-neutral-100 transition-all disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap">
+                {isFrench ? "Précédent" : "Previous"}
+              </button>
+              <button className="px-3 sm:px-4 py-2 bg-brand-blue text-white rounded-lg text-xs sm:text-sm font-medium">
+                1
+              </button>
+              <button className="px-3 sm:px-4 py-2 border border-neutral-300 rounded-lg text-xs sm:text-sm font-medium text-neutral-700 hover:bg-neutral-100 transition-all">
+                2
+              </button>
+              <button className="hidden sm:block px-3 sm:px-4 py-2 border border-neutral-300 rounded-lg text-xs sm:text-sm font-medium text-neutral-700 hover:bg-neutral-100 transition-all">
+                3
+              </button>
+              <span className="px-1 sm:px-2 text-neutral-500 text-xs sm:text-sm">...</span>
+              <button className="hidden sm:block px-3 sm:px-4 py-2 border border-neutral-300 rounded-lg text-xs sm:text-sm font-medium text-neutral-700 hover:bg-neutral-100 transition-all">
+                10
+              </button>
+              <button className="px-2 sm:px-4 py-2 border border-neutral-300 rounded-lg text-xs sm:text-sm font-medium text-neutral-700 hover:bg-neutral-100 transition-all whitespace-nowrap">
+                {isFrench ? "Suivant" : "Next"}
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+
+      {/* Job Detail Drawer */}
+      <JobDetailDrawer
+        job={selectedJob}
+        isOpen={isDrawerOpen}
+        onClose={closeJobDetail}
+        lang={lang}
+      />
+    </>
   );
 }

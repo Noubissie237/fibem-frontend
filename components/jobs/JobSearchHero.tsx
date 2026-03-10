@@ -62,34 +62,34 @@ export function JobSearchHero({ lang, onSearch, onShowAllOffers }: JobSearchHero
   ];
 
   return (
-    <section className="relative py-12 bg-gradient-to-br from-brand-blue to-brand-blue-700 overflow-hidden">
+    <section className="relative py-8 sm:py-12 bg-gradient-to-br from-brand-blue to-brand-blue-700 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:4rem_4rem]" />
       </div>
 
       <Container className="relative">
-        <div className="grid lg:grid-cols-2 gap-8 items-start">
+        <div className="grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 items-start">
           {/* Left Side - Search */}
-          <div className="bg-white rounded-2xl shadow-2xl p-6 lg:p-8">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 bg-brand-blue-100 rounded-xl flex items-center justify-center">
-                <IconSearch className="w-6 h-6 text-brand-blue" />
+          <div className="bg-white rounded-xl sm:rounded-2xl shadow-2xl p-4 sm:p-6 lg:p-8">
+            <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-brand-blue-100 rounded-lg sm:rounded-xl flex items-center justify-center">
+                <IconSearch className="w-5 h-5 sm:w-6 sm:h-6 text-brand-blue" />
               </div>
               <div>
-                <h2 className="text-2xl font-bold text-neutral-900">
+                <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-neutral-900">
                   {isFrench ? "Recherche d'offres" : "Job Search"}
                 </h2>
-                <p className="text-sm text-neutral-500">
+                <p className="text-xs sm:text-sm text-neutral-500">
                   {isFrench ? "930 197 offres d'emploi disponibles" : "930,197 job offers available"}
                 </p>
               </div>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
               {/* Keyword Input */}
               <div>
-                <label htmlFor="keyword" className="block text-sm font-medium text-neutral-700 mb-2">
+                <label htmlFor="keyword" className="block text-xs sm:text-sm font-medium text-neutral-700 mb-1.5 sm:mb-2">
                   {isFrench ? "Métier, mot-clé, n° d'offre" : "Job title, keyword, offer number"}
                 </label>
                 <div className="relative">
@@ -99,15 +99,15 @@ export function JobSearchHero({ lang, onSearch, onShowAllOffers }: JobSearchHero
                     value={keyword}
                     onChange={(e) => setKeyword(e.target.value)}
                     placeholder={isFrench ? "Ex: développeur, comptable..." : "Ex: developer, accountant..."}
-                    className="w-full px-4 py-3 pl-11 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all"
+                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 pl-10 sm:pl-11 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all text-sm sm:text-base"
                   />
-                  <IconSearch className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-neutral-400" />
+                  <IconSearch className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-neutral-400" />
                 </div>
               </div>
 
               {/* Location Input */}
               <div>
-                <label htmlFor="location" className="block text-sm font-medium text-neutral-700 mb-2">
+                <label htmlFor="location" className="block text-xs sm:text-sm font-medium text-neutral-700 mb-1.5 sm:mb-2">
                   {isFrench ? "Lieu de travail" : "Work location"}
                 </label>
                 <div className="relative">
@@ -117,18 +117,18 @@ export function JobSearchHero({ lang, onSearch, onShowAllOffers }: JobSearchHero
                     value={location}
                     onChange={(e) => setLocation(e.target.value)}
                     placeholder={isFrench ? "Ex: Paris, Lyon, Dakar..." : "Ex: Paris, Lyon, Dakar..."}
-                    className="w-full px-4 py-3 pl-11 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all"
+                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 pl-10 sm:pl-11 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all text-sm sm:text-base"
                   />
-                  <IconMapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-neutral-400" />
+                  <IconMapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-neutral-400" />
                 </div>
               </div>
 
               {/* Search Button */}
               <button
                 type="submit"
-                className="w-full bg-brand-blue hover:bg-brand-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2"
+                className="w-full bg-brand-blue hover:bg-brand-blue-700 text-white font-semibold py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm sm:text-base"
               >
-                <IconSearch className="w-5 h-5" />
+                <IconSearch className="w-4 h-4 sm:w-5 sm:h-5" />
                 {isFrench ? "Rechercher" : "Search"}
               </button>
 
@@ -136,7 +136,7 @@ export function JobSearchHero({ lang, onSearch, onShowAllOffers }: JobSearchHero
               <button
                 type="button"
                 onClick={onShowAllOffers}
-                className="w-full text-sm text-brand-blue hover:text-brand-blue-700 font-medium transition-colors"
+                className="w-full text-xs sm:text-sm text-brand-blue hover:text-brand-blue-700 font-medium transition-colors"
               >
                 {isFrench ? "Voir toutes les offres" : "See all offers"}
               </button>
@@ -144,26 +144,26 @@ export function JobSearchHero({ lang, onSearch, onShowAllOffers }: JobSearchHero
           </div>
 
           {/* Right Side - Registration Buttons */}
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             {registrationButtons.map((button) => (
               <a
                 key={button.id}
                 href={button.href}
-                className="group block bg-white hover:bg-brand-blue-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-5 border-2 border-transparent hover:border-brand-blue"
+                className="group block bg-white hover:bg-brand-blue-50 rounded-lg sm:rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 sm:p-5 border-2 border-transparent hover:border-brand-blue"
               >
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-brand-blue text-white rounded-lg flex items-center justify-center font-bold text-xl shrink-0 group-hover:scale-110 transition-transform">
+                <div className="flex items-center gap-3 sm:gap-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-brand-blue text-white rounded-lg flex items-center justify-center font-bold text-lg sm:text-xl shrink-0 group-hover:scale-110 transition-transform">
                     {button.icon}
                   </div>
-                  <div className="flex-1">
-                    <h3 className="font-bold text-neutral-900 mb-1 group-hover:text-brand-blue transition-colors">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-bold text-neutral-900 mb-0.5 sm:mb-1 group-hover:text-brand-blue transition-colors text-sm sm:text-base">
                       {button.title}
                     </h3>
-                    <p className="text-sm text-neutral-600">
+                    <p className="text-xs sm:text-sm text-neutral-600 truncate">
                       {button.subtitle}
                     </p>
                   </div>
-                  <svg className="w-6 h-6 text-neutral-400 group-hover:text-brand-blue group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-neutral-400 group-hover:text-brand-blue group-hover:translate-x-1 transition-all shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </div>
@@ -171,15 +171,15 @@ export function JobSearchHero({ lang, onSearch, onShowAllOffers }: JobSearchHero
             ))}
 
             {/* Additional Services */}
-            <div className="bg-white/90 backdrop-blur-sm rounded-xl p-5 border border-white/50">
-              <h4 className="font-semibold text-neutral-900 mb-3 text-sm">
+            <div className="bg-white/90 backdrop-blur-sm rounded-lg sm:rounded-xl p-4 sm:p-5 border border-white/50">
+              <h4 className="font-semibold text-neutral-900 mb-2 sm:mb-3 text-xs sm:text-sm">
                 {isFrench ? "Autres actions" : "Other actions"}
               </h4>
-              <ul className="space-y-2 text-sm">
+              <ul className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm">
                 <li>
                   <a href={`/${lang}/contact`} className="text-neutral-700 hover:text-brand-blue transition-colors flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-brand-blue rounded-full"></span>
-                    {isFrench ? "Se connecter à mon espace personnel" : "Connect to my personal space"}
+                    <span className="w-1.5 h-1.5 bg-brand-blue rounded-full shrink-0"></span>
+                    <span className="line-clamp-1">{isFrench ? "Se connecter à mon espace personnel" : "Connect to my personal space"}</span>
                   </a>
                 </li>
               </ul>

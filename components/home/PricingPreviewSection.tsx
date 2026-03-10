@@ -1,3 +1,5 @@
+"use client";
+
 import { Dictionary, Locale } from "@/types/i18n";
 import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
@@ -5,6 +7,8 @@ import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { IconCheck } from "@/components/icons/Icons";
 import { cn } from "@/lib/utils";
+import { useCurrency } from "@/contexts/CurrencyContext";
+import { convertAndFormatPrice, extractPriceAmount } from "@/lib/currency";
 
 interface PricingPreviewSectionProps {
   dict: Dictionary;
@@ -13,6 +17,7 @@ interface PricingPreviewSectionProps {
 
 export function PricingPreviewSection({ dict, lang }: PricingPreviewSectionProps) {
   const { pricing } = dict;
+  const { currency } = useCurrency();
 
   return (
     <Section background="gray" id="pricing">
@@ -28,6 +33,12 @@ export function PricingPreviewSection({ dict, lang }: PricingPreviewSectionProps
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-10">
         {pricing.plans.map((plan, index) => {
           const isPopular = index === 1;
+          
+          // Convertir le prix si c'est un montant numérique
+          const isCustomPrice = plan.price === "Sur devis" || plan.price === "Custom";
+          const displayPrice = isCustomPrice 
+            ? plan.price 
+            : convertAndFormatPrice(extractPriceAmount(plan.price), currency);
 
           return (
             <Card
@@ -55,11 +66,13 @@ export function PricingPreviewSection({ dict, lang }: PricingPreviewSectionProps
                   {plan.description}
                 </p>
                 <div className="flex items-baseline justify-center gap-1">
-                  <span className="text-sm text-neutral-500">{pricing.from}</span>
+                  {!isCustomPrice && (
+                    <span className="text-sm text-neutral-500">{pricing.from}</span>
+                  )}
                   <span className="text-4xl font-bold text-neutral-900">
-                    {plan.price}
+                    {displayPrice}
                   </span>
-                  {plan.price !== "Sur devis" && plan.price !== "Custom" && (
+                  {!isCustomPrice && (
                     <span className="text-sm text-neutral-500">
                       {pricing.perMonth}
                     </span>

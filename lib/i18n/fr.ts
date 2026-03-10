@@ -143,7 +143,7 @@ export const fr: Dictionary = {
     title: "Tarifs transparents",
     subtitle: "Des offres claires, sans surprise. Évoluez selon vos besoins.",
     cta: "Voir tous les tarifs",
-    from: "À partir de",
+    from: "",
     perMonth: "/mois",
     popular: "Populaire",
     plans: [

@@ -9,6 +9,8 @@ import { Badge } from "@/components/ui/Badge";
 import { PricingToggle } from "./PricingToggle";
 import { IconCheck } from "@/components/icons/Icons";
 import { cn } from "@/lib/utils";
+import { useCurrency } from "@/contexts/CurrencyContext";
+import { convertAndFormatPrice, extractPriceAmount } from "@/lib/currency";
 
 interface PricingCardsProps {
   dict: Dictionary;
@@ -42,6 +44,7 @@ type PlanData =
 
 export function PricingCards({ dict, lang }: PricingCardsProps) {
   const [isYearly, setIsYearly] = useState(false);
+  const { currency } = useCurrency();
   const { toggle, plans, perMonth, perYear } = dict.pricingPage;
 
   const planData: PlanData[] = [
@@ -87,11 +90,17 @@ export function PricingCards({ dict, lang }: PricingCardsProps) {
 
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
         {planData.map((plan) => {
-          const price = plan.isEnterprise
-            ? plan.price
-            : isYearly
-            ? plan.priceYearly
-            : plan.priceMonthly;
+          let displayPrice: string;
+          
+          if (plan.isEnterprise) {
+            // Pour Enterprise, afficher le texte "Sur devis" / "Custom"
+            displayPrice = plan.price;
+          } else {
+            // Extraire le montant numérique et convertir
+            const priceString = isYearly ? plan.priceYearly : plan.priceMonthly;
+            const priceAmount = extractPriceAmount(priceString);
+            displayPrice = convertAndFormatPrice(priceAmount, currency);
+          }
 
           const priceLabel = plan.isEnterprise
             ? ""
@@ -128,12 +137,12 @@ export function PricingCards({ dict, lang }: PricingCardsProps) {
                 <div className="flex items-baseline gap-1">
                   {!plan.isEnterprise && (
                     <span className="text-4xl font-bold text-neutral-900">
-                      {price}
+                      {displayPrice}
                     </span>
                   )}
                   {plan.isEnterprise ? (
                     <span className="text-2xl font-bold text-neutral-900">
-                      {price}
+                      {displayPrice}
                     </span>
                   ) : (
                     <span className="text-sm text-neutral-500">{priceLabel}</span>

@@ -142,7 +142,7 @@ export const en: Dictionary = {
     title: "Transparent pricing",
     subtitle: "Clear plans, no surprises. Scale according to your needs.",
     cta: "See all pricing",
-    from: "Starting at",
+    from: "",
     perMonth: "/month",
     popular: "Popular",
     plans: [

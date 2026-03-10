@@ -3,35 +3,23 @@
 import { useState, useRef, useEffect } from "react";
 import { IconChevronDown } from "@/components/icons/Icons";
 import { cn } from "@/lib/utils";
-
-export type Currency = "EUR" | "USD" | "GBP" | "JPY" | "CNY" | "XAF" | "INR" | "BRL" | "RUB" | "AED";
+import { useCurrency, Currency } from "@/contexts/CurrencyContext";
+import { currencySymbols, currencyNames } from "@/lib/currency";
 
 interface CurrencySelectorProps {
   currentCurrency?: Currency;
   onCurrencyChange?: (currency: Currency) => void;
 }
 
-const currencyLabels: Record<Currency, { label: string; symbol: string; name: string }> = {
-  EUR: { label: "EUR", symbol: "€", name: "Euro" },
-  USD: { label: "USD", symbol: "$", name: "US Dollar" },
-  GBP: { label: "GBP", symbol: "£", name: "British Pound" },
-  JPY: { label: "JPY", symbol: "¥", name: "Japanese Yen" },
-  CNY: { label: "CNY", symbol: "¥", name: "Chinese Yuan" },
-  XAF: { label: "XAF", symbol: "FCFA", name: "CFA Franc" },
-  INR: { label: "INR", symbol: "₹", name: "Indian Rupee" },
-  BRL: { label: "BRL", symbol: "R$", name: "Brazilian Real" },
-  RUB: { label: "RUB", symbol: "₽", name: "Russian Ruble" },
-  AED: { label: "AED", symbol: "د.إ", name: "UAE Dirham" },
-};
-
 const currencies: Currency[] = ["EUR", "USD", "GBP", "JPY", "CNY", "XAF", "INR", "BRL", "RUB", "AED"];
 
 export function CurrencySelector({ 
-  currentCurrency = "EUR",
+  currentCurrency,
   onCurrencyChange 
 }: CurrencySelectorProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedCurrency, setSelectedCurrency] = useState<Currency>(currentCurrency);
+  const { currency: contextCurrency, setCurrency: setContextCurrency } = useCurrency();
+  const selectedCurrency = currentCurrency || contextCurrency;
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -49,14 +37,14 @@ export function CurrencySelector({
   }, []);
 
   const handleCurrencyChange = (currency: Currency) => {
-    setSelectedCurrency(currency);
+    setContextCurrency(currency);
     setIsOpen(false);
     if (onCurrencyChange) {
       onCurrencyChange(currency);
     }
   };
 
-  const currentSymbol = currencyLabels[selectedCurrency].symbol;
+  const currentSymbol = currencySymbols[selectedCurrency];
 
   return (
     <div ref={dropdownRef} className="relative">
@@ -84,7 +72,8 @@ export function CurrencySelector({
         <div className="absolute right-0 top-full mt-2 w-48 bg-white rounded-lg shadow-mega border border-neutral-100 overflow-hidden animate-fade-in z-50">
           <ul role="listbox" className="py-1 max-h-80 overflow-y-auto">
             {currencies.map((currency) => {
-              const { label, symbol, name } = currencyLabels[currency];
+              const symbol = currencySymbols[currency];
+              const name = currencyNames[currency];
               return (
                 <li key={currency}>
                   <button
@@ -101,7 +90,7 @@ export function CurrencySelector({
                   >
                     <span className="flex items-center gap-2">
                       <span className="font-semibold w-8">{symbol}</span>
-                      <span className="font-medium">{label}</span>
+                      <span className="font-medium">{currency}</span>
                     </span>
                     <span className="text-xs text-neutral-500">{name}</span>
                   </button>

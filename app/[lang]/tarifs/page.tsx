@@ -29,8 +29,8 @@ export async function generateMetadata({
 
   const description =
     lang === "fr"
-      ? "Découvrez nos tarifs transparents. Plans Starter, Business et Enterprise adaptés à toutes les tailles d'entreprise. Essai gratuit 14 jours."
-      : "Discover our transparent pricing. Starter, Business and Enterprise plans for all business sizes. 14-day free trial.";
+      ? "Découvrez nos tarifs transparents. Plans Starter, Business, Max et Enterprise adaptés à toutes les tailles d'entreprise. Essai gratuit 14 jours."
+      : "Discover our transparent pricing. Starter, Business, Max and Enterprise plans for all business sizes. 14-day free trial.";
 
   return {
     title,

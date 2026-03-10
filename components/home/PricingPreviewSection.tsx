@@ -25,7 +25,7 @@ export function PricingPreviewSection({ dict, lang }: PricingPreviewSectionProps
         </p>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-10">
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-10">
         {pricing.plans.map((plan, index) => {
           const isPopular = index === 1;
 

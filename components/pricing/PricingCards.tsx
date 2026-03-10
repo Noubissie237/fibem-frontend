@@ -17,7 +17,7 @@ interface PricingCardsProps {
 
 type PlanData =
   | {
-      key: "starter" | "business";
+      key: "starter" | "business" | "max";
       name: string;
       description: string;
       priceMonthly: string;
@@ -60,6 +60,13 @@ export function PricingCards({ dict, lang }: PricingCardsProps) {
       isEnterprise: false,
     },
     {
+      key: "max" as const,
+      ...plans.max,
+      isPopular: false,
+      href: `/${lang}/inscription`,
+      isEnterprise: false,
+    },
+    {
       key: "enterprise" as const,
       ...plans.enterprise,
       isPopular: false,
@@ -78,7 +85,7 @@ export function PricingCards({ dict, lang }: PricingCardsProps) {
         />
       </div>
 
-      <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
         {planData.map((plan) => {
           const price = plan.isEnterprise
             ? plan.price

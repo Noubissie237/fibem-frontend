@@ -18,6 +18,7 @@ export function PricingCompare({ dict }: PricingCompareProps) {
   const plans = [
     { key: "starter" as const, name: "Starter" },
     { key: "business" as const, name: "Business" },
+    { key: "max" as const, name: "Max" },
     { key: "enterprise" as const, name: "Enterprise" },
   ];
 

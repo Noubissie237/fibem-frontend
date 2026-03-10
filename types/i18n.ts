@@ -193,6 +193,100 @@ export interface Dictionary {
         price: string;
         features: string[];
         cta: string;
+      };  internshipsPage: {
+    meta: {
+      title: "Stages & Alternances - Téléphonie-IA",
+      description: "Opportunités de stage et d'alternance chez Téléphonie-IA",
+    },
+    hero: {
+      title: "Lancez votre carrière avec nous",
+      subtitle: "Développez vos compétences au sein d'une entreprise innovante dans le domaine de la téléphonie intelligente et de l'IA.",
+    },
+    whyJoin: {
+      title: "Pourquoi faire un stage chez nous ?",
+      reasons: [
+        {
+          title: "Projets concrets",
+          description: "Travaillez sur de vraies fonctionnalités utilisées par nos clients, pas de projets fictifs.",
+        },
+        {
+          title: "Mentorat personnalisé",
+          description: "Un tuteur dédié vous accompagne tout au long de votre parcours pour maximiser votre apprentissage.",
+        },
+        {
+          title: "Opportunités d'embauche",
+          description: "Les meilleurs stagiaires se voient proposer un CDI à l'issue de leur stage.",
+        },
+      ],
+    },
+    offers: {
+      title: "Nos offres de stage et alternance",
+      skillsLabel: "Compétences recherchées",
+      applyButton: "Postuler",
+      items: [
+        {
+          id: 1,
+          title: "Stage Développement Full-Stack",
+          duration: "6 mois",
+          startDate: "Février - Septembre 2026",
+          department: "Engineering",
+          description: "Participez au développement de nouvelles fonctionnalités de notre plateforme SaaS. Vous travaillerez sur React, Node.js et découvrirez l'architecture cloud.",
+          skills: ["React", "JavaScript/TypeScript", "Git", "API REST"],
+          level: "Bac+4/5",
+        },
+        {
+          id: 2,
+          title: "Alternance Data Science / IA",
+          duration: "12-24 mois",
+          startDate: "Septembre 2026",
+          department: "R&D",
+          description: "Rejoignez notre équipe R&D pour améliorer nos modèles de transcription et d'analyse de sentiment. Formation en Machine Learning souhaitée.",
+          skills: ["Python", "Machine Learning", "NLP", "Data Analysis"],
+          level: "Bac+4/5",
+        },
+        {
+          id: 3,
+          title: "Stage Product Management",
+          duration: "6 mois",
+          startDate: "Avril - Septembre 2026",
+          department: "Product",
+          description: "Assistez le Product Manager dans la définition de la roadmap, l'analyse des besoins utilisateurs et le suivi des KPIs produit.",
+          skills: ["Analyse", "Communication", "Outils PM", "UX/UI"],
+          level: "Bac+4/5",
+        },
+      ],
+    },
+    process: {
+      title: "Comment postuler ?",
+      steps: [
+        {
+          number: "1",
+          title: "Envoyez votre CV",
+          description: "CV + lettre de motivation à recrutement@fibem.com",
+        },
+        {
+          number: "2",
+          title: "Entretien RH",
+          description: "Discussion sur votre parcours et vos motivations",
+        },
+        {
+          number: "3",
+          title: "Rencontre équipe",
+          description: "Échange avec votre futur tuteur et l'équipe",
+        },
+      ],
+      compensation: "Gratification : Selon la législation en vigueur + tickets restaurant + remboursement transport",
+      sendApplication: "Envoyer ma candidature",
+      spontaneousApplication: "Candidature spontanée",
+    },
+  },
+      max: {
+        name: string;
+        description: string;
+        priceMonthly: string;
+        priceYearly: string;
+        features: string[];
+        cta: string;
       };
     };
     perMonth: string;
@@ -229,6 +323,15 @@ export interface Dictionary {
           support: string;
         };
         enterprise: {
+          numbers: string;
+          minutes: string;
+          recordings: string;
+          transcription: string;
+          dashboards: string;
+          integrations: string;
+          support: string;
+        };
+        max: {
           numbers: string;
           minutes: string;
           recordings: string;

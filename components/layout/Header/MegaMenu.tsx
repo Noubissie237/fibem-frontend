@@ -17,13 +17,13 @@ export function MegaMenu({ data, onClose }: MegaMenuProps) {
 
   return (
     <div
-      className="absolute top-full -left-1/2 -translate-x-1/2 pt-4"
+      className="absolute top-full left-1/2 -translate-x-1/2 pt-4 z-50"
       onMouseEnter={(e) => e.stopPropagation()}
     >
       <div
         className={cn(
           "bg-white rounded-xl shadow-mega border border-neutral-100 overflow-hidden animate-slide-down",
-          hasCallout ? "w-[1000px]" : "w-[900px]"
+          hasCallout ? "w-[900px] max-w-[95vw]" : "w-[800px] max-w-[95vw]"
         )}
       >
         <div className="flex">

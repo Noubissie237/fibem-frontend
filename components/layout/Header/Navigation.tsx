@@ -57,7 +57,7 @@ export function Navigation({ lang, dict }: NavigationProps) {
 
   return (
     <nav ref={navRef} className="flex items-center" role="navigation">
-      <ul className="flex items-center gap-1">
+      <ul className="flex items-center gap-0.5 xl:gap-1">
         {navigationItems.map((item) => {
           const hasMegaMenu = !!item.megaMenu;
           const isActive = activeMenu === item.label;
@@ -74,7 +74,7 @@ export function Navigation({ lang, dict }: NavigationProps) {
                   <button
                     type="button"
                     className={cn(
-                      "flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-lg transition-colors",
+                      "flex items-center gap-0.5 xl:gap-1 px-2 xl:px-3 py-2 text-xs xl:text-sm font-medium rounded-lg transition-colors whitespace-nowrap",
                       isActive
                         ? "text-brand-blue bg-brand-blue-50"
                         : "text-white hover:text-neutral-900 hover:bg-neutral-50"
@@ -83,10 +83,10 @@ export function Navigation({ lang, dict }: NavigationProps) {
                     aria-expanded={isActive}
                     aria-haspopup="true"
                   >
-                    {item.label}
+                    <span className="truncate">{item.label}</span>
                     <IconChevronDown
                       className={cn(
-                        "w-4 h-4 transition-transform duration-200",
+                        "w-3 h-3 xl:w-4 xl:h-4 transition-transform duration-200 shrink-0",
                         isActive && "rotate-180"
                       )}
                     />
@@ -102,9 +102,9 @@ export function Navigation({ lang, dict }: NavigationProps) {
               ) : (
                 <Link
                   href={item.href}
-                  className="flex items-center px-3 py-2 text-sm font-medium text-white hover:text-neutral-900 hover:bg-neutral-50 rounded-lg transition-colors"
+                  className="flex items-center px-2 xl:px-3 py-2 text-xs xl:text-sm font-medium text-white hover:text-neutral-900 hover:bg-neutral-50 rounded-lg transition-colors whitespace-nowrap"
                 >
-                  {item.label}
+                  <span className="truncate">{item.label}</span>
                 </Link>
               )}
             </li>

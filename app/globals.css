@@ -4,10 +4,14 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    max-width: 100vw;
   }
 
   body {
     @apply antialiased text-neutral-800 bg-white;
+    overflow-x: hidden;
+    max-width: 100vw;
   }
 
   h1,

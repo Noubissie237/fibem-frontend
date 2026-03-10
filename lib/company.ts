@@ -138,56 +138,66 @@ export interface TimelineEventContent {
 }
 
 export const timeline: TimelineEvent[] = [
-  { year: "2010", id: "founding" },
-  { year: "2019", id: "launch" },
-  { year: "2021", id: "ai" },
-  { year: "2023", id: "growth" },
-  { year: "2024", id: "expansion" },
+  { year: "2001", id: "founding" },
+  { year: "2010", id: "launch_senegal" },
+  { year: "2014", id: "launch_france" },
+  { year: "2025", id: "growth" },
+  { year: "2026", id: "expansion" },
 ];
 
 export const timelineContentFr: Record<string, TimelineEventContent> = {
   founding: {
     title: "Création de FIBEM",
-    description: "Naissance de l'entreprise avec la vision de moderniser la téléphonie d'entreprise.",
+    description:
+      "Naissance de l’entreprise en France avec l’ouverture du bureau d’études et du bureau d’ingénierie.",
   },
-  launch: {
-    title: "Lancement de Téléphonie-IA",
-    description: "Première version de la plateforme avec fonctionnalités cloud essentielles.",
+  launch_senegal: {
+    title: "Création de SEN FIBEM Sénégal",
+    description:
+      "Implantation de SEN FIBEM au Sénégal avec des activités dans les secteurs du bâtiment, de l’industrie et des tiers CR.",
   },
-  ai: {
-    title: "Intégration de l'IA",
-    description: "Ajout de la transcription automatique et des résumés intelligents.",
+  launch_france: {
+    title: "Création de SEN FIBEM France",
+    description:
+      "Implantation de SEN FIBEM en France avec des activités dans les secteurs du bâtiment, de l’industrie et des tiers CR.",
   },
   growth: {
-    title: "500 clients",
-    description: "Cap symbolique franchi avec une croissance soutenue sur le marché français.",
+    title: "Création de l’agence digitale & marketing",
+    description:
+      "Lancement d’une agence dédiée au digital et au marketing afin d’accompagner les entreprises dans leur transformation numérique et le développement de leur présence en ligne.",
   },
   expansion: {
-    title: "Nouvelles fonctionnalités",
-    description: "Analyse de sentiment, coaching IA, et intégrations CRM avancées.",
+    title: "Lancement de la Téléphonie IA",
+    description:
+      "Mise en place d’une solution innovante de téléphonie intégrant l’intelligence artificielle afin d’optimiser la communication et les interactions avec les clients.",
   },
 };
 
 export const timelineContentEn: Record<string, TimelineEventContent> = {
   founding: {
-    title: "FIBEM Founded",
-    description: "Company born with the vision to modernize business telephony.",
+    title: "Founding of FIBEM",
+    description:
+      "The company was established in France with the opening of a design office and an engineering office.",
   },
-  launch: {
-    title: "Téléphonie-IA Launch",
-    description: "First version of the platform with essential cloud features.",
+  launch_senegal: {
+    title: "Launch of SEN FIBEM Senegal",
+    description:
+      "Establishment of SEN FIBEM in Senegal with activities in the construction, industrial, and CR third-party sectors.",
   },
-  ai: {
-    title: "AI Integration",
-    description: "Addition of automatic transcription and smart summaries.",
+  launch_france: {
+    title: "Launch of SEN FIBEM France",
+    description:
+      "Establishment of SEN FIBEM in France with activities in the construction, industrial, and CR third-party sectors.",
   },
   growth: {
-    title: "500 Customers",
-    description: "Symbolic milestone reached with sustained growth in the French market.",
+    title: "Creation of the Digital & Marketing Agency",
+    description:
+      "Launch of a dedicated digital and marketing agency to support companies in their digital transformation and the development of their online presence.",
   },
   expansion: {
-    title: "New Features",
-    description: "Sentiment analysis, AI coaching, and advanced CRM integrations.",
+    title: "Launch of AI Telephony",
+    description:
+      "Introduction of an innovative telephony solution powered by artificial intelligence to optimize communication and customer interactions.",
   },
 };
 

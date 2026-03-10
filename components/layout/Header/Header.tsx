@@ -9,6 +9,7 @@ import { Navigation } from "./Navigation";
 import { MobileMenu } from "./MobileMenu";
 import { LanguageSelector } from "./LanguageSelector";
 import { CurrencySelector } from "./CurrencySelector";
+import { CartButton } from "./CartButton";
 import { SearchBar } from "./SearchBar";
 import { IconMenu, IconClose } from "@/components/icons/Icons";
 import { cn } from "@/lib/utils";
@@ -121,6 +122,11 @@ export function Header({ lang = "fr", dict }: HeaderProps) {
             
             {/* Séparateur */}
             <div className="hidden xl:block h-6 w-px bg-neutral-200 shrink-0" />
+            
+            {/* Panier */}
+            <div className="shrink-0">
+              <CartButton lang={lang} itemCount={0} />
+            </div>
             
             {/* Boutons Connexion/Inscription */}
             <div className="flex items-center gap-1 xl:gap-2 shrink-0">

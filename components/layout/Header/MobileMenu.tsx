@@ -6,6 +6,7 @@ import { getNavigationItems } from "@/lib/navigation";
 import { Button } from "@/components/ui/Button";
 import { LanguageSelector } from "./LanguageSelector";
 import { CurrencySelector } from "./CurrencySelector";
+import { CartButton } from "./CartButton";
 import { SearchBar } from "./SearchBar";
 import { IconChevronDown, IconSearch } from "@/components/icons/Icons";
 import { cn } from "@/lib/utils";
@@ -139,6 +140,12 @@ export function MobileMenu({ isOpen, onClose, lang, dict }: MobileMenuProps) {
             <LanguageSelector currentLang={lang} />
             <CurrencySelector />
           </div>
+          
+          {/* Panier Mobile */}
+          <div onClick={onClose}>
+            <CartButton lang={lang} itemCount={0} variant="mobile" />
+          </div>
+          
           <Button
             href={`/${lang}/inscription`}
             variant="primary"

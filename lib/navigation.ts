@@ -248,14 +248,14 @@ export function getNavigationItems(
           {
             title: lang === "fr" ? "Opportunités" : "Opportunities",
             items: [
-              {
-                label: lang === "fr" ? "Candidature" : "Application",
-                href: `/${lang}/emploi/candidature`,
-                description:
-                  lang === "fr"
-                    ? "Candidature spontanée"
-                    : "Spontaneous application",
-              },
+              // {
+              //   label: lang === "fr" ? "Candidature" : "Application",
+              //   href: `/${lang}/emploi/candidature`,
+              //   description:
+              //     lang === "fr"
+              //       ? "Candidature spontanée"
+              //       : "Spontaneous application",
+              // },
               {
                 label: lang === "fr" ? "Annonces" : "Job Openings",
                 href: `/${lang}/emploi/annonces`,
@@ -264,14 +264,14 @@ export function getNavigationItems(
                     ? "Consultez nos offres d'emploi"
                     : "View our job openings",
               },
-              {
-                label: lang === "fr" ? "Stagiaires" : "Internships",
-                href: `/${lang}/emploi/stagiaires`,
-                description:
-                  lang === "fr"
-                    ? "Stages et alternances"
-                    : "Internships and work-study programs",
-              },
+              // {
+              //   label: lang === "fr" ? "Stagiaires" : "Internships",
+              //   href: `/${lang}/emploi/stagiaires`,
+              //   description:
+              //     lang === "fr"
+              //       ? "Stages et alternances"
+              //       : "Internships and work-study programs",
+              // },
             ],
           },
         ],

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { getNavigationItems } from "@/lib/navigation";
 import { Button } from "@/components/ui/Button";
 import { LanguageSelector } from "./LanguageSelector";
+import { CurrencySelector } from "./CurrencySelector";
 import { SearchBar } from "./SearchBar";
 import { IconChevronDown, IconSearch } from "@/components/icons/Icons";
 import { cn } from "@/lib/utils";
@@ -134,8 +135,9 @@ export function MobileMenu({ isOpen, onClose, lang, dict }: MobileMenuProps) {
 
         {/* Actions Mobile */}
         <div className="p-4 border-t border-neutral-100 space-y-3">
-          <div className="flex justify-center mb-4">
+          <div className="flex justify-center gap-3 mb-4">
             <LanguageSelector currentLang={lang} />
+            <CurrencySelector />
           </div>
           <Button
             href={`/${lang}/inscription`}

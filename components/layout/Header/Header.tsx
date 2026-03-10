@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/Button";
 import { Navigation } from "./Navigation";
 import { MobileMenu } from "./MobileMenu";
 import { LanguageSelector } from "./LanguageSelector";
+import { CurrencySelector } from "./CurrencySelector";
 import { SearchBar } from "./SearchBar";
 import { IconMenu, IconClose } from "@/components/icons/Icons";
 import { cn } from "@/lib/utils";
@@ -103,6 +104,11 @@ export function Header({ lang = "fr", dict }: HeaderProps) {
             {/* Sélecteur de langue */}
             <div className="shrink-0">
               <LanguageSelector currentLang={lang} />
+            </div>
+            
+            {/* Sélecteur de devise */}
+            <div className="shrink-0">
+              <CurrencySelector />
             </div>
             
             {/* Séparateur */}

@@ -38,9 +38,79 @@ const EnglishFlag = () => (
   </svg>
 );
 
+const SpanishFlag = () => (
+  <svg className="w-5 h-4" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+    <rect width="900" height="600" fill="#c60b1e"/>
+    <rect width="900" height="300" y="150" fill="#ffc400"/>
+  </svg>
+);
+
+const GermanFlag = () => (
+  <svg className="w-5 h-4" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+    <rect width="900" height="600" fill="#FFCE00"/>
+    <rect width="900" height="400" fill="#DD0000"/>
+    <rect width="900" height="200" fill="#000"/>
+  </svg>
+);
+
+const ArabicFlag = () => (
+  <svg className="w-5 h-4" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+    <rect width="900" height="600" fill="#fff"/>
+    <rect width="900" height="200" fill="#000"/>
+    <rect width="900" height="200" y="400" fill="#007A3D"/>
+    <rect width="900" height="200" y="200" fill="#CE1126"/>
+  </svg>
+);
+
+const ChineseFlag = () => (
+  <svg className="w-5 h-4" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+    <rect width="900" height="600" fill="#DE2910"/>
+    <polygon points="150,150 180,240 120,180 180,180 120,240" fill="#FFDE00"/>
+  </svg>
+);
+
+const PortugueseFlag = () => (
+  <svg className="w-5 h-4" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+    <rect width="900" height="600" fill="#FF0000"/>
+    <rect width="360" height="600" fill="#006600"/>
+  </svg>
+);
+
+const RussianFlag = () => (
+  <svg className="w-5 h-4" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+    <rect width="900" height="600" fill="#D52B1E"/>
+    <rect width="900" height="400" fill="#0039A6"/>
+    <rect width="900" height="200" fill="#fff"/>
+  </svg>
+);
+
+const JapaneseFlag = () => (
+  <svg className="w-5 h-4" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+    <rect width="900" height="600" fill="#fff"/>
+    <circle cx="450" cy="300" r="180" fill="#BC002D"/>
+  </svg>
+);
+
+const HindiFlag = () => (
+  <svg className="w-5 h-4" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+    <rect width="900" height="600" fill="#138808"/>
+    <rect width="900" height="400" fill="#fff"/>
+    <rect width="900" height="200" fill="#FF9933"/>
+    <circle cx="450" cy="300" r="60" fill="none" stroke="#000080" strokeWidth="8"/>
+  </svg>
+);
+
 const languageLabels: Record<Locale, { label: string; flag: React.ReactNode }> = {
   fr: { label: "Français", flag: <FrenchFlag /> },
   en: { label: "English", flag: <EnglishFlag /> },
+  es: { label: "Español", flag: <SpanishFlag /> },
+  de: { label: "Deutsch", flag: <GermanFlag /> },
+  ar: { label: "العربية", flag: <ArabicFlag /> },
+  zh: { label: "中文", flag: <ChineseFlag /> },
+  pt: { label: "Português", flag: <PortugueseFlag /> },
+  ru: { label: "Русский", flag: <RussianFlag /> },
+  ja: { label: "日本語", flag: <JapaneseFlag /> },
+  hi: { label: "हिन्दी", flag: <HindiFlag /> },
 };
 
 export function LanguageSelector({ currentLang = "fr" }: LanguageSelectorProps) {
